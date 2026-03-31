@@ -69,19 +69,36 @@
       class="p-0 flex-grow-1 container-fluid d-flex flex-column align-items-center"
     >
       <section
-        class="container-fluid p-0 pt-5 pb-5 m-0 min-vh-100 d-flex flex-column align-items-center justify-content-center"
+        class="container-fluid p-0 m-0 min-vh-100 d-flex flex-column align-items-center justify-content-center"
       >
-        <div class="container-sm">
+        <div class="container-fluid p-0 m-0 h-100 w-100">
+          <div
+            class="offcanvas offcanvas-start"
+            tabindex="-1"
+            id="offcanvas_map_info"
+            aria-labelledby="offcanvasLabel"
+          >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasLabel">Offcanvas</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              Content for the offcanvas goes here. You can place just about any
+              Bootstrap component or custom elements here.
+            </div>
+          </div>
           <div id="map"></div>
-
         </div>
-        <div class="container-sm"></div>
       </section>
     </main>
 
     <footer class="">HOLAAAAAA</footer>
     <script src="../env.js"></script>
     <script src="shelter.js" defer></script>
-    
   </body>
 </html>

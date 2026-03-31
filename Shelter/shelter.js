@@ -29,14 +29,14 @@ async function loadAllGeolocation() {
 
     let Map_Marker_Data = [];
 
-    result.forEach((place) => {
+    result.forEach((place, index) => {
       Data.push(place);
-      console.log(place);
+      //console.log(place);
       let Object_Marker_Data = {
           type: "Feature",
           properties: {
             description:
-              `<p>${place.center_name}</p><a target="_blank" href="${Google_Maps_Search_Link(place.address)}">${place.address}</a><p>${place.comments}</p>`,
+              `<p>${place.center_name}</p><a target="_blank" href="${Google_Maps_Search_Link(place.address)}">${place.address}</a><p>${place.comments}</p><button class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_map_info" aria-controls="offcanvas_map_info" onclick="Load_Data_Off_Canvas(${index})">More</button>`,
           },
           geometry: {
             type: "Point",
@@ -114,3 +114,22 @@ map.on("load", loadAllGeolocation);
 map.on("load", () => {
   
 });
+
+let Offcanvas_Map_Info_DOM = document.querySelector("#offcanvas_map_info");
+let Offcanvas_Map_Info_Body_DOM = Offcanvas_Map_Info_DOM.querySelector(".offcanvas-body");
+function Load_Data_Off_Canvas(index) {
+
+  let Info = Data[index];
+  Offcanvas_Map_Info_Body_DOM.innerHTML = "";
+
+  for (const [key, value] of Object.entries(Info)) {
+    console.log(`${key}: ${value}`);
+
+    let HTML = `<div>
+      <h2>${key}</h2>
+      <p>${value}</p>
+    </div>`;
+    Offcanvas_Map_Info_Body_DOM.insertAdjacentHTML("beforeend",HTML);
+  }
+
+}

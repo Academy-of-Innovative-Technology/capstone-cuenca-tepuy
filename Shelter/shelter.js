@@ -1,9 +1,23 @@
-mapboxgl.accessToken = API_KEYS.MAPBOX_API_TOKEN_ACCESS_KEY;
+
+const ACCESS_TOKEN = API_KEYS.MAPBOX_API_TOKEN_ACCESS_KEY;
+mapboxgl.accessToken = ACCESS_TOKEN;
 const map = new mapboxgl.Map({
   container: "map", // container ID
   center: [-74.0038, 40.7533], // starting position [lng, lat]. Note that lat must be set between -90 and 90
   zoom: 10, // starting zoom
 });
+
+window.addEventListener('load', () => {
+        const geocoder = new MapboxGeocoder();
+        geocoder.accessToken = ACCESS_TOKEN;
+        geocoder.options = {
+            proximity: [-74.0038, 40.7533]
+        };
+        geocoder.marker = true;
+        geocoder.mapboxgl = mapboxgl;
+        map.addControl(geocoder);
+    });
+
 let Google_Maps_Search_Link = (address) => {
   return `https://maps.google.com/?q=${address}`;
 }
@@ -45,6 +59,8 @@ async function loadAllGeolocation() {
         }
         Map_Marker_Data.push(Object_Marker_Data);
     });
+
+    
 
     map.addSource("places", {
     type: "geojson",

@@ -16,6 +16,14 @@ window.addEventListener('load', () => {
         geocoder.marker = true;
         geocoder.mapboxgl = mapboxgl;
         map.addControl(geocoder);
+
+        const geolocate = new mapboxgl.GeolocateControl({
+  positionOptions: { enableHighAccuracy: true },
+  trackUserLocation: true,
+  showUserHeading: true
+});
+map.addControl(geolocate);
+
     });
 
 let Google_Maps_Search_Link = (address) => {

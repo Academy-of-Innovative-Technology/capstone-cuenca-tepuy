@@ -39,15 +39,17 @@ let Location_APIs = [
       Layer_Name: "Shelter",
       Found: "NYC Open Data",
       Source: "Department of Homeless Services",
+      Pin_Color: "#ff9100",
     },
   },
   {
-    url: "https://data.cityofnewyork.us/resource/bmxf-3rd4.json",
+    url: "https://data.cityofnewyork.us/resource/ntcm-2w4k.json",
     extra_data: {
       Name: "Testing",
-      Layer_Name: "Shelter",
+      Layer_Name: "Testing",
       Found: "ENV",
       Source: "ME",
+      Pin_Color: "#fc0303",
     },
   },
 ];
@@ -104,14 +106,13 @@ function Add_List_Location_To_Map(Data) {
       features: Map_Marker_Data,
     },
   });
-
   // Add a circle layer showing the places.
   map.addLayer({
     id: Layer_Group.Layer_Name,
     type: "circle",
     source: Layer_Group.Layer_Name,
     paint: {
-      "circle-color": "#fc00e4",
+      "circle-color": Layer_Group.locations[0].extra_data.Pin_Color,
       "circle-radius": 6,
       "circle-stroke-width": 2,
       "circle-stroke-color": "#ffffff",
@@ -192,7 +193,6 @@ map.on("idle", () => {
 
   all_Layers.forEach((Layer) => {
     let id = Layer.id;
-    //console.log(id);
     if (document.getElementById(id)) {
       return;
     }
@@ -203,7 +203,7 @@ map.on("idle", () => {
     link.href = "#";
     link.textContent = id;
     link.className = "active";
-
+    link.style.backgroundColor = Layer.paint["circle-color"];
     // Show or hide layer when the toggle is clicked.
     link.onclick = function (e) {
       const clickedLayer = this.textContent;

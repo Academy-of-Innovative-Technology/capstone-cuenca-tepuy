@@ -15,6 +15,13 @@ window.addEventListener("load", () => {
   geocoder.marker = true;
   geocoder.mapboxgl = mapboxgl;
   map.addControl(geocoder);
+
+  const geolocate = new mapboxgl.GeolocateControl({
+    positionOptions: { enableHighAccuracy: true },
+    trackUserLocation: true,
+    showUserHeading: true,
+  });
+  map.addControl(geolocate);
 });
 
 let Google_Maps_Search_Link = (address) => {
@@ -72,44 +79,44 @@ function Add_List_Location_To_Map(Data) {
     },
   });
 
-  // Add a circle layer showing the places.
-  map.addLayer({
-    id: "places",
-    type: "circle",
-    source: "places",
-    paint: {
-      "circle-color": "#fc00e4",
-      "circle-radius": 6,
-      "circle-stroke-width": 2,
-      "circle-stroke-color": "#ffffff",
-    },
-  });
+    // Add a circle layer showing the places.
+    map.addLayer({
+      id: "places",
+      type: "circle",
+      source: "places",
+      paint: {
+        "circle-color": "#fc00e4",
+        "circle-radius": 6,
+        "circle-stroke-width": 2,
+        "circle-stroke-color": "#ffffff",
+      },
+    });
 
-  // When a click event occurs on a feature in the places layer, open a popup at the
-  // location of the feature, with description HTML from its properties.
-  map.addInteraction("places-click-interaction", {
-    type: "click",
-    target: { layerId: "places" },
-    handler: (e) => {
-      // Copy coordinates array.
-      const coordinates = e.feature.geometry.coordinates.slice();
-      const description = e.feature.properties.description;
+    // When a click event occurs on a feature in the places layer, open a popup at the
+    // location of the feature, with description HTML from its properties.
+    map.addInteraction("places-click-interaction", {
+      type: "click",
+      target: { layerId: "places" },
+      handler: (e) => {
+        // Copy coordinates array.
+        const coordinates = e.feature.geometry.coordinates.slice();
+        const description = e.feature.properties.description;
 
-      new mapboxgl.Popup()
-        .setLngLat(coordinates)
-        .setHTML(description)
-        .addTo(map);
-    },
-  });
+        new mapboxgl.Popup()
+          .setLngLat(coordinates)
+          .setHTML(description)
+          .addTo(map);
+      },
+    });
 
-  // Change the cursor to a pointer when the mouse is over a POI.
-  map.addInteraction("places-mouseenter-interaction", {
-    type: "mouseenter",
-    target: { layerId: "places" },
-    handler: () => {
-      map.getCanvas().style.cursor = "pointer";
-    },
-  });
+    // Change the cursor to a pointer when the mouse is over a POI.
+    map.addInteraction("places-mouseenter-interaction", {
+      type: "mouseenter",
+      target: { layerId: "places" },
+      handler: () => {
+        map.getCanvas().style.cursor = "pointer";
+      },
+    });
 
   // Change the cursor back to a pointer when it stops hovering over a POI.
   map.addInteraction("places-mouseleave-interaction", {
@@ -258,6 +265,17 @@ function Load_Data_Off_Canvas(index) {
       <h2>${key}</h2>
       <p>${value}</p>
     </div>`;
+
+    if (key == "address") {
+      HTML = `<div>
+      <h2>${key}</h2>
+      <a target="_blank" href="${Google_Maps_Search_Link(value)}"><p>${value}</p></a>
+    </div>`;
+    }
+
+    Offcanvas_Map_Info_Body_DOM.insertAdjacentHTML("beforeend", HTML);
     Offcanvas_Map_Info_Body_DOM.insertAdjacentHTML("beforeend", HTML);
   }
+}
+
 }

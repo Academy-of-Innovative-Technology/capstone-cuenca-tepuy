@@ -68,6 +68,8 @@ function Add_List_Location_To_Map(Data) {
       },
     };
     Map_Marker_Data.push(Object_Marker_Data);
+
+    
   });
 
   map.addSource("places", {
@@ -79,44 +81,44 @@ function Add_List_Location_To_Map(Data) {
     },
   });
 
-    // Add a circle layer showing the places.
-    map.addLayer({
-      id: "places",
-      type: "circle",
-      source: "places",
-      paint: {
-        "circle-color": "#fc00e4",
-        "circle-radius": 6,
-        "circle-stroke-width": 2,
-        "circle-stroke-color": "#ffffff",
-      },
-    });
+  // Add a circle layer showing the places.
+  map.addLayer({
+    id: "places",
+    type: "circle",
+    source: "places",
+    paint: {
+      "circle-color": "#fc00e4",
+      "circle-radius": 6,
+      "circle-stroke-width": 2,
+      "circle-stroke-color": "#ffffff",
+    },
+  });
 
-    // When a click event occurs on a feature in the places layer, open a popup at the
-    // location of the feature, with description HTML from its properties.
-    map.addInteraction("places-click-interaction", {
-      type: "click",
-      target: { layerId: "places" },
-      handler: (e) => {
-        // Copy coordinates array.
-        const coordinates = e.feature.geometry.coordinates.slice();
-        const description = e.feature.properties.description;
+  // When a click event occurs on a feature in the places layer, open a popup at the
+  // location of the feature, with description HTML from its properties.
+  map.addInteraction("places-click-interaction", {
+    type: "click",
+    target: { layerId: "places" },
+    handler: (e) => {
+      // Copy coordinates array.
+      const coordinates = e.feature.geometry.coordinates.slice();
+      const description = e.feature.properties.description;
 
-        new mapboxgl.Popup()
-          .setLngLat(coordinates)
-          .setHTML(description)
-          .addTo(map);
-      },
-    });
+      new mapboxgl.Popup()
+        .setLngLat(coordinates)
+        .setHTML(description)
+        .addTo(map);
+    },
+  });
 
-    // Change the cursor to a pointer when the mouse is over a POI.
-    map.addInteraction("places-mouseenter-interaction", {
-      type: "mouseenter",
-      target: { layerId: "places" },
-      handler: () => {
-        map.getCanvas().style.cursor = "pointer";
-      },
-    });
+  // Change the cursor to a pointer when the mouse is over a POI.
+  map.addInteraction("places-mouseenter-interaction", {
+    type: "mouseenter",
+    target: { layerId: "places" },
+    handler: () => {
+      map.getCanvas().style.cursor = "pointer";
+    },
+  });
 
   // Change the cursor back to a pointer when it stops hovering over a POI.
   map.addInteraction("places-mouseleave-interaction", {
@@ -249,6 +251,50 @@ async function loadAllGeolocation() {
 
 map.on("load", loadAllGeolocation);
 
+map.on("idle", () => {
+
+  let all_Layers = map.getStyle().layers;
+  
+  all_Layers.forEach( (Layer) => {
+    let id = Layer.id;
+    console.log(id);
+    if (document.getElementById(id)) {
+      return;
+    }
+    console.log("check");
+    // Create a link.
+    const link = document.createElement("a");
+    link.id = id;
+    link.href = "#";
+    link.textContent = id;
+    link.className = "active";
+
+    // Show or hide layer when the toggle is clicked.
+    link.onclick = function (e) {
+      const clickedLayer = this.textContent;
+      e.preventDefault();
+      e.stopPropagation();
+
+      const visibility = map.getLayoutProperty(clickedLayer, "visibility");
+
+      // Toggle layer visibility by changing the layout object's visibility property.
+      if (visibility === "visible") {
+        map.setLayoutProperty(clickedLayer, "visibility", "none");
+        this.className = "";
+      } else {
+        this.className = "active";
+        map.setLayoutProperty(clickedLayer, "visibility", "visible");
+      }
+    };
+
+    const layers = document.getElementById("menu");
+    layers.appendChild(link);
+
+  })
+
+})
+
+
 let Offcanvas_Map_Info_DOM = document.querySelector("#offcanvas_map_info");
 let Offcanvas_Map_Info_Body_DOM =
   Offcanvas_Map_Info_DOM.querySelector(".offcanvas-body");
@@ -274,4 +320,3 @@ function Load_Data_Off_Canvas(index) {
     Offcanvas_Map_Info_Body_DOM.insertAdjacentHTML("beforeend", HTML);
   }
 }
-

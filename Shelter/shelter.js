@@ -45,6 +45,7 @@ let Location_APIs = [
     url: "https://data.cityofnewyork.us/resource/bmxf-3rd4.json",
     extra_data: {
       Name: "Testing",
+      Layer_Name: "Shelter",
       Found: "ENV",
       Source: "ME",
     },
@@ -53,26 +54,49 @@ let Location_APIs = [
 
 let Data = [];
 
-function Add_List_Location_To_Map(Data) {
-  let Map_Marker_Data = [];
-  Data.forEach((place, index) => {
-    //console.log(place);
-    let Object_Marker_Data = {
-      type: "Feature",
-      properties: {
-        description: `<p>${place.center_name}</p><a target="_blank" href="${Google_Maps_Search_Link(place.address)}">${place.address}</a><p>${place.comments}</p><button class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_map_info" aria-controls="offcanvas_map_info" onclick="Load_Data_Off_Canvas(${index})">More</button>`,
-      },
-      geometry: {
-        type: "Point",
-        coordinates: [place.longitude, place.latitude],
-      },
-    };
-    Map_Marker_Data.push(Object_Marker_Data);
+function groupByLayer(data) {
+  const grouped = {};
 
-    
+  data.forEach((item) => {
+    const Layer_Name = item.Layer_Name;
+
+    if (!grouped[Layer_Name]) {
+      grouped[Layer_Name] = {
+        Layer_Name,
+        locations: [],
+      };
+    }
+
+    grouped[Layer_Name].locations.push(...item.locations);
   });
 
-  map.addSource("places", {
+  return Object.values(grouped);
+}
+
+function Add_List_Location_To_Map(Data) {
+  let Categorized_Data = groupByLayer(Data);
+
+  Categorized_Data.forEach((Layer_Group, index) => {
+    let Map_Marker_Data = [];
+    Layer_Group.locations.forEach((location) => {
+
+      let Object_Marker_Data = {
+        type: "Feature",
+        properties: {
+          description: `<p>${location.center_name}</p><a target="_blank" href="${Google_Maps_Search_Link(location.address)}">${location}</a><p>${location.comments}</p><button class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_map_info" aria-controls="offcanvas_map_info" onclick="">More</button>`,
+          data: location,
+        },
+        geometry: {
+          type: "Point",
+          coordinates: [location.longitude, location.latitude],
+        },
+      };
+      Map_Marker_Data.push(Object_Marker_Data);
+    });
+    //console.log(Map_Marker_Data);
+
+
+    map.addSource(Layer_Group.Layer_Name, {
     type: "geojson",
     generateId: true,
     data: {
@@ -83,9 +107,9 @@ function Add_List_Location_To_Map(Data) {
 
   // Add a circle layer showing the places.
   map.addLayer({
-    id: "places",
+    id: Layer_Group.Layer_Name,
     type: "circle",
-    source: "places",
+    source: Layer_Group.Layer_Name,
     paint: {
       "circle-color": "#fc00e4",
       "circle-radius": 6,
@@ -98,23 +122,24 @@ function Add_List_Location_To_Map(Data) {
   // location of the feature, with description HTML from its properties.
   map.addInteraction("places-click-interaction", {
     type: "click",
-    target: { layerId: "places" },
+    target: { layerId: Layer_Group.Layer_Name},
     handler: (e) => {
       // Copy coordinates array.
       const coordinates = e.feature.geometry.coordinates.slice();
       const description = e.feature.properties.description;
-
-      new mapboxgl.Popup()
-        .setLngLat(coordinates)
-        .setHTML(description)
-        .addTo(map);
+      //console.log(e.feature.properties.data);
+      Load_Data_Off_Canvas(JSON.parse(e.feature.properties.data));
+      // new mapboxgl.Popup()
+      //   .setLngLat(coordinates)
+      //   .setHTML(description)
+      //   .addTo(map);
     },
   });
 
   // Change the cursor to a pointer when the mouse is over a POI.
   map.addInteraction("places-mouseenter-interaction", {
     type: "mouseenter",
-    target: { layerId: "places" },
+    target: { layerId: Layer_Group.Layer_Name },
     handler: () => {
       map.getCanvas().style.cursor = "pointer";
     },
@@ -123,12 +148,15 @@ function Add_List_Location_To_Map(Data) {
   // Change the cursor back to a pointer when it stops hovering over a POI.
   map.addInteraction("places-mouseleave-interaction", {
     type: "mouseleave",
-    target: { layerId: "places" },
+    target: { layerId: Layer_Group.Layer_Name },
     handler: () => {
       map.getCanvas().style.cursor = "";
     },
   });
+
+  });
 }
+
 
 async function loadAllGeolocation() {
   try {
@@ -140,128 +168,35 @@ async function loadAllGeolocation() {
       }
 
       const data = await response.json();
-      return data.map((item) => ({
-        ...item,
-        extra_data: { ...API.extra_data, url: API.url },
-      }));
+      return {
+        ...API.extra_data,
+        locations: data.map((item) => ({
+          ...item,
+          extra_data: { ...API.extra_data, url: API.url },
+        })),
+      };
     });
-    const results = (await Promise.all(requests)).flat();
+    const results = await Promise.all(requests);
     Data = results;
     Add_List_Location_To_Map(Data);
-    console.log(Data);
+    //console.log(Data);
   } catch (error) {
     console.log(error.message);
   }
 }
 
-// async function loadAllGeolocation() {
-//   try {
-//     const response = await fetch(
-//       Directory_Of_Homeless_Drop_In_Centers_Link_API,
-//       { method: "GET" },
-//     );
-//     if (!response.ok) {
-//       throw new Error(`Reponse status: ${response.status}`);
-//     }
-
-//     const result = await response.json();
-//     console.log(result);
-//     Data = [];
-
-//     let Map_Marker_Data = [];
-
-//     result.forEach((place, index) => {
-//       Data.push(place);
-//       //console.log(place);
-//       let Object_Marker_Data = {
-//           type: "Feature",
-//           properties: {
-//             description:
-//               `<p>${place.center_name}</p><a target="_blank" href="${Google_Maps_Search_Link(place.address)}">${place.address}</a><p>${place.comments}</p><button class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_map_info" aria-controls="offcanvas_map_info" onclick="Load_Data_Off_Canvas(${index})">More</button>`,
-//           },
-//           geometry: {
-//             type: "Point",
-//             coordinates: [place.longitude, place.latitude],
-//           },
-//         }
-//         Map_Marker_Data.push(Object_Marker_Data);
-//     });
-
-//     map.addSource("places", {
-//     type: "geojson",
-//     generateId: true,
-//     data: {
-//       type: "FeatureCollection",
-//       features: Map_Marker_Data,
-//     },
-//   });
-
-//   // Add a circle layer showing the places.
-//   map.addLayer({
-//     id: "places",
-//     type: "circle",
-//     source: "places",
-//     paint: {
-//       "circle-color": "#fc00e4",
-//       "circle-radius": 6,
-//       "circle-stroke-width": 2,
-//       "circle-stroke-color": "#ffffff",
-//     },
-//   });
-
-//   // When a click event occurs on a feature in the places layer, open a popup at the
-//   // location of the feature, with description HTML from its properties.
-//   map.addInteraction("places-click-interaction", {
-//     type: "click",
-//     target: { layerId: "places" },
-//     handler: (e) => {
-//       // Copy coordinates array.
-//       const coordinates = e.feature.geometry.coordinates.slice();
-//       const description = e.feature.properties.description;
-
-//       new mapboxgl.Popup()
-//         .setLngLat(coordinates)
-//         .setHTML(description)
-//         .addTo(map);
-//     },
-//   });
-
-//   // Change the cursor to a pointer when the mouse is over a POI.
-//   map.addInteraction("places-mouseenter-interaction", {
-//     type: "mouseenter",
-//     target: { layerId: "places" },
-//     handler: () => {
-//       map.getCanvas().style.cursor = "pointer";
-//     },
-//   });
-
-//   // Change the cursor back to a pointer when it stops hovering over a POI.
-//   map.addInteraction("places-mouseleave-interaction", {
-//     type: "mouseleave",
-//     target: { layerId: "places" },
-//     handler: () => {
-//       map.getCanvas().style.cursor = "";
-//     },
-//   });
-
-//   } catch (error) {
-//     console.log(error.message);
-//   }
-// }
-
 map.on("load", loadAllGeolocation);
 
 map.on("idle", () => {
-
   let all_Layers = map.getStyle().layers;
-  
-  all_Layers.forEach( (Layer) => {
+
+  all_Layers.forEach((Layer) => {
     let id = Layer.id;
-    console.log(id);
+    //console.log(id);
     if (document.getElementById(id)) {
       return;
     }
-    console.log("check");
+    //console.log("check");
     // Create a link.
     const link = document.createElement("a");
     link.id = id;
@@ -289,21 +224,18 @@ map.on("idle", () => {
 
     const layers = document.getElementById("menu");
     layers.appendChild(link);
-
-  })
-
-})
-
+  });
+});
 
 let Offcanvas_Map_Info_DOM = document.querySelector("#offcanvas_map_info");
 let Offcanvas_Map_Info_Body_DOM =
   Offcanvas_Map_Info_DOM.querySelector(".offcanvas-body");
-function Load_Data_Off_Canvas(index) {
-  let Info = Data[index];
+function Load_Data_Off_Canvas(Data) {
+  let Info = Data;
+  console.log("Load Canvas Info");
   Offcanvas_Map_Info_Body_DOM.innerHTML = "";
-
   for (const [key, value] of Object.entries(Info)) {
-    console.log(`${key}: ${value}`);
+    //console.log(`${key}: ${value}`);
 
     let HTML = `<div>
       <h2>${key}</h2>
@@ -319,4 +251,8 @@ function Load_Data_Off_Canvas(index) {
 
     Offcanvas_Map_Info_Body_DOM.insertAdjacentHTML("beforeend", HTML);
   }
+
+  const bsOffcanvas = new bootstrap.Offcanvas(Offcanvas_Map_Info_DOM)
+  bsOffcanvas.show()
+
 }

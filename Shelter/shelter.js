@@ -249,8 +249,6 @@ async function loadAllGeolocation() {
 
 map.on("load", loadAllGeolocation);
 
-map.on("load", () => {});
-
 let Offcanvas_Map_Info_DOM = document.querySelector("#offcanvas_map_info");
 let Offcanvas_Map_Info_Body_DOM =
   Offcanvas_Map_Info_DOM.querySelector(".offcanvas-body");
@@ -274,8 +272,6 @@ function Load_Data_Off_Canvas(index) {
     }
 
     Offcanvas_Map_Info_Body_DOM.insertAdjacentHTML("beforeend", HTML);
-    Offcanvas_Map_Info_Body_DOM.insertAdjacentHTML("beforeend", HTML);
   }
 }
 
-}

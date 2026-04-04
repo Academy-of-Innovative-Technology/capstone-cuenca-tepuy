@@ -119,7 +119,7 @@ function Add_List_Location_To_Map(Data) {
 
     // When a click event occurs on a feature in the places layer, open a popup at the
     // location of the feature, with description HTML from its properties.
-    map.addInteraction("places-click-interaction", {
+    map.addInteraction(`${Layer_Group.Layer_Name}-click-interaction`, {
       type: "click",
       target: { layerId: Layer_Group.Layer_Name },
       handler: (e) => {
@@ -136,7 +136,7 @@ function Add_List_Location_To_Map(Data) {
     });
 
     // Change the cursor to a pointer when the mouse is over a POI.
-    map.addInteraction("places-mouseenter-interaction", {
+    map.addInteraction(`${Layer_Group.Layer_Name}-mouseenter-interaction`, {
       type: "mouseenter",
       target: { layerId: Layer_Group.Layer_Name },
       handler: () => {
@@ -145,7 +145,7 @@ function Add_List_Location_To_Map(Data) {
     });
 
     // Change the cursor back to a pointer when it stops hovering over a POI.
-    map.addInteraction("places-mouseleave-interaction", {
+    map.addInteraction(`${Layer_Group.Layer_Name}-mouseleave-interaction`, {
       type: "mouseleave",
       target: { layerId: Layer_Group.Layer_Name },
       handler: () => {
@@ -184,44 +184,81 @@ async function loadAllGeolocation() {
 
 map.on("load", loadAllGeolocation);
 
+let Map_Layer_Controls_DOM = document.querySelector("#Map_Layer_Controls");
 map.on("idle", () => {
   let all_Layers = map.getStyle().layers;
 
+  
   all_Layers.forEach((Layer) => {
     let id = Layer.id;
-    if (document.getElementById(id)) {
+
+    let New_BTN_ID = `Layer_Toggler_${id}`;
+
+    if (document.getElementById(New_BTN_ID)) {
+      console.log("exit");
       return;
     }
-    //console.log("check");
-    // Create a link.
-    const link = document.createElement("a");
-    link.id = id;
-    link.href = "#";
-    link.textContent = id;
-    link.className = "active";
-    link.style.backgroundColor = Layer.paint["circle-color"];
-    // Show or hide layer when the toggle is clicked.
-    link.onclick = function (e) {
-      const clickedLayer = this.textContent;
-      e.preventDefault();
-      e.stopPropagation();
+    
+    let HTML = `
+     <input type="checkbox" class="btn-check active" id="${New_BTN_ID}" autocomplete="off" checked>
+    <label class="btn btn-primary" style="background-color: ${Layer.paint["circle-color"]}" for="Layer_Toggler_${id}">${id}</label>`;
 
-      const visibility = map.getLayoutProperty(clickedLayer, "visibility");
+    Map_Layer_Controls_DOM.insertAdjacentHTML("beforeend", HTML);
 
-      // Toggle layer visibility by changing the layout object's visibility property.
-      if (visibility === "visible") {
-        map.setLayoutProperty(clickedLayer, "visibility", "none");
-        this.className = "";
+    let Trigger = document.querySelector(`#${New_BTN_ID}`);
+    Trigger.addEventListener("change", (event) => {
+      if (event.target.checked) {
+        console.log("Turning on");
+        map.setLayoutProperty(id, "visibility", "visible");
+        Trigger.classList.add("active");
       } else {
-        this.className = "active";
-        map.setLayoutProperty(clickedLayer, "visibility", "visible");
+        console.log("Turning off");
+        map.setLayoutProperty(id, "visibility", "none");
+        Trigger.classList.remove("active");
       }
-    };
-
-    const layers = document.getElementById("menu");
-    layers.appendChild(link);
+    });
   });
 });
+
+// map.on("idle", () => {
+//   let all_Layers = map.getStyle().layers;
+//   return;
+//   all_Layers.forEach((Layer) => {
+//     let id = Layer.id;
+//     if (document.getElementById(id)) {
+//       return;
+//     }
+//     //console.log("check");
+//     // Create a link.
+
+//     const link = document.createElement("a");
+//     link.id = id;
+//     link.href = "#";
+//     link.textContent = id;
+//     link.className = "active";
+//     link.style.backgroundColor = Layer.paint["circle-color"];
+//     // Show or hide layer when the toggle is clicked.
+//     link.onclick = function (e) {
+//       const clickedLayer = this.textContent;
+//       e.preventDefault();
+//       e.stopPropagation();
+
+//       const visibility = map.getLayoutProperty(clickedLayer, "visibility");
+
+//       // Toggle layer visibility by changing the layout object's visibility property.
+//       if (visibility === "visible") {
+//         map.setLayoutProperty(clickedLayer, "visibility", "none");
+//         this.className = "";
+//       } else {
+//         this.className = "active";
+//         map.setLayoutProperty(clickedLayer, "visibility", "visible");
+//       }
+//     };
+
+//     const layers = document.getElementById("menu");
+//     layers.appendChild(link);
+//   });
+// });
 
 let Offcanvas_Map_Info_DOM = document.querySelector("#offcanvas_map_info");
 let Offcanvas_Map_Info_Body_DOM =

@@ -6,11 +6,10 @@
   --food_accent: #f4a261;
   --shelter_accent: #8d6e63;
   /* --text: #2f2f2f; */
-  --text : rgb(248, 249, 250);
+  --text: rgb(248, 249, 250);
   --highlight: #8bc34a;
   --call_to_action: #8bc34a;
 }
-
 
 html {
   width: 100%;
@@ -41,27 +40,31 @@ nav {
 }
 
 .overflox-x-clip {
- overflow-x: clip;
+  overflow-x: clip;
 }
 
-article.bg-half-dark, article.bg-half-dark-reverse {
+article.bg-half-dark,
+article.bg-half-dark-reverse {
   visibility: hidden;
 }
-article.bg-half-dark.on, article.bg-half-dark-reverse.on {
+article.bg-half-dark.on,
+article.bg-half-dark-reverse.on {
   visibility: visible;
 }
 
-article.bg-half-dark.on{
+article.bg-half-dark.on {
   animation: slide-in-left 2s ease-out forwards;
 }
-article.bg-half-dark-reverse.on{
-animation: slide-in-right 2s ease-out forwards;
+article.bg-half-dark-reverse.on {
+  animation: slide-in-right 2s ease-out forwards;
 }
 
 @keyframes slide-in-left {
   from {
     opacity: 0;
-    transform: translateX(-100%); /* Start position: fully off-screen to the left */
+    transform: translateX(
+      -100%
+    ); /* Start position: fully off-screen to the left */
   }
   to {
     opacity: 1;
@@ -71,7 +74,9 @@ animation: slide-in-right 2s ease-out forwards;
 @keyframes slide-in-right {
   from {
     opacity: 0;
-    transform: translateX(100%); /* Start position: fully off-screen to the left */
+    transform: translateX(
+      100%
+    ); /* Start position: fully off-screen to the left */
   }
   to {
     opacity: 1;
@@ -91,7 +96,6 @@ animation: slide-in-right 2s ease-out forwards;
 .fade-in-top {
   animation: fade-in-top 1s ease-out forwards;
 }
-
 
 @media (min-width: 768px) {
   .bg-half-dark {

@@ -81,7 +81,6 @@ function Add_List_Location_To_Map(Data) {
   Categorized_Data.forEach((Layer_Group, index) => {
     let Map_Marker_Data = [];
     Layer_Group.locations.forEach((location) => {
-
       let Object_Marker_Data = {
         type: "Feature",
         properties: {
@@ -97,67 +96,64 @@ function Add_List_Location_To_Map(Data) {
     });
     //console.log(Map_Marker_Data);
 
-
     map.addSource(Layer_Group.Layer_Name, {
-    type: "geojson",
-    generateId: true,
-    data: {
-      type: "FeatureCollection",
-      features: Map_Marker_Data,
-    },
-  });
-  // Add a circle layer showing the places.
-  map.addLayer({
-    id: Layer_Group.Layer_Name,
-    type: "circle",
-    source: Layer_Group.Layer_Name,
-    paint: {
-      "circle-color": Layer_Group.locations[0].extra_data.Pin_Color,
-      "circle-radius": 6,
-      "circle-stroke-width": 2,
-      "circle-stroke-color": "#ffffff",
-    },
-  });
+      type: "geojson",
+      generateId: true,
+      data: {
+        type: "FeatureCollection",
+        features: Map_Marker_Data,
+      },
+    });
+    // Add a circle layer showing the places.
+    map.addLayer({
+      id: Layer_Group.Layer_Name,
+      type: "circle",
+      source: Layer_Group.Layer_Name,
+      paint: {
+        "circle-color": Layer_Group.locations[0].extra_data.Pin_Color,
+        "circle-radius": 6,
+        "circle-stroke-width": 2,
+        "circle-stroke-color": "#ffffff",
+      },
+    });
 
-  // When a click event occurs on a feature in the places layer, open a popup at the
-  // location of the feature, with description HTML from its properties.
-  map.addInteraction("places-click-interaction", {
-    type: "click",
-    target: { layerId: Layer_Group.Layer_Name},
-    handler: (e) => {
-      // Copy coordinates array.
-      const coordinates = e.feature.geometry.coordinates.slice();
-      const description = e.feature.properties.description;
-      //console.log(e.feature.properties.data);
-      Load_Data_Off_Canvas(JSON.parse(e.feature.properties.data));
-      // new mapboxgl.Popup()
-      //   .setLngLat(coordinates)
-      //   .setHTML(description)
-      //   .addTo(map);
-    },
-  });
+    // When a click event occurs on a feature in the places layer, open a popup at the
+    // location of the feature, with description HTML from its properties.
+    map.addInteraction("places-click-interaction", {
+      type: "click",
+      target: { layerId: Layer_Group.Layer_Name },
+      handler: (e) => {
+        // Copy coordinates array.
+        const coordinates = e.feature.geometry.coordinates.slice();
+        const description = e.feature.properties.description;
+        //console.log(e.feature.properties.data);
+        Load_Data_Off_Canvas(JSON.parse(e.feature.properties.data));
+        // new mapboxgl.Popup()
+        //   .setLngLat(coordinates)
+        //   .setHTML(description)
+        //   .addTo(map);
+      },
+    });
 
-  // Change the cursor to a pointer when the mouse is over a POI.
-  map.addInteraction("places-mouseenter-interaction", {
-    type: "mouseenter",
-    target: { layerId: Layer_Group.Layer_Name },
-    handler: () => {
-      map.getCanvas().style.cursor = "pointer";
-    },
-  });
+    // Change the cursor to a pointer when the mouse is over a POI.
+    map.addInteraction("places-mouseenter-interaction", {
+      type: "mouseenter",
+      target: { layerId: Layer_Group.Layer_Name },
+      handler: () => {
+        map.getCanvas().style.cursor = "pointer";
+      },
+    });
 
-  // Change the cursor back to a pointer when it stops hovering over a POI.
-  map.addInteraction("places-mouseleave-interaction", {
-    type: "mouseleave",
-    target: { layerId: Layer_Group.Layer_Name },
-    handler: () => {
-      map.getCanvas().style.cursor = "";
-    },
-  });
-
+    // Change the cursor back to a pointer when it stops hovering over a POI.
+    map.addInteraction("places-mouseleave-interaction", {
+      type: "mouseleave",
+      target: { layerId: Layer_Group.Layer_Name },
+      handler: () => {
+        map.getCanvas().style.cursor = "";
+      },
+    });
   });
 }
-
 
 async function loadAllGeolocation() {
   try {
@@ -252,7 +248,6 @@ function Load_Data_Off_Canvas(Data) {
     Offcanvas_Map_Info_Body_DOM.insertAdjacentHTML("beforeend", HTML);
   }
 
-  const bsOffcanvas = new bootstrap.Offcanvas(Offcanvas_Map_Info_DOM)
-  bsOffcanvas.show()
-
+  const bsOffcanvas = new bootstrap.Offcanvas(Offcanvas_Map_Info_DOM);
+  bsOffcanvas.show();
 }

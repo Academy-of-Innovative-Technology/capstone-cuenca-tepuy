@@ -23,10 +23,10 @@ let Location_APIs = [
     },
   },
   {
-    url: "https://data.cityofnewyork.us/resource/ntcm-2w4k.json",
+    url: "../Data/Food_Pantries_DYCD.json",
     extra_data: {
-      Name: "Testing",
-      Layer_Name: "Testing",
+      Name: "Food_Pantries_DYCD",
+      Layer_Name: "Food_Pastries",
       Found: "ENV",
       Source: "ME",
       Pin_Color: "#fc0303",
@@ -61,23 +61,31 @@ function groupByLayer(data) {
 function Add_List_Location_To_Map(Data) {
   let Categorized_Data = groupByLayer(Data);
 
-  Categorized_Data.forEach((Layer_Group, index) => {
+  Categorized_Data.forEach(async (Layer_Group, index) => {
     let Map_Marker_Data = [];
-    Layer_Group.locations.forEach((location) => {
-      let Object_Marker_Data = {
-        type: "Feature",
-        properties: {
-          description: `<p>${location.center_name}</p><a target="_blank" href="${Google_Maps_Search_Link(location.address)}">${location}</a><p>${location.comments}</p><button class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_map_info" aria-controls="offcanvas_map_info" onclick="">More</button>`,
-          data: location,
-        },
-        geometry: {
-          type: "Point",
-          coordinates: [location.longitude, location.latitude],
-        },
-      };
-      Map_Marker_Data.push(Object_Marker_Data);
-    });
-    //console.log(Map_Marker_Data);
+    
+    await Promise.all(
+  Layer_Group.locations.map(async (location) => {
+    const API_DATA_MANAGER = new DataStandardizer(location, directories);
+    const Standarized_Data = await API_DATA_MANAGER.process();
+
+
+    let Object_Marker_Data = {
+      type: "Feature",
+      properties: {
+        // description: `<p>${location.center_name}</p><a target="_blank" href="${Google_Maps_Search_Link(location.address)}">${location}</a><p>${location.comments}</p><button class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_map_info" aria-controls="offcanvas_map_info">More</button>`,
+        data: Standarized_Data,
+      },
+      geometry: {
+        type: "Point",
+        coordinates: [Standarized_Data.longitude, Standarized_Data.latitude],
+      },
+    };
+
+    Map_Marker_Data.push(Object_Marker_Data);
+  })
+);
+    
 
     map.addSource(Layer_Group.Layer_Name, {
       type: "geojson",
@@ -158,6 +166,7 @@ async function loadAllGeolocation() {
     });
     const results = await Promise.all(requests);
     Data = results;
+    console.log(results);
     Add_List_Location_To_Map(Data);
     //console.log(Data);
   } catch (error) {

@@ -14,4 +14,5 @@ let Properties_Name = {
   bin: "bin",
   bbl: "bbl",
   nta: "nta",
+  name: "Center Name"
 };

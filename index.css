@@ -1,15 +1,15 @@
 :root {
   --primary: #2e7d32;
   --secondary: #66bb6a;
-  /* --background: #F7F9F4; */
+  --background: #F7F9F4;
   --background: linear-gradient(135deg, #1f6f43, #2e8b57, #3fa34d);
   --food_accent: #f4a261;
   --shelter_accent: #8d6e63;
-  /* --text: #2f2f2f; */
+  --text: #2f2f2f;
   --text: rgb(248, 249, 250);
   --highlight: #8bc34a;
   --call_to_action: #8bc34a;
-}
+
 
 html {
   width: 100%;
@@ -21,23 +21,18 @@ body {
   /* color: var(--text); */
 }
 
-.food_accent {
-  background-color: var(--food_accent);
-}
-.shelter_accent {
-  background-color: var(--shelter_accent);
-}
+
 nav {
   background-color: var(--secondary);
 }
 #Main_Title {
-  background: var(--background);
+  background: var(--background); 
 }
-.Stat {
+/* .Stat {
   font-size: 2rem;
   font-weight: 700;
   color: #8bc34a; /* your highlight green */
-}
+} */
 
 .overflox-x-clip {
   overflow-x: clip;
@@ -98,7 +93,7 @@ article.bg-half-dark-reverse.on {
 }
 
 @media (min-width: 768px) {
-  .bg-half-dark {
+  /* .bg-half-dark {
     background: #212529;
     background: linear-gradient(
       90deg,
@@ -113,5 +108,5 @@ article.bg-half-dark-reverse.on {
       rgba(33, 37, 41, 1) 50%,
       rgba(255, 0, 0, 0) 50%
     );
-  }
+  } */
 }

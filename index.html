@@ -7,13 +7,15 @@
 
     <link rel="stylesheet" href="Scss/main.css" />
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="index.css" />
   </head>
 
   <body class="d-flex flex-column h-100">
-    <nav class="navbar sticky-top navbar-expand-lg">
+    
+    <nav class="navbar sticky-top navbar-expand-lg" data-bs-theme="dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="../index.html">Home</a>
+        <a class="navbar-brand" href="../index.html">Food & Home</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -27,31 +29,15 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <!-- TEST -->
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                data-bs-toggle="dropdown"
-                href="#"
-                role="button"
-                aria-haspopup="true"
-                aria-expanded="false"
-                >Dropdown</a
-              >
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Separated link</a>
-              </div>
-            </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="../About/about.html">Contribute</a>
+              <a class="nav-link" href="../About/about.html"><i class="bi bi-search me-2"></i>Find</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../About/about.html">Contact us</a>
+              <a class="nav-link" href="../About/about.html"><i class="bi bi-patch-plus me-2"></i>Contribute</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../About/about.html"><i class="bi bi-clipboard me-2"></i>Credits</a>
             </li>
           </ul>
         </div>
@@ -93,7 +79,7 @@
 
       <section
         id="Information"
-        class="container-fluid p-0 m-0 d-flex flex-column align-items-center bg-light-subtle overflox-x-clip"
+        class="container-fluid p-0 m-0 d-flex flex-column align-items-center overflox-x-clip bg-dark-subtle"
       >
         <article
           class="container-fluid d-flex justify-content-center p-0 m-0 bg-half-dark"
@@ -102,9 +88,9 @@
             <div
               class="col-md p-0 bg-dark d-flex flex-column align-items-center justify-content-center"
             >
-              <h2 class="ps-5 pt-5 pe-5">Food Insecurity in New York City</h2>
+              <h2 class="ps-5 pt-5 pe-5 text-decoration-underline">Food Insecurity in New York City</h2>
               <p class="text-light ps-5 pb-5 pe-5">
-                Over <span class="Stat">1.2 million</span> experience food
+                Over <span class="fw-bold text-primary h2">1.2 million</span> experience food
                 insecurity each year, meaning they do not always have reliable
                 access to enough affordable, nutritious food. Organizations like
                 Food Bank For New York City report that demand for food
@@ -129,10 +115,10 @@
             <div
               class="col-md p-0 bg-dark d-flex flex-column align-items-center justify-content-center"
             >
-              <h2 class="ps-5 pt-5 pe-5">Homelessness & Shelter in NYC</h2>
+              <h2 class="ps-5 pt-5 pe-5 text-decoration-underline">Homelessness & Shelter in NYC</h2>
               <p class="text-light ps-5 pb-5 pe-5">
                 Each night, more than
-                <span class="Stat">80,000 people</span> sleep in the New York
+                <span class="fw-bold text-primary h2">80,000 people</span> sleep in the New York
                 City shelter system, including thousands of families with
                 children. According to the New York City Department of Homeless
                 Services, NYC operates the largest municipal shelter system in
@@ -156,9 +142,9 @@
             <div
               class="col-md p-0 bg-dark d-flex flex-column align-items-center justify-content-center"
             >
-              <h2 class="ps-5 pt-5 pe-5">Food Insecurity in New York City</h2>
+              <h2 class="ps-5 pt-5 pe-5 text-decoration-underline">Food Insecurity in New York City</h2>
               <p class="text-light ps-5 pb-5 pe-5">
-                Over <span class="Stat">1.2 million</span> experience food
+                Over <span class="fw-bold text-primary h2">1.2 million</span> experience food
                 insecurity each year, meaning they do not always have reliable
                 access to enough affordable, nutritious food. Organizations like
                 Food Bank For New York City report that demand for food

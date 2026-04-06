@@ -1,16 +1,5 @@
-:root {
-  --primary: #2e7d32;
-  --secondary: #66bb6a;
-  --background: #F7F9F4;
-  --background: linear-gradient(135deg, #1f6f43, #2e8b57, #3fa34d);
-  --food_accent: #f4a261;
-  --shelter_accent: #8d6e63;
-  --text: #2f2f2f;
-  --text: rgb(248, 249, 250);
-  --highlight: #8bc34a;
-  --call_to_action: #8bc34a;
+@import url("nav.css");
 
-}
 
 html {
   width: 100%;
@@ -23,19 +12,9 @@ body {
 }
 
 
-nav {
-  background-color: var(--secondary);
-}
-
-
-.nav-item:hover > a {
-  scale: 1.1;
-  transition: 0.1s linear;
-  color: var(--bs-white) !important;
-}
 
 #Main_Title {
-  background: var(--background); 
+  background: linear-gradient(135deg, #1f6f43, #2e8b57, #3fa34d);
 }
 /* .Stat {
   font-size: 2rem;

@@ -32,7 +32,9 @@ const directories = [
     paths: ["contact.website"],
   },
 ];
-
+const Save_LocalStorage_Name = "Address_Coordinates_Cache";
+let GLOBAL_CACHE =
+  JSON.parse(localStorage.getItem(Save_LocalStorage_Name)) || {};
 class DataStandardizer {
   constructor(data, directories) {
     this.data = data;
@@ -97,12 +99,24 @@ class DataStandardizer {
     }
 
     try {
-      const url = `https://api.mapbox.com/search/geocode/v6/forward?q=${encodeURIComponent(address)}&access_token=${API_KEYS.MAPBOX_API_TOKEN_ACCESS_KEY}`;
 
-      const response = await fetch(url);
-      const data = await response.json();
 
-      const coords = data?.features?.[0]?.geometry?.coordinates;
+      let coords = []
+      if (GLOBAL_CACHE[address]) {
+        console.log("W saving in tokens");
+        coords = GLOBAL_CACHE[address]
+      } else {
+        console.log("L taking the token")
+        const url = `https://api.mapbox.com/search/geocode/v6/forward?q=${encodeURIComponent(address)}&access_token=${API_KEYS.MAPBOX_API_TOKEN_ACCESS_KEY}`;
+        const response = await fetch(url);
+        const data = await response.json();
+        coords = data?.features?.[0]?.geometry?.coordinates;
+
+        GLOBAL_CACHE[address] = coords;
+        localStorage.setItem(Save_LocalStorage_Name, JSON.stringify(GLOBAL_CACHE));
+      }
+  
+      
 
       if (!coords) return null;
 

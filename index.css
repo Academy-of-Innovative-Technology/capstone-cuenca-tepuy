@@ -10,6 +10,7 @@
   --highlight: #8bc34a;
   --call_to_action: #8bc34a;
 
+}
 
 html {
   width: 100%;
@@ -31,7 +32,7 @@ nav {
 /* .Stat {
   font-size: 2rem;
   font-weight: 700;
-  color: #8bc34a; /* your highlight green */
+  color: #8bc34a; your highlight green
 } */
 
 .overflox-x-clip {

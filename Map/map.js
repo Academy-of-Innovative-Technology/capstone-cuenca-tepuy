@@ -9,7 +9,6 @@ const map = new mapboxgl.Map({
 
 let Map_Layer_Controls_DOM = document.querySelector("#Map_Layer_Controls");
 
-
 let Data = [];
 let Location_APIs = [
   {
@@ -33,7 +32,6 @@ let Location_APIs = [
     },
   },
 ];
-
 
 let Google_Maps_Search_Link = (address) => {
   return `https://maps.google.com/?q=${address}`;
@@ -63,29 +61,30 @@ function Add_List_Location_To_Map(Data) {
 
   Categorized_Data.forEach(async (Layer_Group, index) => {
     let Map_Marker_Data = [];
-    
+
     await Promise.all(
-  Layer_Group.locations.map(async (location) => {
-    const API_DATA_MANAGER = new DataStandardizer(location, directories);
-    const Standarized_Data = await API_DATA_MANAGER.process();
+      Layer_Group.locations.map(async (location) => {
+        const API_DATA_MANAGER = new DataStandardizer(location, directories);
+        const Standarized_Data = await API_DATA_MANAGER.process();
 
+        let Object_Marker_Data = {
+          type: "Feature",
+          properties: {
+            // description: `<p>${location.center_name}</p><a target="_blank" href="${Google_Maps_Search_Link(location.address)}">${location}</a><p>${location.comments}</p><button class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_map_info" aria-controls="offcanvas_map_info">More</button>`,
+            data: Standarized_Data,
+          },
+          geometry: {
+            type: "Point",
+            coordinates: [
+              Standarized_Data.longitude,
+              Standarized_Data.latitude,
+            ],
+          },
+        };
 
-    let Object_Marker_Data = {
-      type: "Feature",
-      properties: {
-        // description: `<p>${location.center_name}</p><a target="_blank" href="${Google_Maps_Search_Link(location.address)}">${location}</a><p>${location.comments}</p><button class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_map_info" aria-controls="offcanvas_map_info">More</button>`,
-        data: Standarized_Data,
-      },
-      geometry: {
-        type: "Point",
-        coordinates: [Standarized_Data.longitude, Standarized_Data.latitude],
-      },
-    };
-
-    Map_Marker_Data.push(Object_Marker_Data);
-  })
-);
-    
+        Map_Marker_Data.push(Object_Marker_Data);
+      }),
+    );
 
     map.addSource(Layer_Group.Layer_Name, {
       type: "geojson",
@@ -105,6 +104,7 @@ function Add_List_Location_To_Map(Data) {
         "circle-radius": 6,
         "circle-stroke-width": 2,
         "circle-stroke-color": "#ffffff",
+        "circle-emissive-strength": 1.0,
       },
     });
 
@@ -192,10 +192,6 @@ function Initialize_Map_Extras() {
   map.addControl(geolocate);
 }
 
-
-
-
-
 function Initialize_Layer_Control() {
   let all_Layers = map.getStyle().layers;
   all_Layers.forEach((Layer) => {
@@ -228,6 +224,20 @@ function Initialize_Layer_Control() {
     });
   });
 }
+let Map_Lighting_Mode_LocalStorage_Name = "map-theme";
+function Map_Lighting_Change(Mode) {
+  if (Mode == "day") {
+    map.setConfigProperty("basemap", "lightPreset", "day");
+    localStorage.setItem(Map_Lighting_Mode_LocalStorage_Name, "day");
+  } else if (Mode == "night") {
+    map.setConfigProperty("basemap", "lightPreset", "night");
+    localStorage.setItem(Map_Lighting_Mode_LocalStorage_Name, "night");
+  } else {
+    console.log(
+      "Error: Trying to change the map lighting without correct mode",
+    );
+  }
+}
 
 map.on("load", () => {
   Initialize_Map_Extras();
@@ -237,3 +247,29 @@ map.on("load", () => {
 map.on("idle", () => {
   Initialize_Layer_Control();
 });
+
+map.on("style.load", () => {
+  let Saved_Map_Lighting_Mode = localStorage.getItem(
+    Map_Lighting_Mode_LocalStorage_Name,
+  );
+  if (Saved_Map_Lighting_Mode) {
+    Map_Lighting_Change(Saved_Map_Lighting_Mode);
+  } else {
+    console.log("Test");
+    // First Time Loading, better send them a message so they know xd.
+    let Map_Lighting_Mode_Reminder_Toast_DOM = document.getElementById(
+      "Map_Lighting_Mode_Reminder_Toast",
+    );
+    let toastBootstrap = bootstrap.Toast.getOrCreateInstance(
+      Map_Lighting_Mode_Reminder_Toast_DOM,
+    );
+    toastBootstrap.show();
+  }
+});
+
+document
+  .querySelector("#Map_Lighting_Dark_BTN")
+  .addEventListener("click", () => Map_Lighting_Change("night"));
+document
+  .querySelector("#Map_Lighting_Light_BTN")
+  .addEventListener("click", () => Map_Lighting_Change("day"));

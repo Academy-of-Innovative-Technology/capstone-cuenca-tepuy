@@ -7,7 +7,10 @@
 
     <link rel="stylesheet" href="../Scss/main.css" />
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
     <link rel="stylesheet" href="map.css" />
     <script
       id="search-js"
@@ -88,22 +91,44 @@
             </li>
             <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
               <div class="vr d-none d-lg-flex h-100 mx-lg-2 bg-white"></div>
-              <hr class="d-lg-none my-2 text-white-50">
+              <hr class="d-lg-none my-2 text-white-50" />
             </li>
             <li class="nav-item dropdown" data-bs-theme="light">
-              <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="theme-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme">
+              <a
+                class="nav-link dropdown-toggle d-flex align-items-center"
+                href="#"
+                id="theme-menu"
+                aria-expanded="false"
+                data-bs-toggle="dropdown"
+                data-bs-display="static"
+                aria-label="Toggle theme"
+              >
                 <i class="bi bi-circle-half"></i>
                 <span class="d-lg-none ms-2">Toggle theme</span>
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li>
-                  <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
-                    <i class="bi bi-sun-fill"></i><span class="ms-2">Light</span>
+                  <button
+                    id="Map_Lighting_Light_BTN"
+                    type="button"
+                    class="dropdown-item d-flex align-items-center"
+                    data-bs-theme-value="light"
+                    aria-pressed="false"
+                  >
+                    <i class="bi bi-sun-fill"></i
+                    ><span class="ms-2">Light</span>
                   </button>
                 </li>
                 <li>
-                  <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="true">
-                    <i class="bi bi-moon-stars-fill"></i><span class="ms-2">Dark</span>
+                  <button
+                    id="Map_Lighting_Dark_BTN"
+                    type="button"
+                    class="dropdown-item d-flex align-items-center"
+                    data-bs-theme-value="dark"
+                    aria-pressed="true"
+                  >
+                    <i class="bi bi-moon-stars-fill"></i
+                    ><span class="ms-2">Dark</span>
                   </button>
                 </li>
               </ul>
@@ -129,6 +154,32 @@
             role="group"
             aria-label="Basic checkbox toggle button group"
           ></div>
+
+          <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div
+              class="toast"
+              role="alert"
+              aria-live="assertive"
+              aria-atomic="true"
+              id="Map_Lighting_Mode_Reminder_Toast"
+            >
+              <div class="toast-header">
+                <strong class="me-auto">Tip🔨😎</strong>
+                <small>just now</small>
+                <button
+                  type="button"
+                  class="btn-close ms-2 mb-1"
+                  data-bs-dismiss="toast"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true"></span>
+                </button>
+              </div>
+              <div class="toast-body">
+                Hello! You can use the <i class="bi bi-circle-half"></i> button of this page to change the lighting of the map to day and night 🙌 <br> Choose a map lighting to stop this message from appearing
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>

@@ -3,48 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Food & Home | Find</title>
+    <title>Food & Home | Credits</title>
 
     <link rel="stylesheet" href="../Scss/main.css" />
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="map.css" />
-    <script
-      id="search-js"
-      defer=""
-      src="https://api.mapbox.com/search-js/v1.5.1/web.js"
-    ></script>
     <link
-      href="https://api.mapbox.com/mapbox-gl-js/v3.18.1/mapbox-gl.css"
       rel="stylesheet"
+      href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"
     />
-    <script src="https://api.mapbox.com/mapbox-gl-js/v3.18.1/mapbox-gl.js"></script>
+    <link rel="stylesheet" href="credits.css" />
   </head>
 
   <body class="d-flex flex-column h-100">
-    <div
-      class="offcanvas offcanvas-start"
-      tabindex="-1"
-      id="offcanvas_map_info"
-      aria-labelledby="offcanvasLabel"
-    >
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasLabel">
-          Location Information
-        </h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="offcanvas"
-          aria-label="Close"
-        ></button>
-      </div>
-      <div class="offcanvas-body">
-        Content for the offcanvas goes here. You can place just about any
-        Bootstrap component or custom elements here.
-      </div>
-    </div>
-
     <nav class="navbar sticky-top navbar-expand-lg" data-bs-theme="dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="../index.html">Food & Home</a>
@@ -114,28 +84,39 @@
     </nav>
 
     <main
-      class="p-0 m-0 flex-grow-1 container-fluid d-flex flex-column align-items-center"
+      class="p-0 m-0 flex-grow-1 container-fluid d-flex flex-column align-items-center" 
     >
       <section
-        class="container-fluid h-100 p-0 m-0 d-flex flex-column align-items-center justify-content-center"
+        class="row h-100 p-0 m-0 d-flex justify-content-center align-items-center flex-column"
       >
-        <div class="container-fluid p-0 m-0 h-100 w-100 position-relative">
-          <nav id="menu"></nav>
-          <div id="map"></div>
+        <div class="alert alert-info alert-dismissible col-8">
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss=""
+          ></button>
 
-          <div
-            class="btn-group position-absolute"
-            id="Map_Layer_Controls"
-            role="group"
-            aria-label="Basic checkbox toggle button group"
-          ></div>
+          <div>
+            <h1>
+              This application contain information of the following sources
+            </h1>
+            <ul>
+              <li>
+                <a class="fs-4"
+                  href="https://data.cityofnewyork.us/Social-Services/Directory-Of-Homeless-Drop-In-Centers/bmxf-3rd4/about_data"
+                  >NYC Open Data & Department of Homeless Services</a
+                >
+              </li>
+              <li>
+                <a class="fs-4"
+                  href="https://www.nyc.gov/site/dycd/services/food_pantries.page"
+                  >Department of Youth & Community Development</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
     </main>
-    <script src="../env.js"></script>
-    <script src="api_data_manager.js"></script>
-    <script src="names.js"></script>
-    <script src="offcanvas.js" defer></script>
-    <script src="map.js" defer></script>
   </body>
 </html>

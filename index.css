@@ -11,6 +11,21 @@ body {
   /* color: var(--text); */
 }
 
+[data-bs-theme="light"] {
+  --custom-bg-article-dark-theme: rgb(33 37 41);
+  #Information {
+    background-color: var(--bs-light);
+    background: linear-gradient(135deg, #1f6f43, #2e8b57, #3fa34d);
+  }
+}
+
+[data-bs-theme="dark"] {
+  --custom-bg-article-dark-theme: rgb(0,0,0); /* Dark color */
+}
+.bg-article-dark-theme {
+  background-color: var(--custom-bg-article-dark-theme);
+}
+
 
 
 #Main_Title {

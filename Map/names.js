@@ -2,7 +2,7 @@
 let Properties_Name = {
   homebase_office: "homebase office",
   service_area_zip_code: "service area zip code",
-  address: "address",
+  address: "place address",
   phone_number: "phone number",
   postcode: "postcode",
   borough: "borough",
@@ -14,5 +14,6 @@ let Properties_Name = {
   bin: "bin",
   bbl: "bbl",
   nta: "nta",
-  name: "Center Name"
+  name: "center name",
+  center_name: "center name"
 };

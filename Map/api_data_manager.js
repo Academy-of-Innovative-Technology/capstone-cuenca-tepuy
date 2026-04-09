@@ -1,155 +1,211 @@
-const directories = [
-  {
-    property: "latitude",
-    paths: ["latitude", "Latitude", ""],
-  },
-  {
-    property: "longitude",
-    paths: ["longitude", "Longitude", ""],
-  },
-  {
-    property: "address",
-    paths: ["address", "Address"],
-  },
-  {
-    property: "name",
-    paths: ["name", "provider", "center_name"],
-  },
-  {
-    property: "contact.name",
-    paths: ["contact.name"],
-  },
-  {
-    property: "contact.phone",
-    paths: ["contact.phone"],
-  },
-  {
-    property: "contact.email",
-    paths: ["contact.email"],
-  },
-  {
-    property: "contact.website",
-    paths: ["contact.website"],
-  },
-];
-const Save_LocalStorage_Name = "Address_Coordinates_Cache";
-let GLOBAL_CACHE =
-  JSON.parse(localStorage.getItem(Save_LocalStorage_Name)) || {};
-class DataStandardizer {
-  constructor(data, directories) {
+class DataProcessor {
+  constructor(data, version = "versionA") {
     this.data = data;
-    this.directories = directories;
+    this.version = version;
+
+    this.processors = {
+      "Directory Of Homeless Drop- In Centers": this.processVersionA.bind(this),
+      Food_Pantries_DYCD: this.processVersionB.bind(this),
+    };
   }
 
   async process() {
-    const result = {};
+    const handler = this.processors[this.version];
 
-    for (const entry of this.directories) {
-      let value = this.tryPaths(entry.paths);
-
-      // Fallback for lat/lng using Mapbox
-      if (value === null && this.isLocationProperty(entry.property)) {
-        value = await this.fetchMapboxFallback(entry.property);
-      }
-
-      result[entry.property] = value;
+    if (!handler) {
+      throw new Error(`Unknown version: ${this.version}`);
     }
 
-    return result;
+    return await handler();
   }
+  normalizeAddress(address) {
+    if (!address) return null;
 
-  tryPaths(paths) {
-    for (const path of paths) {
-      const value = this.getValueByPath(this.data, path);
-
-      if (value !== undefined && value !== null) {
-        return value;
-      }
+    if (typeof address === "string") {
+      console.log("Lol stringy");
+      return address;
     }
+
+    if (typeof address === "object") {
+      return [address.street, address.city, address.state, address.zip]
+        .filter(Boolean)
+        .join(", ");
+    }
+
     return null;
   }
+  processVersionA() {
+    const address = this.normalizeAddress(this.data.address);
 
-  isLocationProperty(property) {
-    return property === "latitude" || property === "longitude";
-  }
+    // 🧠 Core metadata (exclude known fields)
+    const excludedKeys = new Set([
+      "provider",
+      "center_name",
+      "address",
+      "contact",
+      "latitude",
+      "longitude",
+    ]);
 
-  flattenAddress(addressObj) {
-    if (!addressObj || typeof addressObj !== "object") return null;
+    const metadata = {};
 
-    const parts = [
-      addressObj.street,
-      addressObj.city,
-      addressObj.state,
-      addressObj.zip,
-    ].filter(Boolean); // remove null/undefined
-
-    return parts.join(", ");
-  }
-
-  async fetchMapboxFallback(property) {
-    let address = this.extractAddress();
-
-    // If address is an object → flatten it
-    if (typeof address === "object") {
-      address = this.flattenAddress(address);
+    for (const key in this.data) {
+      if (!excludedKeys.has(key.toLowerCase())) {
+        metadata[key] = this.data[key];
+      }
     }
 
-    if (!address || !API_KEYS?.MAPBOX_API_TOKEN_ACCESS_KEY) {
-      return null;
+    return {
+      center_name:
+        this.data.center_name ||
+        this.data.provider || // fallback
+        null,
+
+      address,
+
+      contact: {
+        name: this.data.contact?.name || null,
+        phone: this.data.contact?.phone || null,
+        email: this.data.contact?.email || null,
+        website: this.data.contact?.website || null,
+      },
+
+      latitude: this.parseNumber(this.data.latitude),
+      longitude: this.parseNumber(this.data.longitude),
+
+      metadata,
+    };
+  }
+  async processVersionB() {
+    const address = this.normalizeAddress(this.data.address);
+
+    // 📍 Coordinates
+    let latitude = this.parseNumber(this.data.latitude);
+    let longitude = this.parseNumber(this.data.longitude);
+
+    if (latitude == null || longitude == null) {
+      const coords = await this.fetchCoordinates(address);
+      latitude = coords.latitude;
+      longitude = coords.longitude;
+    }
+
+    // 🧠 Build metadata by excluding known fields
+    const excludedKeys = new Set([
+      "center_name",
+      "provider",
+      "address",
+      "contact",
+      "latitude",
+      "longitude",
+    ]);
+
+    const metadata = {};
+
+    for (const key in this.data) {
+      if (!excludedKeys.has(key.toLowerCase())) {
+        metadata[key] = this.data[key];
+      }
+    }
+
+    return {
+      center_name: this.data.center_name || this.data.provider || null,
+
+      address,
+
+      contact: {
+        name: null,
+        phone: null,
+        email: null,
+        website: null,
+      },
+
+      latitude,
+      longitude,
+
+      metadata,
+    };
+  }
+  parseNumber(value) {
+    if (value == null) return null;
+    const num = Number(value);
+    return isNaN(num) ? null : num;
+  }
+
+  formatAddressObject(address) {
+    if (!address || typeof address !== "object") return null;
+
+    return [address.street, address.city, address.state, address.zip]
+      .filter(Boolean)
+      .join(", ");
+  }
+
+  async fetchCoordinates(address) {
+    if (!address) {
+      return { latitude: null, longitude: null };
+    }
+
+    // 🧠 Normalize address into a STRING
+    let normalizedAddress = address;
+
+    if (typeof address === "object") {
+      normalizedAddress = [
+        address.street,
+        address.city,
+        address.state,
+        address.zip,
+      ]
+        .filter(Boolean)
+        .join(", ");
+    }
+
+    if (typeof normalizedAddress !== "string" || !normalizedAddress.trim()) {
+      return { latitude: null, longitude: null };
+    }
+
+    const cacheKey = normalizedAddress.toLowerCase().trim();
+
+    // 🔥 SAFE CACHE LOAD
+    let cache = {};
+    try {
+      cache =
+        JSON.parse(localStorage.getItem("Address_Coordinates_Cache")) || {};
+    } catch (e) {
+      cache = {};
+    }
+
+    // 🔥 CACHE HIT
+    if (cache[cacheKey]) {
+      return cache[cacheKey];
     }
 
     try {
+      const url = `https://api.mapbox.com/search/geocode/v6/forward?q=${encodeURIComponent(
+        normalizedAddress,
+      )}&access_token=${API_KEYS.MAPBOX_API_TOKEN_ACCESS_KEY}`;
 
+      const res = await fetch(url);
+      const data = await res.json();
 
-      let coords = []
-      if (GLOBAL_CACHE[address]) {
-        console.log("W saving in tokens");
-        coords = GLOBAL_CACHE[address]
-      } else {
-        console.log("L taking the token")
-        const url = `https://api.mapbox.com/search/geocode/v6/forward?q=${encodeURIComponent(address)}&access_token=${API_KEYS.MAPBOX_API_TOKEN_ACCESS_KEY}`;
-        const response = await fetch(url);
-        const data = await response.json();
-        coords = data?.features?.[0]?.geometry?.coordinates;
+      const coords = data?.features?.[0]?.geometry?.coordinates;
 
-        GLOBAL_CACHE[address] = coords;
-        localStorage.setItem(Save_LocalStorage_Name, JSON.stringify(GLOBAL_CACHE));
+      if (!coords) {
+        return { latitude: null, longitude: null };
       }
-  
-      
 
-      if (!coords) return null;
+      const result = {
+        latitude: coords[1],
+        longitude: coords[0],
+      };
 
-      if (property === "latitude") return coords[1];
-      if (property === "longitude") return coords[0];
+      // 🔥 SAVE CACHE (IMPORTANT FIX)
+      cache[cacheKey] = result;
 
-      return null;
-    } catch (error) {
-      console.error("Mapbox fallback failed:", error);
-      return null;
+      localStorage.setItem("Address_Coordinates_Cache", JSON.stringify(cache));
+
+      return result;
+    } catch (err) {
+      console.error("Mapbox error:", err);
+      return { latitude: null, longitude: null };
     }
-  }
-
-  extractAddress() {
-    return (
-      this.getValueByPath(this.data, "address") ||
-      this.getValueByPath(this.data, "location.address") ||
-      this.getValueByPath(this.data, "Coordinates.address") ||
-      null
-    );
-  }
-
-  getValueByPath(obj, path) {
-    if (!path) return undefined;
-
-    const parts = path.replace(/\[(\d+)\]/g, ".$1").split(".");
-    let current = obj;
-
-    for (const part of parts) {
-      if (current == null) return undefined;
-      current = current[part];
-    }
-
-    return current;
   }
 }

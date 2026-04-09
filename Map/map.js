@@ -19,6 +19,7 @@ let Location_APIs = [
       Found: "NYC Open Data",
       Source: "Department of Homeless Services",
       Pin_Color: "#ff9100",
+      Processing_Method: "Directory Of Homeless Drop- In Centers",
     },
   },
   {
@@ -29,6 +30,7 @@ let Location_APIs = [
       Found: "ENV",
       Source: "ME",
       Pin_Color: "#fc0303",
+      Processing_Method: "Food_Pantries_DYCD",
     },
   },
 ];
@@ -61,17 +63,20 @@ function Add_List_Location_To_Map(Data) {
 
   Categorized_Data.forEach(async (Layer_Group, index) => {
     let Map_Marker_Data = [];
-
+    
     await Promise.all(
       Layer_Group.locations.map(async (location) => {
-        const API_DATA_MANAGER = new DataStandardizer(location, directories);
+        const API_DATA_MANAGER = new DataProcessor(
+          location,
+          location.extra_data.Processing_Method,
+        );
         const Standarized_Data = await API_DATA_MANAGER.process();
 
         let Object_Marker_Data = {
           type: "Feature",
           properties: {
             // description: `<p>${location.center_name}</p><a target="_blank" href="${Google_Maps_Search_Link(location.address)}">${location}</a><p>${location.comments}</p><button class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_map_info" aria-controls="offcanvas_map_info">More</button>`,
-            data: Standarized_Data,
+            data: location,
           },
           geometry: {
             type: "Point",
@@ -273,3 +278,4 @@ document
 document
   .querySelector("#Map_Lighting_Light_BTN")
   .addEventListener("click", () => Map_Lighting_Change("day"));
+

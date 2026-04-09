@@ -43,8 +43,53 @@
         ></button>
       </div>
       <div class="offcanvas-body">
-        Content for the offcanvas goes here. You can place just about any
-        Bootstrap component or custom elements here.
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                Information
+              </button>
+            </h2>
+            <div
+              id="collapseOne"
+              class="accordion-collapse collapse show"
+              aria-labelledby="headingOne"
+            >
+              <div class="accordion-body" id="OffCanvas_Main_Info">test1</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                Extra Information
+              </button>
+            </h2>
+            <div
+              id="collapseTwo"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingTwo"
+            >
+              <div class="accordion-body" id="OffCanvas_Extra_Info">test 2</div>
+            </div>
+          </div>
+        </div>
+
+        <div id="OffCanvas_Main_Info"></div>
+        <div id="OffCanvas_Extra_Info"></div>
       </div>
     </div>
 
@@ -176,7 +221,10 @@
                 </button>
               </div>
               <div class="toast-body">
-                Hello! You can use the <i class="bi bi-circle-half"></i> button of this page to change the lighting of the map to day and night 🙌 <br> Choose a map lighting to stop this message from appearing
+                Hello! You can use the <i class="bi bi-circle-half"></i> button
+                of this page to change the lighting of the map to day and night
+                🙌 <br />
+                Choose a map lighting to stop this message from appearing
               </div>
             </div>
           </div>

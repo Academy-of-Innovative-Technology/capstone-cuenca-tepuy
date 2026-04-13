@@ -38,10 +38,23 @@ body {
 .mapboxgl-popup-content {
   color: black;
 }
-.accordion-body,
-.offcanvas-header {
-  background-color: #39803c;
+.accordion-body {
+  background-color: #39803c !important;
+}
+.accordion-button {
+  background-color: #25b22c;
 }
 .accordion-button.collapsed {
+  background-color: #2c582e;
+}
+
+.offcanvas-header {
   background-color: #66bb6a;
+}
+
+.OffCanvas_Informations_Wrappers {
+  background-color: #39803c;
+}
+.OffCanvas_Informations_Wrappers:hover {
+  filter: brightness(110%);
 }

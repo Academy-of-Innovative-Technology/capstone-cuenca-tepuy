@@ -49,9 +49,9 @@ async function Load_Data_Off_Canvas(Data) {
       Formatted_Value = JSON.stringify(Formatted_Value);
     }
 
-    let HTML = `<div>
-      <h2>${Formatted_Key_Name}</h2>
-      <p>${Formatted_Value}</p>
+    let HTML = `<div class="OffCanvas_Informations_Wrappers p-2 rounded">
+      <h2 class="text-primary border-bottom border-primary border-3 text-capitalize">${Formatted_Key_Name}</h2>
+      <p class="">${Formatted_Value}</p>
     </div>`;
     OffCanvas_Main_Info_DOM.insertAdjacentHTML("beforeend", HTML);
   }
@@ -74,9 +74,9 @@ async function Load_Data_Off_Canvas(Data) {
       if (typeof Formatted_Value == "object") {
         Formatted_Value = JSON.stringify(Formatted_Value);
       }
-      let HTML = `<div>
+      let HTML = `<div class="OffCanvas_Informations_Wrappers p-2 rounded">
       <h2>${Formatted_Key_Name}</h2>
-      <p>${Formatted_Value}</p>
+      <p class="text-secondary">${Formatted_Value}</p>
     </div>`;
       OffCanvas_Extra_Info_DOM.insertAdjacentHTML("beforeend", HTML);
     }

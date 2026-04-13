@@ -26,7 +26,7 @@ let Location_APIs = [
     url: "../Data/Food_Pantries_DYCD.json",
     extra_data: {
       Name: "Food_Pantries_DYCD",
-      Layer_Name: "Food_Pastries",
+      Layer_Name: "Food Pastries",
       Found: "ENV",
       Source: "ME",
       Pin_Color: "#fc0303",

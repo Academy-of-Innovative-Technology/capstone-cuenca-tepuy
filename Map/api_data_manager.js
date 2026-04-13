@@ -34,33 +34,41 @@ class DataProcessor {
 
     return null;
   }
-  processVersionA() {
+  async processVersionA() {
     const address = this.normalizeAddress(this.data.address);
 
+     let latitude = this.parseNumber(this.data.latitude);
+     let longitude = this.parseNumber(this.data.longitude);
+
+    if (latitude == null || longitude == null) {
+      const coords = await this.fetchCoordinates(address);
+      latitude = coords.latitude;
+      longitude = coords.longitude;
+    }
+    
     // 🧠 Core metadata (exclude known fields)
     const excludedKeys = new Set([
       "provider",
       "center_name",
       "address",
       "contact",
-      "latitude",
-      "longitude",
     ]);
 
-    const metadata = {};
+    let metadata = {};
 
     for (const key in this.data) {
       if (!excludedKeys.has(key.toLowerCase())) {
         metadata[key] = this.data[key];
       }
     }
-
+    metadata.latitude = latitude;
+    metadata.longitude = longitude;
     return {
       center_name:
         this.data.center_name ||
         this.data.provider || // fallback
         null,
-
+      comments: this.data.comments || null,
       address,
 
       contact: {
@@ -69,9 +77,6 @@ class DataProcessor {
         email: this.data.contact?.email || null,
         website: this.data.contact?.website || null,
       },
-
-      latitude: this.parseNumber(this.data.latitude),
-      longitude: this.parseNumber(this.data.longitude),
 
       metadata,
     };
@@ -95,32 +100,28 @@ class DataProcessor {
       "provider",
       "address",
       "contact",
-      "latitude",
-      "longitude",
     ]);
 
-    const metadata = {};
+    let metadata = {};
 
     for (const key in this.data) {
       if (!excludedKeys.has(key.toLowerCase())) {
         metadata[key] = this.data[key];
       }
     }
-
+    metadata.latitude = latitude;
+    metadata.longitude = longitude;
     return {
       center_name: this.data.center_name || this.data.provider || null,
 
       address,
-
+      comments: this.data.comments || null,
       contact: {
         name: null,
         phone: null,
         email: null,
         website: null,
       },
-
-      latitude,
-      longitude,
 
       metadata,
     };

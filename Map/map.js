@@ -81,8 +81,8 @@ function Add_List_Location_To_Map(Data) {
           geometry: {
             type: "Point",
             coordinates: [
-              Standarized_Data.longitude,
-              Standarized_Data.latitude,
+              Standarized_Data.metadata.longitude,
+              Standarized_Data.metadata.latitude,
             ],
           },
         };

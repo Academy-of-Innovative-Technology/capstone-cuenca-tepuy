@@ -52,6 +52,7 @@ class DataProcessor {
       "center_name",
       "address",
       "contact",
+      "comments",
     ]);
 
     let metadata = {};
@@ -100,6 +101,7 @@ class DataProcessor {
       "provider",
       "address",
       "contact",
+      "comments",
     ]);
 
     let metadata = {};

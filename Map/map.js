@@ -5,6 +5,8 @@ const map = new mapboxgl.Map({
   container: "map", // container ID
   center: [-74.0038, 40.7533], // starting position [lng, lat]. Note that lat must be set between -90 and 90
   zoom: 10, // starting zoom
+  dragRotate: false,
+  touchZoomRotate: false,
 });
 
 let Map_Layer_Controls_DOM = document.querySelector("#Map_Layer_Controls");
@@ -124,6 +126,19 @@ function Add_List_Location_To_Map(Data) {
         const description = e.feature.properties.description;
         //console.log(e.feature.properties.data);
         Load_Data_Off_Canvas(JSON.parse(e.feature.properties.data));
+        console.log(e);
+
+        let Zoom_level = map.getZoom();
+        console.log("Zoom level is " + Zoom_level);
+        if (map.getZoom() <= 11) {
+          Zoom_level = 11;
+        }
+        map.flyTo({
+          center: e.lngLat,
+          zoom: Zoom_level,
+          essential: true, // this animation is considered essential with respect to prefers-reduced-motion
+        });
+        
         // new mapboxgl.Popup()
         //   .setLngLat(coordinates)
         //   .setHTML(description)

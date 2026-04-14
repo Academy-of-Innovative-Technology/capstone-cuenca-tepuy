@@ -216,6 +216,7 @@ function Initialize_Layer_Control() {
     Map_Layer_Controls_DOM.insertAdjacentHTML("beforeend", HTML);
 
     let Trigger = document.querySelector(`#${New_BTN_ID}`);
+    if (!Trigger) { return; }
     Trigger.addEventListener("change", (event) => {
       if (event.target.checked) {
         console.log("Turning on");
@@ -273,9 +274,9 @@ map.on("style.load", () => {
 });
 
 document
-  .querySelector("#Map_Lighting_Dark_BTN")
+  .querySelector("#Dark_Theme_BTN")
   .addEventListener("click", () => Map_Lighting_Change("night"));
 document
-  .querySelector("#Map_Lighting_Light_BTN")
+  .querySelector("#Light_Theme_BTN")
   .addEventListener("click", () => Map_Lighting_Change("day"));
 

@@ -91,9 +91,9 @@
       </div>
     </div>
 
-    <nav class="navbar sticky-top navbar-expand-lg bg-primary" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="../index.html"><span class="badge bg-primary">NY</span> Atlas</a>
+        <a class="navbar-brand bg-dark p-1 rounded d-flex justify-content-center align-items-center gap-1" href="../index.html"><span class="badge bg-primary">NY</span><span>Atlas</span></a>
         <button
           class="navbar-toggler"
           type="button"
@@ -134,44 +134,22 @@
             </li>
             <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
               <div class="vr d-none d-lg-flex h-100 mx-lg-2 bg-white"></div>
-              <hr class="d-lg-none my-2 text-white-50" />
+              <hr class="d-lg-none my-2 text-white-50">
             </li>
             <li class="nav-item dropdown" data-bs-theme="light">
-              <a
-                class="nav-link dropdown-toggle d-flex align-items-center"
-                href="#"
-                id="theme-menu"
-                aria-expanded="false"
-                data-bs-toggle="dropdown"
-                data-bs-display="static"
-                aria-label="Toggle theme"
-              >
+              <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="theme-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme">
                 <i class="bi bi-circle-half"></i>
                 <span class="d-lg-none ms-2">Toggle theme</span>
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li>
-                  <button
-                    id="Map_Lighting_Light_BTN"
-                    type="button"
-                    class="dropdown-item d-flex align-items-center"
-                    data-bs-theme-value="light"
-                    aria-pressed="false"
-                  >
-                    <i class="bi bi-sun-fill"></i
-                    ><span class="ms-2">Light</span>
+                  <button id="Light_Theme_BTN" type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                    <i class="bi bi-sun-fill"></i><span class="ms-2">Light</span>
                   </button>
                 </li>
                 <li>
-                  <button
-                    id="Map_Lighting_Dark_BTN"
-                    type="button"
-                    class="dropdown-item d-flex align-items-center"
-                    data-bs-theme-value="dark"
-                    aria-pressed="true"
-                  >
-                    <i class="bi bi-moon-stars-fill"></i
-                    ><span class="ms-2">Dark</span>
+                  <button id="Dark_Theme_BTN" type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="true">
+                    <i class="bi bi-moon-stars-fill"></i><span class="ms-2">Dark</span>
                   </button>
                 </li>
               </ul>

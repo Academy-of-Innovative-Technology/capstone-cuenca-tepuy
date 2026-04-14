@@ -11,13 +11,14 @@
       rel="stylesheet"
       href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"
     />
+    <script defer src="../nav.js"></script>
     <link rel="stylesheet" href="credits.css" />
   </head>
 
   <body class="d-flex flex-column h-100">
-    <nav class="navbar sticky-top navbar-expand-lg" data-bs-theme="dark">
+    <nav class="navbar fixed-top navbar-expand-lg bg-primary" data-bs-theme="dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="../index.html">Food & Home</a>
+        <a class="navbar-brand bg-dark p-1 rounded d-flex justify-content-center align-items-center gap-1" href="../index.html"><span class="badge bg-primary">NY</span><span>Atlas</span></a>
         <button
           class="navbar-toggler"
           type="button"
@@ -67,12 +68,12 @@
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li>
-                  <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                  <button id="Light_Theme_BTN" type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
                     <i class="bi bi-sun-fill"></i><span class="ms-2">Light</span>
                   </button>
                 </li>
                 <li>
-                  <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="true">
+                  <button id="Dark_Theme_BTN" type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="true">
                     <i class="bi bi-moon-stars-fill"></i><span class="ms-2">Dark</span>
                   </button>
                 </li>

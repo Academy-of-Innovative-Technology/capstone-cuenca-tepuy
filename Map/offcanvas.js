@@ -23,8 +23,8 @@ function Is_Only_Extra_Data(object) {
 }
 
 let Off_Canvas_Information_Order_Priority = [
-  "center name",
-  "place address",
+  "location name",
+  "location address",
   "contact",
   "comments",
   "borough",

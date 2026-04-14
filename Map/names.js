@@ -13,7 +13,7 @@ let Properties_Name = {
   census_tract: "census tract",
   bin: "building identification number (BIN)",
   bbl: "borough, block, and lot number (BBL)",
-  nta: "nta",
+  nta: "neighborhood tabulation area (NTA)",
   name: "location name",
   center_name: "location name",
 };

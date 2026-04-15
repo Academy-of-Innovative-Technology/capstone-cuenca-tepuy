@@ -1,5 +1,7 @@
 const Main_Information_Keys = new Set([
   "center_name",
+  "train_lines",
+  "place_name",
   "provider",
   "address",
   "contact",
@@ -15,6 +17,8 @@ class DataProcessor {
       "Directory Of Homeless Drop- In Centers":
         this.process_DirectoryOfHomelessDropInCenters.bind(this),
       Food_Pantries_DYCD: this.process_Food_Pantries_DYCD.bind(this),
+      NY_MTA_Transit_Train_Station_Bathrooms:
+        this.process_NY_MTA_Transit_Train_Station_Bathrooms.bind(this),
     };
   }
 
@@ -31,7 +35,6 @@ class DataProcessor {
     if (!address) return null;
 
     if (typeof address === "string") {
-      console.log("Lol stringy");
       return address;
     }
 
@@ -126,6 +129,48 @@ class DataProcessor {
       metadata,
     };
   }
+
+  async process_NY_MTA_Transit_Train_Station_Bathrooms() {
+    const address = this.normalizeAddress(this.data.address);
+
+    // 📍 Coordinates
+    let latitude = this.parseNumber(this.data.latitude);
+    let longitude = this.parseNumber(this.data.longitude);
+
+    if (latitude == null || longitude == null) {
+      const coords = await this.fetchCoordinates(address);
+      latitude = coords.latitude;
+      longitude = coords.longitude;
+    }
+
+    // 🧠 Build metadata by excluding known fields
+    const excludedKeys = Main_Information_Keys;
+
+    let metadata = {};
+
+    for (const key in this.data) {
+      if (!excludedKeys.has(key.toLowerCase())) {
+        metadata[key] = this.data[key];
+      }
+    }
+    metadata.latitude = latitude;
+    metadata.longitude = longitude;
+    return {
+      center_name: this.data.center_name || this.data.provider || null,
+      train_lines: this.data.train_lines || null,
+      address,
+      comments: this.data.comments || null,
+      contact: {
+        name: null,
+        phone: null,
+        email: null,
+        website: null,
+      },
+
+      metadata,
+    };
+  }
+
   parseNumber(value) {
     if (value == null) return null;
     const num = Number(value);

@@ -1,13 +1,31 @@
 const ACCESS_TOKEN = API_KEYS.MAPBOX_API_TOKEN_ACCESS_KEY;
 mapboxgl.accessToken = ACCESS_TOKEN;
 
+let Zoom_Save_Session_Storage_Name = "Zoom_Save_Session_Storage"
+let Zoom_Save_Cache = sessionStorage.getItem(Zoom_Save_Session_Storage_Name) || 12;
+
+
+
 const map = new mapboxgl.Map({
   container: "map", // container ID
   center: [-73.913125, 40.742861], // starting position [lng, lat]. Note that lat must be set between -90 and 90
-  zoom: 12, // starting zoom
+  zoom: Zoom_Save_Cache, // starting zoom
   dragRotate: false,
   touchZoomRotate: false,
 });
+
+window.addEventListener("visibilitychange", (event) => {
+  //event.preventDefault(); // Standard
+  //event.returnValue = ""; // Required for some older browsers
+  if (document.visibilityState === 'hidden') { 
+    let Current_Zoom = map.getZoom();
+    Zoom_Save_Cache = sessionStorage.getItem(Zoom_Save_Session_Storage_Name);
+    if (Current_Zoom) {
+      sessionStorage.setItem(Zoom_Save_Session_Storage_Name, Current_Zoom);
+    }
+  }
+});
+
 
 let Map_Layer_Controls_DOM = document.querySelector("#Map_Layer_Controls");
 
@@ -28,11 +46,22 @@ let Location_APIs = [
     url: "../Data/Food_Pantries_DYCD.json",
     extra_data: {
       Name: "Food_Pantries_DYCD",
-      Layer_Name: "Food Pastries",
+      Layer_Name: "Food_Pastries",
       Found: "ENV",
       Source: "ME",
       Pin_Color: "#fc0303",
       Processing_Method: "Food_Pantries_DYCD",
+    },
+  },
+  {
+    url: "../Data/NY_MTA_Transit_Train_Station_Bathrooms.json",
+    extra_data: {
+      Name: "MTA Station w/ Bathroom",
+      Layer_Name: "MTA_Station_Bathrooms",
+      Found: "MTA",
+      Source: "MTA",
+      Pin_Color: "#00ff15",
+      Processing_Method: "NY_MTA_Transit_Train_Station_Bathrooms",
     },
   },
 ];
@@ -67,7 +96,6 @@ function Add_List_Location_To_Map(Data) {
 
   Categorized_Data.forEach(async (Layer_Group, index) => {
     let Map_Marker_Data = [];
-
     await Promise.all(
       Layer_Group.locations.map(async (location) => {
         const API_DATA_MANAGER = new DataProcessor(
@@ -75,7 +103,7 @@ function Add_List_Location_To_Map(Data) {
           location.extra_data.Processing_Method,
         );
         const Standarized_Data = await API_DATA_MANAGER.process();
-
+        
         let Object_Marker_Data = {
           type: "Feature",
           properties: {
@@ -94,13 +122,13 @@ function Add_List_Location_To_Map(Data) {
         Map_Marker_Data.push(Object_Marker_Data);
       }),
     );
-
     map.addSource(Layer_Group.Layer_Name, {
       type: "geojson",
       generateId: true,
       data: {
         type: "FeatureCollection",
         features: Map_Marker_Data,
+        button_name: Layer_Group.locations[0].extra_data.Name,
       },
     });
     // Add a circle layer showing the places.
@@ -108,6 +136,7 @@ function Add_List_Location_To_Map(Data) {
       id: Layer_Group.Layer_Name,
       type: "circle",
       source: Layer_Group.Layer_Name,
+      
       paint: {
         "circle-color": Layer_Group.locations[0].extra_data.Pin_Color,
         "circle-radius": 6,
@@ -190,7 +219,6 @@ async function loadAllGeolocation() {
     });
     const results = await Promise.all(requests);
     Data = results;
-    console.log(results);
     Add_List_Location_To_Map(Data);
     //console.log(Data);
   } catch (error) {
@@ -220,25 +248,21 @@ function Initialize_Layer_Control() {
   let all_Layers = map.getStyle().layers;
   all_Layers.forEach((Layer) => {
     let id = Layer.id;
-
     let New_BTN_ID = `Layer_Toggler_${id}`;
 
     if (document.getElementById(New_BTN_ID)) {
       console.log("exit");
       return;
     }
-
+    let Button_Name = map.getSource(id)._data.button_name || id;
     let HTML = `
      <input type="checkbox" class="btn-check active" id="${New_BTN_ID}" autocomplete="off" checked>
-    <label class="btn btn-primary" style="background-color: ${Layer.paint["circle-color"]}" for="Layer_Toggler_${id}">${id}</label>`;
+    <label class="btn btn-primary" style="background-color: ${Layer.paint["circle-color"]}" for="Layer_Toggler_${id}">${Button_Name}</label>`;
 
     Map_Layer_Controls_DOM.insertAdjacentHTML("beforeend", HTML);
-
     let Trigger = document.querySelector(`#${New_BTN_ID}`);
-    if (!Trigger) {
-      return;
-    }
     Trigger.addEventListener("change", (event) => {
+      console.log("triggered");
       if (event.target.checked) {
         console.log("Turning on");
         map.setLayoutProperty(id, "visibility", "visible");

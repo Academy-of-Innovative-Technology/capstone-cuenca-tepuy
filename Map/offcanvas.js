@@ -56,10 +56,8 @@ function Load_Data_Into_Container(Data, Destination_DOM, IgnoreList) {
       indexB = Infinity;
     }
     if (indexA !== indexB) {
-      console.log(a.key_name + " vs " + b.key_name);
       return indexA - indexB;
     }
-    console.log(a.key_name + " alphabetically vs " + b.key_name);
     return nameA.localeCompare(nameB);
   });
   console.log(List_Data);

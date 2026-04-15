@@ -3,133 +3,133 @@
     "place_name": "125 St",
     "address": null,
     "borough": "Manhattan",
-    "Train_Lines": ["A", "C", "B", "D", "4", "5", "6"],
+    "train_lines": ["A", "C", "B", "D", "4", "5", "6"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "14 St",
     "address": null,
     "borough": "Manhattan",
-    "Train_Lines": ["A", "C", "E"],
+    "train_lines": ["A", "C", "E"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "14 St-Union Sq",
     "address": null,
     "borough": "Manhattan",
-    "Train_Lines": ["L", "N", "Q", "R", "W", "4", "5", "6"],
+    "train_lines": ["L", "N", "Q", "R", "W", "4", "5", "6"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "168 St",
     "address": null,
     "borough": "Manhattan",
-    "Train_Lines": ["A", "C", "1"],
+    "train_lines": ["A", "C", "1"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "34 St-Herald Sq",
     "address": null,
     "borough": "Manhattan",
-    "Train_Lines": ["B", "D", "F", "M", "N", "Q", "R", "W"],
+    "train_lines": ["B", "D", "F", "M", "N", "Q", "R", "W"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "34 St-Hudson Yards",
     "address": null,
     "borough": "Manhattan",
-    "Train_Lines": ["7"],
+    "train_lines": ["7"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "42 St-Bryant Park",
     "address": null,
     "borough": "Manhattan",
-    "Train_Lines": ["B", "D", "F", "M"],
+    "train_lines": ["B", "D", "F", "M"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "5 Av/53 St",
     "address": null,
     "borough": "Manhattan",
-    "Train_Lines": ["E", "F"],
+    "train_lines": ["E", "F"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "57 St-7 Av",
     "address": null,
     "borough": "Manhattan",
-    "Train_Lines": ["N", "Q", "R"],
+    "train_lines": ["N", "Q", "R"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "72 St",
     "address": null,
     "borough": "Manhattan",
-    "Train_Lines": ["Q"],
+    "train_lines": ["Q"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "86 St",
     "address": null,
     "borough": "Manhattan",
-    "Train_Lines": ["Q"],
+    "train_lines": ["Q"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "96 St",
     "address": null,
     "borough": "Manhattan",
-    "Train_Lines": ["Q"],
+    "train_lines": ["Q"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "Chambers St",
     "address": null,
     "borough": "Manhattan",
-    "Train_Lines": ["A", "C", "1", "2", "3"],
+    "train_lines": ["A", "C", "1", "2", "3"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "Delancey St-Essex St",
     "address": null,
     "borough": "Manhattan",
-    "Train_Lines": ["F", "M", "J", "Z"],
+    "train_lines": ["F", "M", "J", "Z"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "Inwood-207 St",
     "address": null,
     "borough": "Manhattan",
-    "Train_Lines": ["A"],
+    "train_lines": ["A"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "Fulton St",
     "address": null,
     "borough": "Manhattan",
-    "Train_Lines": ["A", "C", "J", "Z", "2", "3", "4", "5"],
+    "train_lines": ["A", "C", "J", "Z", "2", "3", "4", "5"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "Lexington Av/63 St",
     "address": null,
     "borough": "Manhattan",
-    "Train_Lines": ["F", "Q"],
+    "train_lines": ["F", "Q"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "South Ferry",
     "address": null,
     "borough": "Manhattan",
-    "Train_Lines": ["1"],
+    "train_lines": ["1"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "Times Sq-42 St",
     "address": null,
     "borough": "Manhattan",
-    "Train_Lines": ["N", "Q", "R", "W", "S", "1", "2", "3", "7"],
+    "train_lines": ["N", "Q", "R", "W", "S", "1", "2", "3", "7"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
 
@@ -137,70 +137,70 @@
     "place_name": "Far Rockaway-Mott Av",
     "address": null,
     "borough": "Queens",
-    "Train_Lines": ["A"],
+    "train_lines": ["A"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "Flushing-Main St",
     "address": null,
     "borough": "Queens",
-    "Train_Lines": ["7"],
+    "train_lines": ["7"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "Forest Hills-71 Av",
     "address": null,
     "borough": "Queens",
-    "Train_Lines": ["E", "F", "M", "R"],
+    "train_lines": ["E", "F", "M", "R"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "Jackson Heights-Roosevelt Av",
     "address": null,
     "borough": "Queens",
-    "Train_Lines": ["E", "F", "M", "R", "7"],
+    "train_lines": ["E", "F", "M", "R", "7"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "Jamaica-179 St",
     "address": null,
     "borough": "Queens",
-    "Train_Lines": ["F"],
+    "train_lines": ["F"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "Jamaica Center-Parsons/Archer",
     "address": null,
     "borough": "Queens",
-    "Train_Lines": ["E", "J", "Z"],
+    "train_lines": ["E", "J", "Z"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "Kew Gardens-Union Tpke",
     "address": null,
     "borough": "Queens",
-    "Train_Lines": ["E", "F"],
+    "train_lines": ["E", "F"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "Mets-Willets Point",
     "address": null,
     "borough": "Queens",
-    "Train_Lines": ["7"],
+    "train_lines": ["7"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "Rockaway Park-Beach 116 St",
     "address": null,
     "borough": "Queens",
-    "Train_Lines": ["A", "S"],
+    "train_lines": ["A", "S"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "Queensboro Plaza",
     "address": null,
     "borough": "Queens",
-    "Train_Lines": ["N", "W", "7"],
+    "train_lines": ["N", "W", "7"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
 
@@ -208,140 +208,140 @@
     "place_name": "18 Av",
     "address": null,
     "borough": "Brooklyn",
-    "Train_Lines": ["F"],
+    "train_lines": ["F"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "36 St",
     "address": null,
     "borough": "Brooklyn",
-    "Train_Lines": ["D", "N", "R"],
+    "train_lines": ["D", "N", "R"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "59 St",
     "address": null,
     "borough": "Brooklyn",
-    "Train_Lines": ["N", "R"],
+    "train_lines": ["N", "R"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "Atlantic Av-Barclays Ctr",
     "address": null,
     "borough": "Brooklyn",
-    "Train_Lines": ["B", "D", "N", "Q", "R", "2", "3", "4", "5"],
+    "train_lines": ["B", "D", "N", "Q", "R", "2", "3", "4", "5"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "Bay Ridge-95 St",
     "address": null,
     "borough": "Brooklyn",
-    "Train_Lines": ["R"],
+    "train_lines": ["R"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "Church Av",
     "address": null,
     "borough": "Brooklyn",
-    "Train_Lines": ["B", "Q", "F", "G"],
+    "train_lines": ["B", "Q", "F", "G"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "Coney Island-Stillwell Av",
     "address": null,
     "borough": "Brooklyn",
-    "Train_Lines": ["D", "F", "N", "Q"],
+    "train_lines": ["D", "F", "N", "Q"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "Crown Heights-Utica Av",
     "address": null,
     "borough": "Brooklyn",
-    "Train_Lines": ["3", "4"],
+    "train_lines": ["3", "4"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "DeKalb Av",
     "address": null,
     "borough": "Brooklyn",
-    "Train_Lines": ["B", "Q", "R"],
+    "train_lines": ["B", "Q", "R"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "Euclid Av",
     "address": null,
     "borough": "Brooklyn",
-    "Train_Lines": ["A", "C"],
+    "train_lines": ["A", "C"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "Flatbush Av-Brooklyn College",
     "address": null,
     "borough": "Brooklyn",
-    "Train_Lines": ["2", "5"],
+    "train_lines": ["2", "5"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "Franklin Av-Medgar Evers College",
     "address": null,
     "borough": "Brooklyn",
-    "Train_Lines": ["2", "3", "4", "5"],
+    "train_lines": ["2", "3", "4", "5"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "Kings Hwy",
     "address": null,
     "borough": "Brooklyn",
-    "Train_Lines": ["B", "Q"],
+    "train_lines": ["B", "Q"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "Jay St-MetroTech",
     "address": null,
     "borough": "Brooklyn",
-    "Train_Lines": ["A", "C", "F", "R"],
+    "train_lines": ["A", "C", "F", "R"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "Myrtle Av",
     "address": null,
     "borough": "Brooklyn",
-    "Train_Lines": ["J", "M", "Z"],
+    "train_lines": ["J", "M", "Z"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "Myrtle-Wyckoff Avs",
     "address": null,
     "borough": "Brooklyn",
-    "Train_Lines": ["M", "L"],
+    "train_lines": ["M", "L"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "New Utrecht Av",
-    "address": null,
+    "address": "New Utrecht Ave, Brooklyn, NY 11219",
     "borough": "Brooklyn",
-    "Train_Lines": ["N"],
+    "train_lines": ["N"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "Newkirk Plaza",
     "address": null,
     "borough": "Brooklyn",
-    "Train_Lines": ["B", "Q"],
+    "train_lines": ["B", "Q"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "Prospect Park",
     "address": null,
     "borough": "Brooklyn",
-    "Train_Lines": ["B", "Q", "S"],
+    "train_lines": ["B", "Q", "S"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "Sheepshead Bay",
     "address": null,
     "borough": "Brooklyn",
-    "Train_Lines": ["B", "Q"],
+    "train_lines": ["B", "Q"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
 
@@ -349,42 +349,42 @@
     "place_name": "161 St-Yankee Stadium",
     "address": null,
     "borough": "The Bronx",
-    "Train_Lines": ["B", "D"],
+    "train_lines": ["B", "D"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "E 180 St",
     "address": null,
     "borough": "The Bronx",
-    "Train_Lines": ["2", "5"],
+    "train_lines": ["2", "5"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "Eastchester-Dyre Av",
     "address": null,
     "borough": "The Bronx",
-    "Train_Lines": ["5"],
+    "train_lines": ["5"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "Norwood-205 St",
     "address": null,
     "borough": "The Bronx",
-    "Train_Lines": ["D"],
+    "train_lines": ["D"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "Pelham Bay Park",
     "address": null,
     "borough": "The Bronx",
-    "Train_Lines": ["6"],
+    "train_lines": ["6"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {
     "place_name": "Woodlawn",
     "address": null,
     "borough": "The Bronx",
-    "Train_Lines": ["4"],
+    "train_lines": ["4"],
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   }
 ]

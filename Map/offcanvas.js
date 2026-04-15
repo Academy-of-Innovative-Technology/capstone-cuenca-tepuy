@@ -26,6 +26,7 @@ let Off_Canvas_Information_Order_Priority = [
   "location name",
   "location address",
   "contact",
+  "train stations",
   "comments",
   "borough",
   "latitude",

@@ -1,3 +1,11 @@
+const Main_Information_Keys = new Set([
+  "center_name",
+  "provider",
+  "address",
+  "contact",
+  "comments",
+]);
+
 class DataProcessor {
   constructor(data, version) {
     this.data = data;
@@ -35,6 +43,7 @@ class DataProcessor {
 
     return null;
   }
+
   async process_DirectoryOfHomelessDropInCenters() {
     const address = this.normalizeAddress(this.data.address);
 
@@ -48,13 +57,7 @@ class DataProcessor {
     }
 
     // 🧠 Core metadata (exclude known fields)
-    const excludedKeys = new Set([
-      "provider",
-      "center_name",
-      "address",
-      "contact",
-      "comments",
-    ]);
+    const excludedKeys = Main_Information_Keys;
 
     let metadata = {};
 
@@ -97,13 +100,7 @@ class DataProcessor {
     }
 
     // 🧠 Build metadata by excluding known fields
-    const excludedKeys = new Set([
-      "center_name",
-      "provider",
-      "address",
-      "contact",
-      "comments",
-    ]);
+    const excludedKeys = Main_Information_Keys;
 
     let metadata = {};
 

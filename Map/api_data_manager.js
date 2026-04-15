@@ -1,11 +1,12 @@
 class DataProcessor {
-  constructor(data, version = "versionA") {
+  constructor(data, version) {
     this.data = data;
     this.version = version;
 
     this.processors = {
-      "Directory Of Homeless Drop- In Centers": this.processVersionA.bind(this),
-      Food_Pantries_DYCD: this.processVersionB.bind(this),
+      "Directory Of Homeless Drop- In Centers":
+        this.process_DirectoryOfHomelessDropInCenters.bind(this),
+      Food_Pantries_DYCD: this.process_Food_Pantries_DYCD.bind(this),
     };
   }
 
@@ -34,18 +35,18 @@ class DataProcessor {
 
     return null;
   }
-  async processVersionA() {
+  async process_DirectoryOfHomelessDropInCenters() {
     const address = this.normalizeAddress(this.data.address);
 
-     let latitude = this.parseNumber(this.data.latitude);
-     let longitude = this.parseNumber(this.data.longitude);
+    let latitude = this.parseNumber(this.data.latitude);
+    let longitude = this.parseNumber(this.data.longitude);
 
     if (latitude == null || longitude == null) {
       const coords = await this.fetchCoordinates(address);
       latitude = coords.latitude;
       longitude = coords.longitude;
     }
-    
+
     // 🧠 Core metadata (exclude known fields)
     const excludedKeys = new Set([
       "provider",
@@ -82,7 +83,7 @@ class DataProcessor {
       metadata,
     };
   }
-  async processVersionB() {
+  async process_Food_Pantries_DYCD() {
     const address = this.normalizeAddress(this.data.address);
 
     // 📍 Coordinates

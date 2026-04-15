@@ -117,3 +117,6 @@ async function Load_Data_Off_Canvas(Data) {
   const bsOffcanvas = new bootstrap.Offcanvas(Offcanvas_Map_Info_DOM);
   bsOffcanvas.show();
 }
+
+
+

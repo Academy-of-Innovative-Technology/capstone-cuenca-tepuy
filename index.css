@@ -114,3 +114,19 @@ article.bg-half-dark-reverse.on {
     );
   } */
 }
+
+@keyframes rainbow_color {
+  0% { color: #ff0000; }    /* Red */
+  14% { color: #ff7f00; }   /* Orange */
+  28% { color: #ffff00; }   /* Yellow */
+  42% { color: #00ff00; }   /* Green */
+  56% { color: #0000ff; }   /* Blue */
+  70% { color: #4b0082; }   /* Indigo */
+  84% { color: #8b00ff; }   /* Violet */
+  100% { color: #ff0000; }  /* Loop back to Red */
+}
+
+.rainbow_color {
+  animation: rainbow_color 6s linear infinite;
+}
+

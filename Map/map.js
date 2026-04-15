@@ -41,6 +41,8 @@ let Google_Maps_Search_Link = (address) => {
   return `https://maps.google.com/?q=${address}`;
 };
 
+
+
 function groupByLayer(data) {
   const grouped = {};
 
@@ -59,13 +61,13 @@ function groupByLayer(data) {
 
   return Object.values(grouped);
 }
-
+let Zoom_Level_Before_OffCanvas;
 function Add_List_Location_To_Map(Data) {
   let Categorized_Data = groupByLayer(Data);
 
   Categorized_Data.forEach(async (Layer_Group, index) => {
     let Map_Marker_Data = [];
-    
+
     await Promise.all(
       Layer_Group.locations.map(async (location) => {
         const API_DATA_MANAGER = new DataProcessor(
@@ -117,6 +119,7 @@ function Add_List_Location_To_Map(Data) {
 
     // When a click event occurs on a feature in the places layer, open a popup at the
     // location of the feature, with description HTML from its properties.
+    
     map.addInteraction(`${Layer_Group.Layer_Name}-click-interaction`, {
       type: "click",
       target: { layerId: Layer_Group.Layer_Name },
@@ -129,16 +132,17 @@ function Add_List_Location_To_Map(Data) {
         console.log(e);
 
         let Zoom_level = map.getZoom();
-        console.log("Zoom level is " + Zoom_level);
-        if (map.getZoom() <= 11) {
-          Zoom_level = 11;
-        }
+        Zoom_Level_Before_OffCanvas = Zoom_level;
+        // console.log("Zoom level is " + Zoom_level);
+        // if (map.getZoom() <= 11) {
+        //   Zoom_level = 11;
+        // }
         map.flyTo({
           center: e.lngLat,
-          zoom: Zoom_level,
+          zoom: 15,
           essential: true, // this animation is considered essential with respect to prefers-reduced-motion
         });
-        
+
         // new mapboxgl.Popup()
         //   .setLngLat(coordinates)
         //   .setHTML(description)
@@ -231,7 +235,9 @@ function Initialize_Layer_Control() {
     Map_Layer_Controls_DOM.insertAdjacentHTML("beforeend", HTML);
 
     let Trigger = document.querySelector(`#${New_BTN_ID}`);
-    if (!Trigger) { return; }
+    if (!Trigger) {
+      return;
+    }
     Trigger.addEventListener("change", (event) => {
       if (event.target.checked) {
         console.log("Turning on");
@@ -295,3 +301,9 @@ document
   .querySelector("#Light_Theme_BTN")
   .addEventListener("click", () => Map_Lighting_Change("day"));
 
+Offcanvas_Map_Info_DOM.addEventListener("hide.bs.offcanvas", () => {
+  map.flyTo({
+    zoom: Zoom_Level_Before_OffCanvas,
+    essential: true,
+  });
+});

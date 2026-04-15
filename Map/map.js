@@ -3,8 +3,8 @@ mapboxgl.accessToken = ACCESS_TOKEN;
 
 const map = new mapboxgl.Map({
   container: "map", // container ID
-  center: [-74.0038, 40.7533], // starting position [lng, lat]. Note that lat must be set between -90 and 90
-  zoom: 10, // starting zoom
+  center: [-73.913125, 40.742861], // starting position [lng, lat]. Note that lat must be set between -90 and 90
+  zoom: 12, // starting zoom
   dragRotate: false,
   touchZoomRotate: false,
 });

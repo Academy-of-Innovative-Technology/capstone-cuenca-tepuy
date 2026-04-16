@@ -115,7 +115,7 @@ function Add_List_Location_To_Map(Data) {
           location.extra_data.Processing_Method,
         );
         const Standarized_Data = await API_DATA_MANAGER.process();
-        console.log(Standarized_Data);
+
         let Object_Marker_Data = {
           type: "Feature",
           properties: {

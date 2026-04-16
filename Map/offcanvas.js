@@ -5,6 +5,15 @@ let OffCanvas_Extra_Info_DOM = document.querySelector("#OffCanvas_Extra_Info");
 
 let Main_Info_Categories = ["place_name", "place.address"];
 
+function Close_All_Off_Canvas_Accordion_Main_Information() {
+  const target = document.getElementById("collapseOne");
+  const button = document.querySelector('[data-bs-target="#collapseOne"]');
+
+  target.classList.remove("show");
+  button.classList.add("collapsed");
+  button.setAttribute("aria-expanded", "false");
+}
+
 function Close_All_Off_Canvas_Accordion_Extra_Information() {
   const secondAccordion = document.querySelector("#collapseTwo");
   const bsCollapse = new bootstrap.Collapse(secondAccordion, {
@@ -145,6 +154,17 @@ function Load_Data_Into_Container(Data, Destination_DOM, IgnoreList) {
     Destination_DOM.insertAdjacentHTML("beforeend", HTML);
   });
 }
+function Is_Only_Meta_Data(object) {
+  let result = true;
+  console.log(object);
+  for (const [key, value] of Object.entries(object)) {
+    if (key != "metadata" && value != null) {
+      result = false;
+    }
+  }
+  return result;
+}
+
 async function Load_Data_Off_Canvas(Data) {
   Close_All_Off_Canvas_Accordion_Extra_Information();
   const API_DATA_MANAGER = new DataProcessor(
@@ -153,10 +173,18 @@ async function Load_Data_Off_Canvas(Data) {
   );
   const Standarized_Data = await API_DATA_MANAGER.process();
 
-  Load_Data_Into_Container(Standarized_Data, OffCanvas_Main_Info_DOM, [
+ 
+  if (!Is_Only_Meta_Data(Standarized_Data)) {
+    document.querySelector("#headingOne").classList.remove("visually-hidden");
+     Load_Data_Into_Container(Standarized_Data, OffCanvas_Main_Info_DOM, [
     "metadata",
   ]);
-  
+  } else {
+    document.querySelector("#headingOne").classList.add("visually-hidden");
+    OffCanvas_Main_Info_DOM.innerHTML =
+      "This center does not have extra information";
+    Close_All_Off_Canvas_Accordion_Main_Information();
+  }
 
   if (
     Standarized_Data.metadata &&

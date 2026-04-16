@@ -1,391 +1,408 @@
 [
   {
-    "place_name": "125 St",
-    "address": null,
+    "place_name": "125 St (A/C/B/D)",
+    "address": "125 St & St Nicholas Ave, New York, NY",
+    "coordinates": { "lat": 40.811109, "lng": -73.952271 },
     "borough": "Manhattan",
-    "train_lines": ["A", "C", "B", "D", "4", "5", "6"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["A", "C", "B", "D"]
+  },
+  {
+    "place_name": "125 St (4/5/6)",
+    "address": "125 St & Lexington Ave, New York, NY",
+    "coordinates": { "lat": 40.804138, "lng": -73.937594 },
+    "borough": "Manhattan",
+    "train_lines": ["4", "5", "6"]
   },
   {
     "place_name": "14 St",
-    "address": null,
+    "address": "14 St & 8 Ave, New York, NY",
+    "coordinates": { "lat": 40.740894, "lng": -74.001709 },
     "borough": "Manhattan",
-    "train_lines": ["A", "C", "E"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["A", "C", "E"]
   },
   {
     "place_name": "14 St-Union Sq",
-    "address": null,
+    "address": "Union Square E & 14 St, New York, NY",
+    "coordinates": { "lat": 40.735736, "lng": -73.990568 },
     "borough": "Manhattan",
-    "train_lines": ["L", "N", "Q", "R", "W", "4", "5", "6"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["L", "N", "Q", "R", "W", "4", "5", "6"]
   },
   {
     "place_name": "168 St",
-    "address": null,
+    "address": "168 St & Broadway, New York, NY",
+    "coordinates": { "lat": 40.840556, "lng": -73.939879 },
     "borough": "Manhattan",
-    "train_lines": ["A", "C", "1"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["A", "C", "1"]
   },
   {
     "place_name": "34 St-Herald Sq",
-    "address": null,
+    "address": "34 St & 6 Ave, New York, NY",
+    "coordinates": { "lat": 40.749567, "lng": -73.987823 },
     "borough": "Manhattan",
-    "train_lines": ["B", "D", "F", "M", "N", "Q", "R", "W"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["B", "D", "F", "M", "N", "Q", "R", "W"]
   },
   {
     "place_name": "34 St-Hudson Yards",
-    "address": null,
+    "address": "34 St & 11 Ave, New York, NY",
+    "coordinates": { "lat": 40.755955, "lng": -74.001963 },
     "borough": "Manhattan",
-    "train_lines": ["7"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["7"]
   },
   {
     "place_name": "42 St-Bryant Park",
-    "address": null,
+    "address": "42 St & 6 Ave, New York, NY",
+    "coordinates": { "lat": 40.754222, "lng": -73.984569 },
     "borough": "Manhattan",
-    "train_lines": ["B", "D", "F", "M"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["B", "D", "F", "M"]
   },
   {
     "place_name": "5 Av/53 St",
-    "address": null,
+    "address": "53 St & 5 Ave, New York, NY",
+    "coordinates": { "lat": 40.760288, "lng": -73.975224 },
     "borough": "Manhattan",
-    "train_lines": ["E", "F"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["E", "F"]
   },
   {
     "place_name": "57 St-7 Av",
-    "address": null,
+    "address": "57 St & 7 Ave, New York, NY",
+    "coordinates": { "lat": 40.764664, "lng": -73.980658 },
     "borough": "Manhattan",
-    "train_lines": ["N", "Q", "R"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["N", "Q", "R"]
   },
   {
     "place_name": "72 St",
-    "address": null,
+    "address": "72 St & 2 Ave, New York, NY",
+    "coordinates": { "lat": 40.768802, "lng": -73.958372 },
     "borough": "Manhattan",
-    "train_lines": ["Q"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["Q"]
   },
   {
     "place_name": "86 St",
-    "address": null,
+    "address": "86 St & 2 Ave, New York, NY",
+    "coordinates": { "lat": 40.77809, "lng": -73.951822 },
     "borough": "Manhattan",
-    "train_lines": ["Q"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["Q"]
   },
   {
     "place_name": "96 St",
-    "address": null,
+    "address": "96 St & 2 Ave, New York, NY",
+    "coordinates": { "lat": 40.784318, "lng": -73.947152 },
     "borough": "Manhattan",
-    "train_lines": ["Q"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["Q"]
   },
   {
-    "place_name": "Chambers St",
-    "address": null,
+    "place_name": "Chambers St (A/C)",
+    "address": "Chambers St & Church St, New York, NY",
+    "coordinates": { "lat": 40.713243, "lng": -74.008911 },
     "borough": "Manhattan",
-    "train_lines": ["A", "C", "1", "2", "3"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["A", "C"]
+  },
+  {
+    "place_name": "Chambers St (1/2/3)",
+    "address": "Chambers St & West Broadway, New York, NY",
+    "coordinates": { "lat": 40.718092, "lng": -74.013168 },
+    "borough": "Manhattan",
+    "train_lines": ["1", "2", "3"]
   },
   {
     "place_name": "Delancey St-Essex St",
-    "address": null,
+    "address": "Delancey St & Essex St, New York, NY",
+    "coordinates": { "lat": 40.718315, "lng": -73.988114 },
     "borough": "Manhattan",
-    "train_lines": ["F", "M", "J", "Z"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["F", "M", "J", "Z"]
   },
   {
     "place_name": "Inwood-207 St",
-    "address": null,
+    "address": "207 St & Broadway, New York, NY",
+    "coordinates": { "lat": 40.868072, "lng": -73.919899 },
     "borough": "Manhattan",
-    "train_lines": ["A"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["A"]
   },
   {
     "place_name": "Fulton St",
-    "address": null,
+    "address": "Fulton St & Broadway, New York, NY",
+    "coordinates": { "lat": 40.710374, "lng": -74.007582 },
     "borough": "Manhattan",
-    "train_lines": ["A", "C", "J", "Z", "2", "3", "4", "5"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["A", "C", "J", "Z", "2", "3", "4", "5"]
   },
   {
     "place_name": "Lexington Av/63 St",
-    "address": null,
+    "address": "63 St & Lexington Ave, New York, NY",
+    "coordinates": { "lat": 40.764629, "lng": -73.966113 },
     "borough": "Manhattan",
-    "train_lines": ["F", "Q"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["F", "Q"]
   },
   {
     "place_name": "South Ferry",
-    "address": null,
+    "address": "South Ferry Plaza, New York, NY",
+    "coordinates": { "lat": 40.702068, "lng": -74.013664 },
     "borough": "Manhattan",
-    "train_lines": ["1"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["1"]
   },
   {
     "place_name": "Times Sq-42 St",
-    "address": null,
+    "address": "42 St & Broadway, New York, NY",
+    "coordinates": { "lat": 40.755477, "lng": -73.987691 },
     "borough": "Manhattan",
-    "train_lines": ["N", "Q", "R", "W", "S", "1", "2", "3", "7"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["N", "Q", "R", "W", "S", "1", "2", "3", "7"]
   },
-
   {
     "place_name": "Far Rockaway-Mott Av",
-    "address": null,
+    "address": "Mott Ave & Beach 22 St, Queens, NY",
+    "coordinates": { "lat": 40.60313, "lng": -73.755405 },
     "borough": "Queens",
-    "train_lines": ["A"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["A"]
   },
   {
     "place_name": "Flushing-Main St",
-    "address": null,
+    "address": "Main St & Roosevelt Ave, Queens, NY",
+    "coordinates": { "lat": 40.759614, "lng": -73.830031 },
     "borough": "Queens",
-    "train_lines": ["7"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["7"]
   },
   {
     "place_name": "Forest Hills-71 Av",
-    "address": null,
+    "address": "71 Ave & Queens Blvd, Queens, NY",
+    "coordinates": { "lat": 40.721691, "lng": -73.844521 },
     "borough": "Queens",
-    "train_lines": ["E", "F", "M", "R"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["E", "F", "M", "R"]
   },
   {
     "place_name": "Jackson Heights-Roosevelt Av",
-    "address": null,
+    "address": "Roosevelt Ave & 74 St, Queens, NY",
+    "coordinates": { "lat": 40.746644, "lng": -73.891338 },
     "borough": "Queens",
-    "train_lines": ["E", "F", "M", "R", "7"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["E", "F", "M", "R", "7"]
   },
   {
     "place_name": "Jamaica-179 St",
-    "address": null,
+    "address": "179 St & Hillside Ave, Queens, NY",
+    "coordinates": { "lat": 40.712591, "lng": -73.783817 },
     "borough": "Queens",
-    "train_lines": ["F"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["F"]
   },
   {
     "place_name": "Jamaica Center-Parsons/Archer",
-    "address": null,
+    "address": "Parsons Blvd & Archer Ave, Queens, NY",
+    "coordinates": { "lat": 40.702566, "lng": -73.801109 },
     "borough": "Queens",
-    "train_lines": ["E", "J", "Z"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["E", "J", "Z"]
   },
   {
     "place_name": "Kew Gardens-Union Tpke",
-    "address": null,
+    "address": "Union Tpke & Queens Blvd, Queens, NY",
+    "coordinates": { "lat": 40.714508, "lng": -73.831393 },
     "borough": "Queens",
-    "train_lines": ["E", "F"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["E", "F"]
   },
   {
     "place_name": "Mets-Willets Point",
-    "address": null,
+    "address": "Roosevelt Ave & 126 St, Queens, NY",
+    "coordinates": { "lat": 40.754622, "lng": -73.845952 },
     "borough": "Queens",
-    "train_lines": ["7"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["7"]
   },
   {
     "place_name": "Rockaway Park-Beach 116 St",
-    "address": null,
+    "address": "Beach 116 St & Rockaway Beach Blvd, Queens, NY",
+    "coordinates": { "lat": 40.580903, "lng": -73.835592 },
     "borough": "Queens",
-    "train_lines": ["A", "S"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["A", "S"]
   },
   {
     "place_name": "Queensboro Plaza",
-    "address": null,
+    "address": "Queens Plaza N & 27 St, Queens, NY",
+    "coordinates": { "lat": 40.750582, "lng": -73.940202 },
     "borough": "Queens",
-    "train_lines": ["N", "W", "7"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["N", "W", "7"]
   },
-
   {
     "place_name": "18 Av",
-    "address": null,
+    "address": "18 Ave & McDonald Ave, Brooklyn, NY",
+    "coordinates": { "lat": 40.629756, "lng": -73.976119 },
     "borough": "Brooklyn",
-    "train_lines": ["F"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["F"]
   },
   {
     "place_name": "36 St",
-    "address": null,
+    "address": "36 St & 4 Ave, Brooklyn, NY",
+    "coordinates": { "lat": 40.655144, "lng": -74.003549 },
     "borough": "Brooklyn",
-    "train_lines": ["D", "N", "R"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["D", "N", "R"]
   },
   {
     "place_name": "59 St",
-    "address": null,
+    "address": "59 St & 4 Ave, Brooklyn, NY",
+    "coordinates": { "lat": 40.64123, "lng": -74.017881 },
     "borough": "Brooklyn",
-    "train_lines": ["N", "R"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["N", "R"]
   },
   {
     "place_name": "Atlantic Av-Barclays Ctr",
-    "address": null,
+    "address": "Atlantic Ave & Flatbush Ave, Brooklyn, NY",
+    "coordinates": { "lat": 40.684359, "lng": -73.977666 },
     "borough": "Brooklyn",
-    "train_lines": ["B", "D", "N", "Q", "R", "2", "3", "4", "5"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["B", "D", "N", "Q", "R", "2", "3", "4", "5"]
   },
   {
     "place_name": "Bay Ridge-95 St",
-    "address": null,
+    "address": "95 St & 4 Ave, Brooklyn, NY",
+    "coordinates": { "lat": 40.616622, "lng": -74.030876 },
     "borough": "Brooklyn",
-    "train_lines": ["R"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["R"]
   },
   {
-    "place_name": "Church Av",
-    "address": null,
+    "place_name": "Church Av (B/Q)",
+    "address": "Church Ave & Culver Line, Brooklyn, NY",
+    "coordinates": { "lat": 40.644041, "lng": -73.979678 },
     "borough": "Brooklyn",
-    "train_lines": ["B", "Q", "F", "G"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["B", "Q"]
+  },
+  {
+    "place_name": "Church Av (F/G)",
+    "address": "Church Ave & McDonald Ave, Brooklyn, NY",
+    "coordinates": { "lat": 40.643956, "lng": -73.979493 },
+    "borough": "Brooklyn",
+    "train_lines": ["F", "G"]
   },
   {
     "place_name": "Coney Island-Stillwell Av",
-    "address": null,
+    "address": "Stillwell Ave & Surf Ave, Brooklyn, NY",
+    "coordinates": { "lat": 40.577422, "lng": -73.98182 },
     "borough": "Brooklyn",
-    "train_lines": ["D", "F", "N", "Q"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["D", "F", "N", "Q"]
   },
   {
     "place_name": "Crown Heights-Utica Av",
-    "address": null,
+    "address": "Utica Ave & Eastern Pkwy, Brooklyn, NY",
+    "coordinates": { "lat": 40.668895, "lng": -73.932997 },
     "borough": "Brooklyn",
-    "train_lines": ["3", "4"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["3", "4"]
   },
   {
     "place_name": "DeKalb Av",
-    "address": null,
+    "address": "DeKalb Ave & Flatbush Ave Ext, Brooklyn, NY",
+    "coordinates": { "lat": 40.690635, "lng": -73.981929 },
     "borough": "Brooklyn",
-    "train_lines": ["B", "Q", "R"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["B", "Q", "R"]
   },
   {
     "place_name": "Euclid Av",
-    "address": null,
+    "address": "Euclid Ave & Pitkin Ave, Brooklyn, NY",
+    "coordinates": { "lat": 40.675345, "lng": -73.872036 },
     "borough": "Brooklyn",
-    "train_lines": ["A", "C"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["A", "C"]
   },
   {
     "place_name": "Flatbush Av-Brooklyn College",
-    "address": null,
+    "address": "Flatbush Ave & Nostrand Ave, Brooklyn, NY",
+    "coordinates": { "lat": 40.632834, "lng": -73.947642 },
     "borough": "Brooklyn",
-    "train_lines": ["2", "5"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["2", "5"]
   },
   {
     "place_name": "Franklin Av-Medgar Evers College",
-    "address": null,
+    "address": "Franklin Ave & Eastern Pkwy, Brooklyn, NY",
+    "coordinates": { "lat": 40.670847, "lng": -73.958131 },
     "borough": "Brooklyn",
-    "train_lines": ["2", "3", "4", "5"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["2", "3", "4", "5"]
   },
   {
     "place_name": "Kings Hwy",
-    "address": null,
+    "address": "Kings Hwy & Ocean Ave, Brooklyn, NY",
+    "coordinates": { "lat": 40.608928, "lng": -73.957438 },
     "borough": "Brooklyn",
-    "train_lines": ["B", "Q"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["B", "Q"]
   },
   {
     "place_name": "Jay St-MetroTech",
-    "address": null,
+    "address": "Jay St & Willoughby St, Brooklyn, NY",
+    "coordinates": { "lat": 40.692338, "lng": -73.987342 },
     "borough": "Brooklyn",
-    "train_lines": ["A", "C", "F", "R"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["A", "C", "F", "R"]
   },
   {
     "place_name": "Myrtle Av",
-    "address": null,
+    "address": "Myrtle Ave & Broadway, Brooklyn, NY",
+    "coordinates": { "lat": 40.697207, "lng": -73.935657 },
     "borough": "Brooklyn",
-    "train_lines": ["J", "M", "Z"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["J", "M", "Z"]
   },
   {
     "place_name": "Myrtle-Wyckoff Avs",
-    "address": null,
+    "address": "Wyckoff Ave & Myrtle Ave, Brooklyn, NY",
+    "coordinates": { "lat": 40.699814, "lng": -73.912628 },
     "borough": "Brooklyn",
-    "train_lines": ["M", "L"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["M", "L"]
   },
   {
     "place_name": "New Utrecht Av",
-    "address": "New Utrecht Ave, Brooklyn, NY 11219",
+    "address": "New Utrecht Ave & 62 St, Brooklyn, NY",
+    "coordinates": { "lat": 40.624842, "lng": -74.004523 },
     "borough": "Brooklyn",
-    "train_lines": ["N", "A", "B", "C", "D", "J"],
-    "XD": "Change train line to only N because that's the only real",
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["N"]
   },
   {
     "place_name": "Newkirk Plaza",
-    "address": null,
+    "address": "Newkirk Ave & East 16 St, Brooklyn, NY",
+    "coordinates": { "lat": 40.635082, "lng": -73.962928 },
     "borough": "Brooklyn",
-    "train_lines": ["B", "Q"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["B", "Q"]
   },
   {
     "place_name": "Prospect Park",
-    "address": null,
+    "address": "Flatbush Ave & Empire Blvd, Brooklyn, NY",
+    "coordinates": { "lat": 40.661614, "lng": -73.962245 },
     "borough": "Brooklyn",
-    "train_lines": ["B", "Q", "S"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["B", "Q", "S"]
   },
   {
     "place_name": "Sheepshead Bay",
-    "address": null,
+    "address": "Sheepshead Bay Rd & East 16 St, Brooklyn, NY",
+    "coordinates": { "lat": 40.586896, "lng": -73.954155 },
     "borough": "Brooklyn",
-    "train_lines": ["B", "Q"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["B", "Q"]
   },
-
   {
     "place_name": "161 St-Yankee Stadium",
-    "address": null,
+    "address": "161 St & River Ave, Bronx, NY",
+    "coordinates": { "lat": 40.827905, "lng": -73.925651 },
     "borough": "The Bronx",
-    "train_lines": ["B", "D"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["B", "D"]
   },
   {
     "place_name": "E 180 St",
-    "address": null,
+    "address": "180 St & Morris Park Ave, Bronx, NY",
+    "coordinates": { "lat": 40.841894, "lng": -73.873488 },
     "borough": "The Bronx",
-    "train_lines": ["2", "5"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["2", "5"]
   },
   {
     "place_name": "Eastchester-Dyre Av",
-    "address": null,
+    "address": "Dyre Ave & Light St, Bronx, NY",
+    "coordinates": { "lat": 40.888248, "lng": -73.830834 },
     "borough": "The Bronx",
-    "train_lines": ["5"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["5"]
   },
   {
     "place_name": "Norwood-205 St",
-    "address": null,
+    "address": "205 St & Bainbridge Ave, Bronx, NY",
+    "coordinates": { "lat": 40.874811, "lng": -73.878855 },
     "borough": "The Bronx",
-    "train_lines": ["D"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["D"]
   },
   {
     "place_name": "Pelham Bay Park",
-    "address": null,
+    "address": "Bruckner Blvd & Westchester Ave, Bronx, NY",
+    "coordinates": { "lat": 40.852462, "lng": -73.828121 },
     "borough": "The Bronx",
-    "train_lines": ["6"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["6"]
   },
   {
     "place_name": "Woodlawn",
-    "address": null,
+    "address": "233 St & Jerome Ave, Bronx, NY",
+    "coordinates": { "lat": 40.886037, "lng": -73.878751 },
     "borough": "The Bronx",
-    "train_lines": ["4"],
-    "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
+    "train_lines": ["4"]
   }
 ]

@@ -6,6 +6,7 @@ const Main_Information_Keys = new Set([
   "address",
   "contact",
   "comments",
+  "coordinates",
 ]);
 
 class DataProcessor {

@@ -74,7 +74,7 @@ function Process_Train_Lines_As_Icons(list) {
   list.forEach((line) => {
     let Line_Color_BG = Train_Line_Colors[line].background_color || "white";
     let Line_Color_Text = Train_Line_Colors[line].text_color || "white";
-    let HTML = `<div class="rounded-circle ratio ratio-1x1 overflow-hidden" style="background-color: ${Line_Color_BG}"><span class="d-flex justify-content-center align-items-center h4" style="color:${Line_Color_Text};">${line}</span></div>`;
+    let HTML = `<div class="rounded-circle ratio ratio-1x1 overflow-hidden" style="background-color: ${Line_Color_BG}; width: 40px; height: 40px;"><span class="d-flex justify-content-center align-items-center h4" style="color:${Line_Color_Text};">${line}</span></div>`;
     Station_HTML += HTML;
   })
 

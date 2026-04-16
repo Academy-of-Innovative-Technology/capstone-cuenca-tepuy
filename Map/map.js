@@ -65,6 +65,17 @@ let Location_APIs = [
       Processing_Method: "NY_MTA_Transit_Train_Station_Bathrooms",
     },
   },
+  {
+    url: "../Data/Overcompass_NY_Bathroom.json",
+    extra_data: {
+      Name: "NY_Bathroom",
+      Layer_Name: "NY_Bathrooms",
+      Found: "Overcompass",
+      Source: "Overcompass",
+      Pin_Color: "blue",
+      Processing_Method: "NY_Bathrooms",
+    },
+  },
 ];
 
 let Google_Maps_Search_Link = (address) => {
@@ -104,7 +115,7 @@ function Add_List_Location_To_Map(Data) {
           location.extra_data.Processing_Method,
         );
         const Standarized_Data = await API_DATA_MANAGER.process();
-        
+        console.log(Standarized_Data);
         let Object_Marker_Data = {
           type: "Feature",
           properties: {

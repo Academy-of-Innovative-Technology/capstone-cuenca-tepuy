@@ -268,19 +268,28 @@ function Initialize_Layer_Control() {
     let Button_Name = map.getSource(id)._data.button_name || id;
     let HTML = `
      <input type="checkbox" class="btn-check active" id="${New_BTN_ID}" autocomplete="off" checked>
-    <label class="btn btn-primary" style="background-color: ${Layer.paint["circle-color"]}" for="Layer_Toggler_${id}">${Button_Name}</label>`;
+    <label class="btn btn-primary" id="${New_BTN_ID}_Label" style="background-color: ${Layer.paint["circle-color"]}" for="Layer_Toggler_${id}">${Button_Name}</label>`;
 
     Map_Layer_Controls_DOM.insertAdjacentHTML("beforeend", HTML);
     let Trigger = document.querySelector(`#${New_BTN_ID}`);
+    let Label = document.querySelector(`#${New_BTN_ID}_Label`);
     Trigger.addEventListener("change", (event) => {
       if (event.target.checked) {
         //console.log("Turning on");
         map.setLayoutProperty(id, "visibility", "visible");
         Trigger.classList.add("active");
+        if (Label) {
+          Label.classList.remove("Darker");
+        }
       } else {
         map.setLayoutProperty(id, "visibility", "none");
         Trigger.classList.remove("active");
+        if (Label) {
+          
+          Label.classList.add("Darker");
+        }
       }
+
     });
   });
 }

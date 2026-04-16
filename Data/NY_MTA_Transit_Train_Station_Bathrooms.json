@@ -320,7 +320,8 @@
     "place_name": "New Utrecht Av",
     "address": "New Utrecht Ave, Brooklyn, NY 11219",
     "borough": "Brooklyn",
-    "train_lines": ["N"],
+    "train_lines": ["N", "A", "B", "C", "D", "J"],
+    "XD": "Change train line to only N because that's the only real",
     "Comment": "bathrooms open from 7 a.m.-7 p.m., with a one-hour closure for cleaning from 12 noon-1 p.m."
   },
   {

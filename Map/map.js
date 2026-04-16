@@ -9,6 +9,7 @@ let Zoom_Save_Cache = sessionStorage.getItem(Zoom_Save_Session_Storage_Name) || 
 const map = new mapboxgl.Map({
   container: "map", // container ID
   center: [-73.913125, 40.742861], // starting position [lng, lat]. Note that lat must be set between -90 and 90
+
   zoom: Zoom_Save_Cache, // starting zoom
   dragRotate: false,
   touchZoomRotate: false,
@@ -34,7 +35,7 @@ let Location_APIs = [
   {
     url: "https://data.cityofnewyork.us/resource/bmxf-3rd4.json",
     extra_data: {
-      Name: "Directory Of Homeless Drop- In Centers",
+      Name: "Homeless Shelters",
       Layer_Name: "Shelter",
       Found: "NYC Open Data",
       Source: "Department of Homeless Services",
@@ -45,7 +46,7 @@ let Location_APIs = [
   {
     url: "../Data/Food_Pantries_DYCD.json",
     extra_data: {
-      Name: "Food_Pantries_DYCD",
+      Name: "Food Pantries by DYCD",
       Layer_Name: "Food_Pastries",
       Found: "ENV",
       Source: "ME",
@@ -158,7 +159,7 @@ function Add_List_Location_To_Map(Data) {
         const description = e.feature.properties.description;
         //console.log(e.feature.properties.data);
         Load_Data_Off_Canvas(JSON.parse(e.feature.properties.data));
-        console.log(e);
+       
 
         let Zoom_level = map.getZoom();
         Zoom_Level_Before_OffCanvas = Zoom_level;
@@ -251,7 +252,6 @@ function Initialize_Layer_Control() {
     let New_BTN_ID = `Layer_Toggler_${id}`;
 
     if (document.getElementById(New_BTN_ID)) {
-      console.log("exit");
       return;
     }
     let Button_Name = map.getSource(id)._data.button_name || id;
@@ -262,13 +262,11 @@ function Initialize_Layer_Control() {
     Map_Layer_Controls_DOM.insertAdjacentHTML("beforeend", HTML);
     let Trigger = document.querySelector(`#${New_BTN_ID}`);
     Trigger.addEventListener("change", (event) => {
-      console.log("triggered");
       if (event.target.checked) {
-        console.log("Turning on");
+        //console.log("Turning on");
         map.setLayoutProperty(id, "visibility", "visible");
         Trigger.classList.add("active");
       } else {
-        console.log("Turning off");
         map.setLayoutProperty(id, "visibility", "none");
         Trigger.classList.remove("active");
       }
@@ -306,7 +304,7 @@ map.on("style.load", () => {
   if (Saved_Map_Lighting_Mode) {
     Map_Lighting_Change(Saved_Map_Lighting_Mode);
   } else {
-    console.log("Test");
+
     // First Time Loading, better send them a message so they know xd.
     let Map_Lighting_Mode_Reminder_Toast_DOM = document.getElementById(
       "Map_Lighting_Mode_Reminder_Toast",

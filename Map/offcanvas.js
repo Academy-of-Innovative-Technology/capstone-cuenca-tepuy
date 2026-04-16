@@ -26,12 +26,62 @@ let Off_Canvas_Information_Order_Priority = [
   "location name",
   "location address",
   "contact",
-  "train stations",
+  "train lines",
   "comments",
   "borough",
   "latitude",
   "longitude",
 ];
+
+let Train_Line_Colors = {
+  A: { text_color: "white", background_color: "#0039A6" }, // blue
+  B: { text_color: "white", background_color: "#FF6319" }, // orange
+  C: { text_color: "white", background_color: "#0039A6" }, // blue
+  D: { text_color: "white", background_color: "#FF6319" }, // orange
+  E: { text_color: "white", background_color: "#0039A6" }, // blue
+  F: { text_color: "white", background_color: "#FF6319" }, // orange
+  M: { text_color: "white", background_color: "#FF6319" }, // orange
+  G: { text_color: "white", background_color: "#6CBE45" }, // green
+
+  1: { text_color: "white", background_color: "#EE352E" }, // red
+  2: { text_color: "white", background_color: "#EE352E" },
+  3: { text_color: "white", background_color: "#EE352E" },
+
+  4: { text_color: "white", background_color: "#00933C" }, // green
+  5: { text_color: "white", background_color: "#00933C" },
+  6: { text_color: "white", background_color: "#00933C" },
+
+  7: { text_color: "white", background_color: "#B933AD" }, // purple
+
+  N: { text_color: "black", background_color: "#FCCC0A" }, // yellow
+  Q: { text_color: "black", background_color: "#FCCC0A" },
+  R: { text_color: "black", background_color: "#FCCC0A" },
+  W: { text_color: "black", background_color: "#FCCC0A" },
+
+  J: { text_color: "white", background_color: "#996633" }, // brown
+  Z: { text_color: "white", background_color: "#996633" },
+
+  L: { text_color: "black", background_color: "#A7A9AC" }, // gray
+  S: { text_color: "black", background_color: "#A7A9AC" }, // shuttle
+};
+
+function Process_Train_Lines_As_Icons(list) {
+  if (!list) {
+    return;
+  }
+  let Result;
+  let Station_HTML = ``;
+  list.forEach((line) => {
+    let Line_Color_BG = Train_Line_Colors[line].background_color || "white";
+    let Line_Color_Text = Train_Line_Colors[line].text_color || "white";
+    let HTML = `<div class="rounded-circle ratio ratio-1x1 overflow-hidden" style="background-color: ${Line_Color_BG}"><span class="d-flex justify-content-center align-items-center h4" style="color:${Line_Color_Text};">${line}</span></div>`;
+    Station_HTML += HTML;
+  })
+
+  Result = `<div class="d-flex flex-fill gap-2">${Station_HTML}</div>`
+
+  return Result;
+}
 
 function Load_Data_Into_Container(Data, Destination_DOM, IgnoreList) {
   let List_Data = [];
@@ -60,19 +110,30 @@ function Load_Data_Into_Container(Data, Destination_DOM, IgnoreList) {
     }
     return nameA.localeCompare(nameB);
   });
-  console.log(List_Data);
+
   List_Data.forEach((Item) => {
-    let Content;
-    if (typeof Item.content == "object") {
-      Content = "";
+    let Content = "";
+    if (typeof Item.content == "object" && !Array.isArray(Item.content)) {
       for (const [key, value] of Object.entries(Item.content)) {
         if (value == null) {
           continue;
         } // Skips if the section have a null field
         Content += `<p class="text-break">${key}: ${value}</p>`;
       }
+    } else if (Array.isArray(Item.content)) {
+      if (Item.key_name == "train lines") {
+        Content = Process_Train_Lines_As_Icons(Item.content);
+      } else {
+        Item.content.forEach((element) => {
+          Content += `<p class="text-break">${element} </p>`;
+        });
+      }
+      
+
     } else {
-      Content = `<p class="text-break">${Item.content}</p>`;
+      if (Item.content) {
+        Content = `<p class="text-break">${Item.content}</p>`;
+      }  
     }
     if (Content == "") {
       return;
@@ -85,7 +146,6 @@ function Load_Data_Into_Container(Data, Destination_DOM, IgnoreList) {
   });
 }
 async function Load_Data_Off_Canvas(Data) {
-  console.log(Data.extra_data.Processing_Method);
   Close_All_Off_Canvas_Accordion_Extra_Information();
   const API_DATA_MANAGER = new DataProcessor(
     Data,

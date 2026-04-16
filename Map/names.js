@@ -16,4 +16,5 @@ let Properties_Name = {
   nta: "neighborhood tabulation area (NTA)",
   name: "location name",
   center_name: "location name",
+  train_lines: "train lines",
 };

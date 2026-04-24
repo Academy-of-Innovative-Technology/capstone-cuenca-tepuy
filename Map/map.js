@@ -1,10 +1,9 @@
 const ACCESS_TOKEN = API_KEYS.MAPBOX_API_TOKEN_ACCESS_KEY;
 mapboxgl.accessToken = ACCESS_TOKEN;
 
-let Zoom_Save_Session_Storage_Name = "Zoom_Save_Session_Storage"
-let Zoom_Save_Cache = sessionStorage.getItem(Zoom_Save_Session_Storage_Name) || 12;
-
-
+let Zoom_Save_Session_Storage_Name = "Zoom_Save_Session_Storage";
+let Zoom_Save_Cache =
+  sessionStorage.getItem(Zoom_Save_Session_Storage_Name) || 12;
 
 const map = new mapboxgl.Map({
   container: "map", // container ID
@@ -18,7 +17,7 @@ const map = new mapboxgl.Map({
 window.addEventListener("visibilitychange", (event) => {
   //event.preventDefault(); // Standard
   //event.returnValue = ""; // Required for some older browsers
-  if (document.visibilityState === 'hidden') { 
+  if (document.visibilityState === "hidden") {
     let Current_Zoom = map.getZoom();
     Zoom_Save_Cache = sessionStorage.getItem(Zoom_Save_Session_Storage_Name);
     if (Current_Zoom) {
@@ -26,7 +25,6 @@ window.addEventListener("visibilitychange", (event) => {
     }
   }
 });
-
 
 let Map_Layer_Controls_DOM = document.querySelector("#Map_Layer_Controls");
 
@@ -50,7 +48,7 @@ let Location_APIs = [
       Layer_Name: "Food_Pastries",
       Found: "ENV",
       Source: "ME",
-      Pin_Color: "#fc0303",
+      Pin_Color: "#298200",
       Processing_Method: "Food_Pantries_DYCD",
     },
   },
@@ -61,7 +59,7 @@ let Location_APIs = [
       Layer_Name: "MTA_Station_Bathrooms",
       Found: "MTA",
       Source: "MTA",
-      Pin_Color: "#00ff15",
+      Pin_Color: "rgba(0, 47, 186, 1)",
       Processing_Method: "NY_MTA_Transit_Train_Station_Bathrooms",
     },
   },
@@ -72,7 +70,7 @@ let Location_APIs = [
       Layer_Name: "NY_Bathrooms",
       Found: "Overcompass",
       Source: "Overcompass",
-      Pin_Color: "blue",
+      Pin_Color: "#895129",
       Processing_Method: "NY_Bathrooms",
     },
   },
@@ -81,8 +79,6 @@ let Location_APIs = [
 let Google_Maps_Search_Link = (address) => {
   return `https://maps.google.com/?q=${address}`;
 };
-
-
 
 function groupByLayer(data) {
   const grouped = {};
@@ -102,6 +98,10 @@ function groupByLayer(data) {
 
   return Object.values(grouped);
 }
+
+let mapbox_circle_stroke_color_light_mode = "rgba(0, 0, 0, 1)";
+let mapbox_circle_stroke_color_dark_mode = "rgba(186, 186, 186, 1)";
+
 let Zoom_Level_Before_OffCanvas;
 function Add_List_Location_To_Map(Data) {
   let Categorized_Data = groupByLayer(Data);
@@ -148,19 +148,19 @@ function Add_List_Location_To_Map(Data) {
       id: Layer_Group.Layer_Name,
       type: "circle",
       source: Layer_Group.Layer_Name,
-      
+
       paint: {
         "circle-color": Layer_Group.locations[0].extra_data.Pin_Color,
         "circle-radius": 6,
         "circle-stroke-width": 2,
-        "circle-stroke-color": "#ffffff",
-        "circle-emissive-strength": 1.0,
+        "circle-stroke-color": "rgba(0, 0, 0, 1)",
+        "circle-emissive-strength": 1.5,
       },
     });
 
     // When a click event occurs on a feature in the places layer, open a popup at the
     // location of the feature, with description HTML from its properties.
-    
+
     map.addInteraction(`${Layer_Group.Layer_Name}-click-interaction`, {
       type: "click",
       target: { layerId: Layer_Group.Layer_Name },
@@ -170,7 +170,6 @@ function Add_List_Location_To_Map(Data) {
         const description = e.feature.properties.description;
         //console.log(e.feature.properties.data);
         Load_Data_Off_Canvas(JSON.parse(e.feature.properties.data));
-       
 
         let Zoom_level = map.getZoom();
         Zoom_Level_Before_OffCanvas = Zoom_level;
@@ -208,7 +207,9 @@ function Add_List_Location_To_Map(Data) {
         map.getCanvas().style.cursor = "";
       },
     });
+    Update_Map_Lighting();
   });
+  
 }
 
 async function loadAllGeolocation() {
@@ -285,21 +286,48 @@ function Initialize_Layer_Control() {
         map.setLayoutProperty(id, "visibility", "none");
         Trigger.classList.remove("active");
         if (Label) {
-          
           Label.classList.add("Darker");
         }
       }
-
     });
   });
 }
+
 let Map_Lighting_Mode_LocalStorage_Name = "map-theme";
 function Map_Lighting_Change(Mode) {
   if (Mode == "day") {
     map.setConfigProperty("basemap", "lightPreset", "day");
+
+    const layers = map.getStyle().layers;
+    layers.forEach((layer) => {
+      if (layer.type === "circle") {
+        console.log(layer);
+        map.setPaintProperty(
+          layer.id,
+          "circle-stroke-color",
+          mapbox_circle_stroke_color_light_mode,
+        );
+        //map.setPaintProperty(layer.id, "circle-stroke-width", 2);
+      }
+    });
+
     localStorage.setItem(Map_Lighting_Mode_LocalStorage_Name, "day");
   } else if (Mode == "night") {
     map.setConfigProperty("basemap", "lightPreset", "night");
+
+    const layers = map.getStyle().layers;
+    layers.forEach((layer) => {
+      if (layer.type === "circle") {
+        console.log(layer);
+        map.setPaintProperty(
+          layer.id,
+          "circle-stroke-color",
+          mapbox_circle_stroke_color_dark_mode,
+        );
+        //map.setPaintProperty(layer.id, "circle-stroke-width", 2);
+      }
+    });
+
     localStorage.setItem(Map_Lighting_Mode_LocalStorage_Name, "night");
   } else {
     console.log(
@@ -308,23 +336,26 @@ function Map_Lighting_Change(Mode) {
   }
 }
 
-map.on("load", () => {
-  Initialize_Map_Extras();
-  loadAllGeolocation();
-});
 
-map.on("idle", () => {
-  Initialize_Layer_Control();
-});
-
-map.on("style.load", () => {
+function Update_Map_Lighting() {
   let Saved_Map_Lighting_Mode = localStorage.getItem(
     Map_Lighting_Mode_LocalStorage_Name,
   );
   if (Saved_Map_Lighting_Mode) {
     Map_Lighting_Change(Saved_Map_Lighting_Mode);
   } else {
+    // First Time Loading, better send them a message so they know xd.
+    
+  }
+}
 
+function Initialize_Map_Lighting() {
+  let Saved_Map_Lighting_Mode = localStorage.getItem(
+    Map_Lighting_Mode_LocalStorage_Name,
+  );
+  if (Saved_Map_Lighting_Mode) {
+    Update_Map_Lighting();
+  } else {
     // First Time Loading, better send them a message so they know xd.
     let Map_Lighting_Mode_Reminder_Toast_DOM = document.getElementById(
       "Map_Lighting_Mode_Reminder_Toast",
@@ -334,6 +365,19 @@ map.on("style.load", () => {
     );
     toastBootstrap.show();
   }
+}
+
+map.on("load", () => {
+  loadAllGeolocation();
+});
+
+map.on("idle", () => {
+  Initialize_Layer_Control();
+  
+});
+
+map.on("style.load", () => {
+  Initialize_Map_Lighting();
 });
 
 document

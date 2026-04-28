@@ -16,14 +16,12 @@ body {
   width: 100%;
   height: 100%;
 }
-#Map_Layer_Controls > input.active {
-  
-}
+
 
 .Darker {
   filter: brightness(50%);
 }
-#Map_Layer_Controls {
+.Map_Layer_Controls_Container {
   position: absolute;
   z-index: 1;
   top: 50px;

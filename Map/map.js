@@ -259,6 +259,7 @@ function Initialize_Map_Extras() {
 
 function Initialize_Layer_Control() {
   let all_Layers = map.getStyle().layers;
+
   all_Layers.forEach((Layer) => {
     let id = Layer.id;
     let New_BTN_ID = `Layer_Toggler_${id}`;
@@ -267,9 +268,9 @@ function Initialize_Layer_Control() {
       return;
     }
     let Button_Name = map.getSource(id)._data.button_name || id;
-    let HTML = `
+    let HTML = `<a href="dropdown-item">
      <input type="checkbox" class="btn-check active" id="${New_BTN_ID}" autocomplete="off" checked>
-    <label class="btn btn-primary" id="${New_BTN_ID}_Label" style="background-color: ${Layer.paint["circle-color"]}" for="Layer_Toggler_${id}">${Button_Name}</label>`;
+    <label class="btn btn-primary" id="${New_BTN_ID}_Label" style="background-color: ${Layer.paint["circle-color"]}" for="Layer_Toggler_${id}">${Button_Name}</label></a>`;
 
     Map_Layer_Controls_DOM.insertAdjacentHTML("beforeend", HTML);
     let Trigger = document.querySelector(`#${New_BTN_ID}`);

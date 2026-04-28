@@ -204,12 +204,20 @@
           <nav id="menu"></nav>
           <div id="map"></div>
 
-          <div
-            class="position-absolute btn-group-vertical"
-            id="Map_Layer_Controls"
-            role="group"
-            aria-label="Basic checkbox toggle button group"
-          ></div>
+          <div class="dropdown position-absolute Map_Layer_Controls_Container">
+            <a
+              class="nav-link dropdown-toggle bg-primary p-2"
+              data-bs-toggle="dropdown"
+              href="#"
+              role="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+              data-bs-auto-close="outside"
+              >Dropdown</a
+            >
+            <div class="dropdown-menu" id="Map_Layer_Controls">
+            </div>
+          </div>
 
           <div class="toast-container position-fixed bottom-0 end-0 p-3">
             <div

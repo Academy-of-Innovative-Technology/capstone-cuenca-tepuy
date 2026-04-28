@@ -1,15 +1,5 @@
 [
   {
-    "provider": "Food Bank For New York City",
-    "address": null,
-    "contact": {
-      "name": null,
-      "phone": null,
-      "email": null,
-      "website": "www.foodbanknyc.org"
-    }
-  },
-  {
     "provider": "Metropolitan New York Coordinating Council on Jewish Poverty, Inc.",
     "address": {
       "street": "77 Water Street",
@@ -63,16 +53,6 @@
       "name": "Ms Marwa Janini",
       "phone": "(551) 280-6724",
       "email": "marwa@arabamericanny.org"
-    }
-  },
-  {
-    "provider": "Food Bank For New York City",
-    "address": null,
-    "contact": {
-      "name": null,
-      "phone": null,
-      "email": null,
-      "website": "www.foodbanknyc.org"
     }
   },
   {
@@ -707,16 +687,6 @@
     }
   },
   {
-    "provider": "Food Bank For New York City",
-    "address": null,
-    "contact": {
-      "name": null,
-      "phone": null,
-      "email": null,
-      "website": "www.foodbanknyc.org"
-    }
-  },
-  {
     "provider": "Metropolitan New York Coordinating Council on Jewish Poverty, Inc.",
     "address": {
       "street": "77 Water Street",
@@ -980,16 +950,6 @@
       "name": "Mr. Frankie Miranda",
       "phone": "(212) 233-8955",
       "email": "fmiranda@hispanicfederation.org"
-    }
-  },
-  {
-    "provider": "Food Bank For New York City",
-    "address": null,
-    "contact": {
-      "name": null,
-      "phone": null,
-      "email": null,
-      "website": "www.foodbanknyc.org"
     }
   },
   {

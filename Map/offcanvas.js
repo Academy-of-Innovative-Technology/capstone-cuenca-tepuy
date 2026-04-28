@@ -5,6 +5,30 @@ let OffCanvas_Extra_Info_DOM = document.querySelector("#OffCanvas_Extra_Info");
 
 let Main_Info_Categories = ["place_name", "place.address"];
 
+function Open_All_Off_Canvas_Information() {
+  
+
+  if (!document.querySelector("#headingOne").classList.contains("visually-hidden")) {
+    const target = document.getElementById("collapseOne");
+    const button = document.querySelector('[data-bs-target="#collapseOne"]');
+    target.classList.add("show");
+    button.classList.remove("collapsed");
+    button.setAttribute("aria-expanded", "true");
+  }
+
+  if (
+    !document.querySelector("#headingTwo").classList.contains("visually-hidden")
+  ) {
+    const target2 = document.getElementById("collapseTwo");
+    const button2 = document.querySelector('[data-bs-target="#collapseTwo"]');
+    target2.classList.add("show");
+    button2.classList.remove("collapsed");
+    button2.setAttribute("aria-expanded", "true");
+  }
+
+
+}
+
 function Close_All_Off_Canvas_Accordion_Main_Information() {
   const target = document.getElementById("collapseOne");
   const button = document.querySelector('[data-bs-target="#collapseOne"]');
@@ -172,18 +196,20 @@ async function Load_Data_Off_Canvas(Data) {
     Data.extra_data.Processing_Method,
   );
   const Standarized_Data = await API_DATA_MANAGER.process();
-
+  Open_All_Off_Canvas_Information();
  
   if (!Is_Only_Meta_Data(Standarized_Data)) {
     document.querySelector("#headingOne").classList.remove("visually-hidden");
      Load_Data_Into_Container(Standarized_Data, OffCanvas_Main_Info_DOM, [
     "metadata",
-  ]);
+     ]);
+    Close_All_Off_Canvas_Accordion_Extra_Information();
   } else {
     document.querySelector("#headingOne").classList.add("visually-hidden");
     OffCanvas_Main_Info_DOM.innerHTML =
       "This center does not have extra information";
     Close_All_Off_Canvas_Accordion_Main_Information();
+    console.log("Test");
   }
 
   if (

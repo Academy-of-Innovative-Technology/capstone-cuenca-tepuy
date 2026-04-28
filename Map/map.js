@@ -369,6 +369,7 @@ function Initialize_Map_Lighting() {
 
 map.on("load", () => {
   loadAllGeolocation();
+  Initialize_Map_Extras();
 });
 
 map.on("idle", () => {

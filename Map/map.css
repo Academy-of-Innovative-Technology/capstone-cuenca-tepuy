@@ -21,11 +21,16 @@ body {
 .Darker {
   filter: brightness(50%);
 }
+
+#Map_Layer_Controls.show {
+  display: flex;
+}
 .Map_Layer_Controls_Container {
   position: absolute;
   z-index: 1;
-  top: 50px;
-  right: 50px;
+  top: 8px;
+  left: 8px;
+  color: rgba(0, 0, 0, 0.75);
   font-family:
     system-ui,
     -apple-system,

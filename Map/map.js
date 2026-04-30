@@ -154,7 +154,7 @@ function Add_List_Location_To_Map(Data) {
         "circle-radius": 6,
         "circle-stroke-width": 2,
         "circle-stroke-color": "rgba(0, 0, 0, 1)",
-        "circle-emissive-strength": 1.5,
+        "circle-emissive-strength": 1.05,
       },
     });
 

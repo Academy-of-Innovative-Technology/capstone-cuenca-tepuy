@@ -318,7 +318,7 @@ function Map_Lighting_Change(Mode) {
     const layers = map.getStyle().layers;
     layers.forEach((layer) => {
       if (layer.type === "circle") {
-        console.log(layer);
+
         map.setPaintProperty(
           layer.id,
           "circle-stroke-color",

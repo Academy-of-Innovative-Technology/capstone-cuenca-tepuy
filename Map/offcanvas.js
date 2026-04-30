@@ -3,8 +3,6 @@ let Offcanvas_Map_Info_DOM = document.querySelector("#offcanvas_map_info");
 let OffCanvas_Main_Info_DOM = document.querySelector("#OffCanvas_Main_Info");
 let OffCanvas_Extra_Info_DOM = document.querySelector("#OffCanvas_Extra_Info");
 
-let Main_Info_Categories = ["place_name", "place.address"];
-
 function Open_All_Off_Canvas_Information() {
   
 
@@ -165,7 +163,13 @@ function Load_Data_Into_Container(Data, Destination_DOM, IgnoreList) {
 
     } else {
       if (Item.content) {
-        Content = `<p class="text-break">${Item.content}</p>`;
+        console.log(Item);
+        if (Item.key_name == "location address") {
+          Content = `<a target="_blank" href="${Google_Maps_Search_Link(Item.content)}" class="text-break ">${Item.content}</a>`;
+        } else {
+          Content = `<p class="text-break">${Item.content}</p>`;
+        }
+        
       }  
     }
     if (Content == "") {

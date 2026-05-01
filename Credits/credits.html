@@ -16,9 +16,16 @@
   </head>
 
   <body class="d-flex flex-column h-100">
-    <nav class="navbar fixed-top navbar-expand-lg bg-primary" data-bs-theme="dark">
+    <nav
+      class="navbar navbar-expand-lg bg-primary"
+      data-bs-theme="dark"
+    >
       <div class="container-fluid">
-        <a class="navbar-brand bg-dark p-1 rounded d-flex justify-content-center align-items-center gap-1" href="../index.html"><span class="badge bg-primary">NY</span><span>Atlas</span></a>
+        <a
+          class="navbar-brand bg-dark p-1 rounded d-flex justify-content-center align-items-center gap-1"
+          href="../index.html"
+          ><span class="badge bg-primary">NY</span><span>Atlas</span></a
+        >
         <button
           class="navbar-toggler"
           type="button"
@@ -59,22 +66,44 @@
             </li>
             <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
               <div class="vr d-none d-lg-flex h-100 mx-lg-2 bg-white"></div>
-              <hr class="d-lg-none my-2 text-white-50">
+              <hr class="d-lg-none my-2 text-white-50" />
             </li>
             <li class="nav-item dropdown" data-bs-theme="light">
-              <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="theme-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme">
+              <a
+                class="nav-link dropdown-toggle d-flex align-items-center"
+                href="#"
+                id="theme-menu"
+                aria-expanded="false"
+                data-bs-toggle="dropdown"
+                data-bs-display="static"
+                aria-label="Toggle theme"
+              >
                 <i class="bi bi-circle-half"></i>
                 <span class="d-lg-none ms-2">Toggle theme</span>
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li>
-                  <button id="Light_Theme_BTN" type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
-                    <i class="bi bi-sun-fill"></i><span class="ms-2">Light</span>
+                  <button
+                    id="Light_Theme_BTN"
+                    type="button"
+                    class="dropdown-item d-flex align-items-center"
+                    data-bs-theme-value="light"
+                    aria-pressed="false"
+                  >
+                    <i class="bi bi-sun-fill"></i
+                    ><span class="ms-2">Light</span>
                   </button>
                 </li>
                 <li>
-                  <button id="Dark_Theme_BTN" type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="true">
-                    <i class="bi bi-moon-stars-fill"></i><span class="ms-2">Dark</span>
+                  <button
+                    id="Dark_Theme_BTN"
+                    type="button"
+                    class="dropdown-item d-flex align-items-center"
+                    data-bs-theme-value="dark"
+                    aria-pressed="true"
+                  >
+                    <i class="bi bi-moon-stars-fill"></i
+                    ><span class="ms-2">Dark</span>
                   </button>
                 </li>
               </ul>
@@ -85,42 +114,59 @@
     </nav>
 
     <main
-      class="p-0 m-0 flex-grow-1 container-fluid d-flex flex-column align-items-center" 
+      class="p-0 m-0 flex-grow-1 container-fluid d-flex flex-column align-items-center"
     >
       <section
         class="row h-100 p-0 m-0 d-flex justify-content-center align-items-center flex-column"
       >
-        <div class="alert alert-info alert-dismissible col-8">
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss=""
-          ></button>
+        <div class="alert alert-info alert-dismissible col-sm-8">
+          <button type="button" class="btn-close" data-bs-dismiss=""></button>
 
           <div>
             <h1>
-              This application contain information of the following sources
+              This application contain data from the following sources
             </h1>
-            <ul>
-              <li>
-                <a class="fs-4"
+            <ul class="d-flex flex-column gap-3">
+              <li class="d-sm-flex align-items-center gap-3">
+                <img class="img-thumbnail Website_Thumbnails" src="https://opendata.cityofnewyork.us/wp-content/themes/opendata-wp/assets/img/favicon.ico" />
+                <div>
+                  <a
+                  class="fs-4"
                   href="https://data.cityofnewyork.us/Social-Services/Directory-Of-Homeless-Drop-In-Centers/bmxf-3rd4/about_data"
                   >NYC Open Data & Department of Homeless Services</a
                 >
+                </div>
               </li>
-              <li>
-                <a class="fs-4"
+              <li class="d-sm-flex align-items-center gap-3">
+                <img class="img-thumbnail Website_Thumbnails" src="https://www.nyc.gov/favicon.ico" />
+                <div>
+                  <a
+                  class="fs-4"
                   href="https://www.nyc.gov/site/dycd/services/food_pantries.page"
                   >Department of Youth & Community Development</a
                 >
+                </div>
+                
               </li>
-                            <li>
-                <a class="fs-4"
+              <li class="d-sm-flex align-items-center gap-3">
+                <img class="img-thumbnail Website_Thumbnails" class="img-thumbnail Website_Thumbnails" src="https://www.mta.info/favicon.ico" />
+                <div>
+                  <a
+                  class="fs-4"
                   href="https://www.mta.info/agency/new-york-city-transit/bathrooms"
                   >New York City Transit (MTA)</a
                 >
+                </div>
               </li>
-              
+              <li class="d-sm-flex align-items-center gap-3">
+                <img class="img-thumbnail Website_Thumbnails" src="https://wiki.openstreetmap.org/favicon.ico" />
+                <div>
+                  <a
+                  class="fs-4"
+                  href="https://wiki.openstreetmap.org/wiki/Main_Page"
+                  >OpenStreetMap Wiki & Overpass API</a
+                ></div>
+              </li>
             </ul>
           </div>
         </div>

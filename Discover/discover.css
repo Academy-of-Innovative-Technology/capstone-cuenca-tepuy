@@ -10,3 +10,6 @@ body {
   height: 100% !important;
 }
 
+.card-container {
+  max-width: 450px;
+}

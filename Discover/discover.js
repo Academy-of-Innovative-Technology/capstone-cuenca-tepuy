@@ -8,7 +8,7 @@ let Discovery_Content_List = [
     img_link: "../Images/Food_Bank_For_NYC_SS.png",
     hyperlink: "https://www.foodbanknyc.org/news-and-stories/",
     description:
-      "introduces one of the largest anti-hunger organizations in New York City. <br> Its mission is to help ensure that all New Yorkers have stable access to food and basic resources.",
+      "Introduces one of the largest anti-hunger organizations in New York City. Its mission is to provide New Yorkers with reliable access to food, nutrition support, community resources, and other essential services for individuals and families in need.",
   },
   {
     header: "Data",
@@ -18,7 +18,7 @@ let Discovery_Content_List = [
       "https://council.nyc.gov/wp-content/uploads/2025/05/livestream-overlay2.png",
     hyperlink: "https://council.nyc.gov/data/emergency-food-in-nyc/",
     description:
-      "NYC offers emergency food assistance through hundreds of food pantries and community kitchens across the five boroughs. <br> The program helps connect residents to free meals and groceries, especially in neighborhoods facing high food insecurity.",
+      "NYC provides emergency food assistance through hundreds of food pantries and community kitchens across the five boroughs. The program connects residents with free groceries and meals in neighborhoods facing high levels of food insecurity.",
   },
   {
     header: "Information",
@@ -27,7 +27,7 @@ let Discovery_Content_List = [
     img_link: "../Images/Subway_Bathroom_SS.png",
     hyperlink: "https://www.mta.info/agency/new-york-city-transit/bathrooms",
     description:
-      "The NYC MTA provides public bathrooms at many subway stations across the city. <br> These facilities are regularly maintained and upgraded to improve cleanliness and accessibility.",
+      "The NYC MTA offers public bathrooms at many subway stations throughout the city. These facilities are regularly cleaned, maintained, and upgraded to improve accessibility and rider convenience.",
   },
   {
     header: "Map",
@@ -36,7 +36,7 @@ let Discovery_Content_List = [
     img_link: "../Images/Subway_Diagram.jpg",
     hyperlink: "https://www.mta.info/maps",
     description:
-      "The NYC MTA provides subway, bus, and railroad maps to help riders navigate the transit system across all five boroughs. <br> These maps include subway routes, bus lines, accessibility information, and real-time service updates.",
+      "The NYC MTA provides subway, bus, and railroad maps to help riders travel across the five boroughs. These maps include transit routes, accessibility details, and real-time service information for daily commuters.",
   },
 ];
 

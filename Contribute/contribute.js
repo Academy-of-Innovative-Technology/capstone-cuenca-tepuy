@@ -4,8 +4,7 @@ mapboxgl.accessToken = ACCESS_TOKEN;
 let Zoom_Save_Session_Storage_Name = "Zoom_Save_Session_Storage";
 let Zoom_Save_Cache =
   sessionStorage.getItem(Zoom_Save_Session_Storage_Name) || 12;
-let mapbox_circle_stroke_color_light_mode = "rgba(0, 0, 0, 1)";
-let mapbox_circle_stroke_color_dark_mode = "rgba(186, 186, 186, 1)";
+
 const map = new mapboxgl.Map({
   container: "map", // container ID
   center: [-73.913125, 40.742861], // starting position [lng, lat]. Note that lat must be set between -90 and 90

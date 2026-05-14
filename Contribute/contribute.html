@@ -130,78 +130,107 @@
         >
           <div
             id=""
-            class="col-md-4 col-lg-4 d-flex flex-column align-items-center p-2"
+            class="col-md-5 col-lg-4 d-flex flex-column align-items-center p-2"
           >
             <h2 class="text-center">Suggest a new location</h2>
-            <form class="">
+            <form class="ps-3 pe-3">
               <div class="form-floating mb-3">
                 <input
                   type="email"
                   class="form-control"
                   id="Email_Address"
                   placeholder="email@example.com"
-                  value="email@example.com"
+                  value="" required
                 />
-                <label for="Email_Address">Invalid input</label>
+                <label for="Email_Address">Your email</label>
               </div>
+
               <div class="form-floating mb-3">
                 <input
                   type="text"
                   class="form-control"
                   id="Place_Name"
-                  placeholder="Place Name"
+                  placeholder="Place Name" required
                 />
                 <label for="Place_Name">Place Name</label>
               </div>
-              <label>Which type of geolocation type you want to use?</label>
-              <div class="form-check">
+
+              <div class="mb-3">
+                <label for="Resource_Type_Datalist_Input" class="form-label"
+                  >Resource type</label
+                >
                 <input
-                  class="form-check-input"
-                  type="radio"
-                  name="exampleRadios"
-                  id="exampleRadios1"
-                  value="option1"
-                  checked
-                />
-                <label class="form-check-label" for="exampleRadios1">
-                  Address
-                </label>
-                <input
-                  type="text"
                   class="form-control"
-                  id="Place_Name"
-                  placeholder="Address"
+                  list="Resource_Types_Datalist_Options"
+                  id="Resource_Type_Datalist_Input"
+                  placeholder="Type to search..." required
                 />
+                <datalist id="Resource_Types_Datalist_Options">
+                  <option value="Bathroom"></option>
+                  <option value="Shelter"></option>
+                  <option value="Food Panstries"></option>
+                </datalist>
               </div>
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="exampleRadios"
-                  id="exampleRadios2"
-                  value="option2"
-                />
-                <label class="form-check-label" for="exampleRadios2">
-                  Coordinate
-                </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="Place_Name"
-                  placeholder="Coordinate"
-                />
+
+              <div class="mb-3">
+                <label>Which type of geolocation type you want to use?</label>
+                <div class="input-group">
+                  <div class="form-check w-100">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="Geolocation_Type"
+                    id="Address_Radio_Input"
+                    value="Coordinate"
+                    checked
+                  />
+                  <label class="form-check-label" for="Address_Radio_Input">
+                    Address
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="Address_Input"
+                    placeholder="Address" required
+                  />
+                </div>
+
+                <div class="form-check w-100">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="Geolocation_Type"
+                    id="Coordinate_Radio_Input"
+                    value="Coordinate"
+                  />
+                  <label class="form-check-label" for="Coordinate_Radio_Input">
+                    Coordinate
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="Coordinate_Input"
+                    placeholder="[Latitude, Longitude]" required
+                  />
+                </div>
+                </div>
               </div>
 
               <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label"
-                  >Example textarea</label
+                  >Description</label
                 >
                 <textarea
                   class="form-control"
-                  id="exampleFormControlTextarea1"
+                  id="Description_Input"
                   rows="3"
                 ></textarea>
               </div>
+
+              <div class="mb-3">
+                <button class="btn btn-primary" type="submit">Submit form</button>
+              </div>
+
             </form>
           </div>
           <div id="map"></div>
@@ -238,5 +267,6 @@
     </main>
     <script src="../env.js"></script>
     <script src="contribute.js" defer></script>
+    <script src="form.js" defer></script>
   </body>
 </html>

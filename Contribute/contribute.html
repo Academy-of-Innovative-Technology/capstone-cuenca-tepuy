@@ -172,7 +172,7 @@
                 </datalist>
               </div>
 
-              <div class="mb-3">
+              <div class="mb-3" id="Geolocation_Container">
                 <label>Which type of geolocation type you want to use?</label>
                 <div class="input-group">
                   <div class="form-check w-100">
@@ -206,12 +206,15 @@
                   <label class="form-check-label" for="Coordinate_Radio_Input">
                     Coordinate
                   </label>
-                  <input
+                  <div class="input-group">
+                    <button id="Copy_Coordinate" type="button" class="btn btn-primary" >Copy</button>
+                    <input
                     type="text"
                     class="form-control"
                     id="Coordinate_Input"
                     placeholder="[Latitude, Longitude]" required
                   />
+                  </div>
                 </div>
                 </div>
               </div>
@@ -228,7 +231,7 @@
               </div>
 
               <div class="mb-3">
-                <button class="btn btn-primary" type="submit">Submit form</button>
+                <button class="btn btn-primary btn" type="submit">Submit form</button>
               </div>
 
             </form>
@@ -267,6 +270,7 @@
     </main>
     <script src="../env.js"></script>
     <script src="contribute.js" defer></script>
+    <script src="form_validator.js" defer></script>
     <script src="form.js" defer></script>
   </body>
 </html>

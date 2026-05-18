@@ -14,6 +14,14 @@ const map = new mapboxgl.Map({
   touchZoomRotate: false,
 });
 
+
+// var el = (t, a) => {
+//   if (a) {
+//     return document.querySelectorAll(t);
+//   }
+//   return document.querySelector(t);
+// };
+
 window.addEventListener("visibilitychange", (event) => {
   //event.preventDefault(); // Standard
   //event.returnValue = ""; // Required for some older browsers
@@ -30,9 +38,6 @@ let Map_Layer_Controls_DOM = document.querySelector("#Map_Layer_Controls");
 
 let mapbox_circle_stroke_color_light_mode = "rgba(0, 0, 0, 1)";
 let mapbox_circle_stroke_color_dark_mode = "rgba(186, 186, 186, 1)";
-
-
-
 
 function Initialize_Map_Extras() {
   const geocoder = new MapboxGeocoder();
@@ -51,8 +56,6 @@ function Initialize_Map_Extras() {
   });
   map.addControl(geolocate);
 }
-
-
 
 let Map_Lighting_Mode_LocalStorage_Name = "map-theme";
 function Map_Lighting_Change(Mode) {
@@ -79,7 +82,6 @@ function Map_Lighting_Change(Mode) {
     const layers = map.getStyle().layers;
     layers.forEach((layer) => {
       if (layer.type === "circle") {
-
         map.setPaintProperty(
           layer.id,
           "circle-stroke-color",
@@ -130,7 +132,6 @@ map.on("load", () => {
   Initialize_Map_Extras();
 });
 
-
 map.on("style.load", () => {
   Initialize_Map_Lighting();
 });
@@ -141,4 +142,16 @@ document
 document
   .querySelector("#Light_Theme_BTN")
   .addEventListener("click", () => Map_Lighting_Change("day"));
+
+const marker = new mapboxgl.Marker({
+  color: "#FF0000", // set marker color
+  scale: 1.5, // scale the marker size
+});
+
+map.on("click", (event) => {
+  let Coords = event.lngLat;
+  console.log(Coords);
+  marker.setLngLat([Coords.lng, Coords.lat]).addTo(map);
+  
+});
 

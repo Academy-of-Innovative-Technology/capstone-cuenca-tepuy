@@ -47,3 +47,7 @@ body {
 .mapboxgl-popup-content {
   color: black;
 }
+.required .form-label:after {
+  content: " *";
+  color: red;
+}

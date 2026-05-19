@@ -133,7 +133,7 @@
             class="col-md-6 col-lg-4 h-100 d-flex flex-column align-items-center p-2 overflow-y-scroll"
           >
             <h2 class="text-center">Suggest a new location</h2>
-            <form class="ps-3 pe-3">
+            <form id="Suggestion_Form_DOM" class="ps-3 pe-3">
               <div class="form-floating mb-3">
                 <input
                   type="email"
@@ -142,7 +142,7 @@
                   placeholder="email@example.com"
                   value="" required
                 />
-                <label for="Email_Address">Your email</label>
+                <label class="form-label required" for="Email_Address">Your email</label>
               </div>
 
               <div class="form-floating mb-3">
@@ -152,12 +152,11 @@
                   id="Place_Name"
                   placeholder="Place Name" required
                 />
-                <label for="Place_Name">Place Name</label>
+                <label class="form-label required" for="Place_Name">Place Name</label>
               </div>
 
               <div class="mb-3">
-                <label for="Resource_Type_Datalist_Input" class="form-label"
-                   required>Resource type</label
+                <label for="Resource_Type_Datalist_Input" class="form-label required">Resource type</label
                 >
                 <input
                   class="form-control"
@@ -173,7 +172,7 @@
               </div>
 
               <div class="mb-3" id="Geolocation_Container">
-                <label>Which type of geolocation type you want to use?</label>
+                <label class="form-label required">Which type of geolocation type you want to use?</label>
                 <div class="input-group">
                   <div class="form-check w-100">
                   <input
@@ -220,7 +219,7 @@
               </div>
 
               <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label"
+                <label for="Description_Input" class="form-label"
                   >Description</label
                 >
                 <textarea
@@ -231,7 +230,7 @@
               </div>
 
               <div class="mb-3">
-                <button class="btn btn-primary btn" type="submit">Submit form</button>
+                <button id="Submit_BTN" class="btn btn-primary btn" type="submit">Submit form</button>
               </div>
 
             </form>

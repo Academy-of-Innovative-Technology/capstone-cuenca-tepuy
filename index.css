@@ -30,6 +30,7 @@ body {
 }
 .bg-article-dark-theme {
   background-color: var(--custom-bg-article-dark-theme);
+  min-height: 345px;
 }
 
 /* .Stat {

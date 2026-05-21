@@ -13,3 +13,8 @@ body {
 .card-container {
   max-width: 450px;
 }
+.card_object:hover {
+  scale: 1.01;
+  transition: 0.25s;
+  filter:brightness(1.1);
+}

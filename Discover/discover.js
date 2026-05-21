@@ -48,7 +48,7 @@ function Load_All_Discovery_Content() {
       return;
     }
 
-    let HTML = `<div class="col-12 col-md-5 card-container">
+    let HTML = `<div class="col-12 col-md-5 card-container card_object">
             <a target="_blank" class="text-decoration-none text-reset" href="${Content.hyperlink}">
             <div class="card mb-3">
             <h3 class="card-header">${Content.header}</h3>

@@ -131,3 +131,19 @@ article.bg-half-dark-reverse.on {
   animation: rainbow_color 6s linear infinite;
 }
 
+
+
+
+
+
+#Quick_Links_Container > a:hover {
+  scale: 1.01;
+  color: rgba(var(--bs-light-rgb), var(--bs-text-opacity)) !important;
+}
+
+.vl {
+    border-left: 2px solid black;
+    height: 100px;
+    display: inline-block;
+    margin: 0 20px;
+  }

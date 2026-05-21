@@ -39,6 +39,7 @@ let Location_APIs = [
       Source: "Department of Homeless Services",
       Pin_Color: "rgb(245, 158, 11)",
       Processing_Method: "Directory Of Homeless Drop- In Centers",
+      Icon_Link: "Icons/Shelter.png",
     },
   },
   {
@@ -50,6 +51,7 @@ let Location_APIs = [
       Source: "ME",
       Pin_Color: "rgb(16, 185, 129)",
       Processing_Method: "Food_Pantries_DYCD",
+      Icon_Link: "Icons/Food_Pastries.png",
     },
   },
   {
@@ -61,6 +63,7 @@ let Location_APIs = [
       Source: "MTA",
       Pin_Color: "rgb(139, 92, 246)",
       Processing_Method: "NY_MTA_Transit_Train_Station_Bathrooms",
+      Icon_Link: "Icons/MTA_Logo.png",
     },
   },
   {
@@ -72,6 +75,7 @@ let Location_APIs = [
       Source: "Overcompass",
       Pin_Color: "rgb(37, 99, 235)",
       Processing_Method: "NY_Bathrooms",
+      Icon_Link: "Icons/Toilet.png",
     },
   },
 ];
@@ -101,6 +105,11 @@ function groupByLayer(data) {
 
 let mapbox_circle_stroke_color_light_mode = "rgba(0, 0, 0, 1)";
 let mapbox_circle_stroke_color_dark_mode = "rgba(186, 186, 186, 1)";
+
+// Icon sizing: modify these to change icon diameter and outline thickness
+const ICON_PIXEL_DIAMETER = 30; // desired icon photo diameter in screen pixels
+const ICON_OUTLINE_WIDTH = 2; // outline thickness in pixels
+const ICON_BG_RADIUS = ICON_PIXEL_DIAMETER / 2 + ICON_OUTLINE_WIDTH; // circle background radius (px)
 
 let Zoom_Level_Before_OffCanvas;
 function Add_List_Location_To_Map(Data) {
@@ -143,20 +152,182 @@ function Add_List_Location_To_Map(Data) {
         button_name: Layer_Group.locations[0].extra_data.Name,
       },
     });
-    // Add a circle layer showing the places.
-    map.addLayer({
-      id: Layer_Group.Layer_Name,
-      type: "circle",
-      source: Layer_Group.Layer_Name,
+    // Try to use an icon image (if provided) and fall back to circle.
+    // Prefer an explicit `Icon_Link` in extra_data. Support remote URLs or
+    // filenames stored locally in the `Icons/` folder.
+    const extra = Layer_Group.locations[0].extra_data || {};
+    let iconUrl = null;
+    // explicit keys first
+    const explicit = extra.Icon_Link || extra.Icon || extra.icon;
+    if (explicit && typeof explicit === "string") {
+      if (explicit.startsWith("http")) {
+        iconUrl = explicit;
+      } else {
+        // treat as a local filename or relative path — try the Icons folder
+        if (explicit.startsWith("/") || explicit.startsWith("..")) {
+          iconUrl = explicit;
+        } else if (explicit.includes("Icons/")) {
+          // normalize so Map/map.html (current file) can reach ../Icons/...
+          if (explicit.startsWith("Icons/")) iconUrl = `../${explicit}`;
+          else iconUrl = explicit;
+        } else {
+          iconUrl = `../Icons/${explicit}`;
+        }
+      }
+    }
 
-      paint: {
-        "circle-color": Layer_Group.locations[0].extra_data.Pin_Color,
-        "circle-radius": 6,
-        "circle-stroke-width": 2,
-        "circle-stroke-color": "rgba(0, 0, 0, 1)",
-        "circle-emissive-strength": 1.05,
-      },
-    });
+    // fallback: search any http url or common image filename in extra values
+    if (!iconUrl) {
+      const found = Object.values(extra).find((v) => {
+        return (
+          typeof v === "string" &&
+          (v.startsWith("http") || /\.(png|jpg|jpeg|svg|gif)$/.test(v))
+        );
+      });
+      if (found) {
+        if (found.startsWith("http")) iconUrl = found;
+        else if (found.includes("Icons/") || found.startsWith("/"))
+          iconUrl = found;
+        else iconUrl = `../Icons/${found}`;
+      }
+    }
+
+    let usedImageName = null;
+    let usedImageScale = null;
+    if (iconUrl) {
+      try {
+        // loadImage uses a callback style; wrap in a promise
+        const imageName = `${Layer_Group.Layer_Name}_icon`;
+        const loaded = await new Promise((resolve) => {
+          map.loadImage(iconUrl, (error, image) => {
+            if (error) {
+              console.warn(`Failed to load icon ${iconUrl}:`, error);
+              return resolve(false);
+            }
+            try {
+              // create a circular-cropped canvas at desired pixel size (respect device pixel ratio)
+              // create canvas at the desired CSS pixel size (do not double-scale by DPR)
+              const canvasSize = ICON_PIXEL_DIAMETER;
+              const canvas = document.createElement("canvas");
+              canvas.width = canvasSize;
+              canvas.height = canvasSize;
+              const ctx = canvas.getContext("2d");
+              ctx.clearRect(0, 0, canvasSize, canvasSize);
+              // circular clip
+              ctx.save();
+              ctx.beginPath();
+              ctx.arc(
+                canvasSize / 2,
+                canvasSize / 2,
+                canvasSize / 2,
+                0,
+                Math.PI * 2,
+              );
+              ctx.closePath();
+              ctx.clip();
+
+              // draw image with cover behavior
+              const imgW =
+                image.width ||
+                image.naturalWidth ||
+                (image.bitmap && image.bitmap.width) ||
+                canvasSize;
+              const imgH =
+                image.height ||
+                image.naturalHeight ||
+                (image.bitmap && image.bitmap.height) ||
+                canvasSize;
+              const scale = Math.max(canvasSize / imgW, canvasSize / imgH);
+              const dx = (canvasSize - imgW * scale) / 2;
+              const dy = (canvasSize - imgH * scale) / 2;
+              ctx.drawImage(image, dx, dy, imgW * scale, imgH * scale);
+              ctx.restore();
+
+              // add the processed canvas image to the map (use pixelRatio=1 to match CSS pixels)
+              if (!map.hasImage(imageName)) {
+                map.addImage(imageName, canvas, { pixelRatio: 1 });
+              }
+              resolve({ name: imageName, scale: 1 });
+            } catch (err) {
+              console.warn("Error processing icon image:", err);
+              // fallback to raw image but compute a scale so it's not huge
+              const imgW =
+                image &&
+                (image.width ||
+                  image.naturalWidth ||
+                  (image.bitmap && image.bitmap.width));
+              const fallbackScale = imgW
+                ? Math.max(0.01, ICON_PIXEL_DIAMETER / imgW)
+                : 0.08;
+              if (!map.hasImage(imageName)) {
+                map.addImage(imageName, image);
+              }
+              console.warn(
+                `Using fallback image for ${imageName}, imgW=${imgW}, scale=${fallbackScale}`,
+              );
+              resolve({ name: imageName, scale: fallbackScale });
+            }
+          });
+        });
+        if (loaded) {
+          usedImageName = loaded.name;
+          usedImageScale = loaded.scale;
+        }
+      } catch (e) {
+        // ignore and fallback to circle
+        usedImageName = null;
+      }
+    }
+
+    if (usedImageName) {
+      // Add a circular background layer (rounded icon background + outline)
+      const bgLayerId = `${Layer_Group.Layer_Name}_bg`;
+      const pinColor =
+        (Layer_Group.locations[0].extra_data &&
+          Layer_Group.locations[0].extra_data.Pin_Color) ||
+        "#6c757d";
+      // add background circle first so it's beneath the symbol
+      map.addLayer({
+        id: bgLayerId,
+        type: "circle",
+        source: Layer_Group.Layer_Name,
+        paint: {
+          "circle-color": pinColor,
+          "circle-radius": ICON_BG_RADIUS,
+          "circle-stroke-width": ICON_OUTLINE_WIDTH,
+          "circle-stroke-color": mapbox_circle_stroke_color_light_mode,
+        },
+      });
+
+      // Add the symbol layer using the processed circular image on top of the background
+      map.addLayer({
+        id: Layer_Group.Layer_Name,
+        type: "symbol",
+        source: Layer_Group.Layer_Name,
+        layout: {
+          "icon-image": usedImageName,
+          // scale the icon: processed canvas uses 1, fallback images use computed scale
+          "icon-size": usedImageScale || 1,
+          "icon-allow-overlap": true,
+          "icon-ignore-placement": true,
+        },
+      });
+    } else {
+      // Add a circle layer showing the places.
+      map.addLayer({
+        id: Layer_Group.Layer_Name,
+        type: "circle",
+        source: Layer_Group.Layer_Name,
+
+        paint: {
+          "circle-color": Layer_Group.locations[0].extra_data.Pin_Color,
+          "circle-radius": ICON_BG_RADIUS,
+          "circle-stroke-width": ICON_OUTLINE_WIDTH,
+          "circle-stroke-color": mapbox_circle_stroke_color_light_mode,
+          "circle-emissive-strength": 1.05,
+        },
+      });
+    }
 
     // When a click event occurs on a feature in the places layer, open a popup at the
     // location of the feature, with description HTML from its properties.
@@ -266,10 +437,33 @@ function Initialize_Layer_Control() {
     if (document.getElementById(New_BTN_ID)) {
       return;
     }
-    let Button_Name = map.getSource(id)._data.button_name || id;
+    let Button_Name =
+      (map.getSource(id) &&
+        map.getSource(id)._data &&
+        map.getSource(id)._data.button_name) ||
+      id;
+    // Determine a background color: prefer circle paint, fall back to source Pin_Color, otherwise default
+    let bgColor = "#6c757d";
+    try {
+      if (Layer.paint && Layer.paint["circle-color"]) {
+        bgColor = Layer.paint["circle-color"];
+      } else {
+        const src = map.getSource(id) && map.getSource(id)._data;
+        if (src && src.features && src.features.length > 0) {
+          const pdata =
+            src.features[0].properties && src.features[0].properties.data;
+          if (pdata && pdata.extra_data && pdata.extra_data.Pin_Color) {
+            bgColor = pdata.extra_data.Pin_Color;
+          }
+        }
+      }
+    } catch (e) {
+      // ignore and use default
+    }
+
     let HTML = `<a href="dropdown-item">
      <input type="checkbox" class="btn-check active" id="${New_BTN_ID}" autocomplete="off" checked>
-    <label class="btn btn-primary w-100 p-2 border-0 rounded-0" id="${New_BTN_ID}_Label" style="background-color: ${Layer.paint["circle-color"]}" for="Layer_Toggler_${id}">${Button_Name}</label></a>`;
+    <label class="btn btn-primary w-100 p-2 border-0 rounded-0" id="${New_BTN_ID}_Label" style="background-color: ${bgColor}" for="Layer_Toggler_${id}">${Button_Name}</label></a>`;
 
     Map_Layer_Controls_DOM.insertAdjacentHTML("beforeend", HTML);
     let Trigger = document.querySelector(`#${New_BTN_ID}`);
@@ -318,7 +512,6 @@ function Map_Lighting_Change(Mode) {
     const layers = map.getStyle().layers;
     layers.forEach((layer) => {
       if (layer.type === "circle") {
-
         map.setPaintProperty(
           layer.id,
           "circle-stroke-color",

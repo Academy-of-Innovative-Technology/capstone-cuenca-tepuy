@@ -463,6 +463,9 @@ function Initialize_Layer_Control() {
 
   all_Layers.forEach((Layer) => {
     let id = Layer.id;
+
+
+
     let New_BTN_ID = `Layer_Toggler_${id}`;
 
     if (document.getElementById(New_BTN_ID)) {
@@ -503,12 +506,14 @@ function Initialize_Layer_Control() {
       if (event.target.checked) {
         //console.log("Turning on");
         map.setLayoutProperty(id, "visibility", "visible");
+        map.setLayoutProperty(id + "_bg", "visibility", "visible");
         Trigger.classList.add("active");
         if (Label) {
           Label.classList.remove("Darker");
         }
       } else {
         map.setLayoutProperty(id, "visibility", "none");
+        map.setLayoutProperty(id + "_bg", "visibility", "none");
         Trigger.classList.remove("active");
         if (Label) {
           Label.classList.add("Darker");

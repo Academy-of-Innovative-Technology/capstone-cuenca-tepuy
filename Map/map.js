@@ -145,7 +145,6 @@ function Add_List_Location_To_Map(Data) {
         let Object_Marker_Data = {
           type: "Feature",
           properties: {
-            // description: `<p>${location.center_name}</p><a target="_blank" href="${Google_Maps_Search_Link(location.address)}">${location}</a><p>${location.comments}</p><button class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_map_info" aria-controls="offcanvas_map_info">More</button>`,
             data: location,
           },
           geometry: {

@@ -459,13 +459,11 @@ function Initialize_Map_Extras() {
 }
 
 function Initialize_Layer_Control() {
+  const layerListContainer = document.getElementById("layer-list-container");
   let all_Layers = map.getStyle().layers;
 
   all_Layers.forEach((Layer) => {
     let id = Layer.id;
-
-
-
     let New_BTN_ID = `Layer_Toggler_${id}`;
 
     if (document.getElementById(New_BTN_ID) || id.endsWith("_bg")) {
@@ -495,33 +493,48 @@ function Initialize_Layer_Control() {
       // ignore and use default
     }
 
-    let HTML = `<a href="dropdown-item">
-     <input type="checkbox" class="btn-check active" id="${New_BTN_ID}" autocomplete="off" checked>
-    <label class="btn btn-primary w-100 p-2 border-0 rounded-0" id="${New_BTN_ID}_Label" style="background-color: ${bgColor}" for="Layer_Toggler_${id}">${Button_Name}</label></a>`;
+    let HTML = `
+      <div class="layer-item d-flex align-items-center" data-layer-name="${Button_Name}">
+        <input type="checkbox" class="form-check-input layer-checkbox" id="${New_BTN_ID}" checked>
+        <div class="layer-color-dot ms-2" style="background-color: ${bgColor}; width: 16px; height: 16px; border-radius: 50%;"></div>
+        <label class="form-check-label ms-2 mb-0 flex-grow-1 cursor-pointer text-dark" for="${New_BTN_ID}">${Button_Name}</label>
+      </div>
+    `;
 
-    Map_Layer_Controls_DOM.insertAdjacentHTML("beforeend", HTML);
+    layerListContainer.insertAdjacentHTML("beforeend", HTML);
     let Trigger = document.querySelector(`#${New_BTN_ID}`);
-    let Label = document.querySelector(`#${New_BTN_ID}_Label`);
     Trigger.addEventListener("change", (event) => {
       if (event.target.checked) {
-        //console.log("Turning on");
         map.setLayoutProperty(id, "visibility", "visible");
         map.setLayoutProperty(id + "_bg", "visibility", "visible");
-        Trigger.classList.add("active");
-        if (Label) {
-          Label.classList.remove("Darker");
-        }
       } else {
         map.setLayoutProperty(id, "visibility", "none");
         map.setLayoutProperty(id + "_bg", "visibility", "none");
-        Trigger.classList.remove("active");
-        if (Label) {
-          Label.classList.add("Darker");
-        }
       }
     });
   });
 }
+
+let Layer_Control_Filter_DOM = document.querySelector("#layer-search-input");
+function Update_Filter_Layers() {
+  let all_Layers = document.querySelectorAll(".layer-item");
+  if (Layer_Control_Filter_DOM.value == "") {
+    all_Layers.forEach((Layer) => {
+      Layer.classList.remove("visually-hidden");
+    });
+  } else {
+    all_Layers.forEach((Layer) => {
+      if (Layer.dataset.layerName
+        .toLowerCase()
+        .includes(Layer_Control_Filter_DOM.value.toLowerCase())) {
+        Layer.classList.remove("visually-hidden");
+      } else {
+        Layer.classList.add("visually-hidden");
+      }
+    });
+  }
+}
+Layer_Control_Filter_DOM.addEventListener("input", Update_Filter_Layers);
 
 let Map_Lighting_Mode_LocalStorage_Name = "map-theme";
 function Map_Lighting_Change(Mode) {

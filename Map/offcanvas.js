@@ -1,7 +1,6 @@
 let Offcanvas_Map_Info_DOM = document.querySelector("#offcanvas_map_info");
 
-let OffCanvas_Main_Info_DOM = document.querySelector("#OffCanvas_Main_Info");
-let OffCanvas_Extra_Info_DOM = document.querySelector("#OffCanvas_Extra_Info");
+let OffCanvas_All_Info_DOM = document.querySelector("#OffCanvas_All_Info");
 
 // Helper: return inline SVG for a given key name (normalized)
 function getKeyIcon(key) {
@@ -41,42 +40,47 @@ function getKeyIcon(key) {
 }
 
 function Open_All_Off_Canvas_Information() {
-  if (
-    !document.querySelector("#headingOne").classList.contains("visually-hidden")
-  ) {
+  const h1 = document.querySelector("#headingOne");
+  if (h1 && !h1.classList.contains("visually-hidden")) {
     const target = document.getElementById("collapseOne");
     const button = document.querySelector('[data-bs-target="#collapseOne"]');
-    target.classList.add("show");
-    button.classList.remove("collapsed");
-    button.setAttribute("aria-expanded", "true");
+    if (target) target.classList.add("show");
+    if (button) {
+      button.classList.remove("collapsed");
+      button.setAttribute("aria-expanded", "true");
+    }
   }
 
-  if (
-    !document.querySelector("#headingTwo").classList.contains("visually-hidden")
-  ) {
+  const h2 = document.querySelector("#headingTwo");
+  if (h2 && !h2.classList.contains("visually-hidden")) {
     const target2 = document.getElementById("collapseTwo");
     const button2 = document.querySelector('[data-bs-target="#collapseTwo"]');
-    target2.classList.add("show");
-    button2.classList.remove("collapsed");
-    button2.setAttribute("aria-expanded", "true");
+    if (target2) target2.classList.add("show");
+    if (button2) {
+      button2.classList.remove("collapsed");
+      button2.setAttribute("aria-expanded", "true");
+    }
   }
 }
 
 function Close_All_Off_Canvas_Accordion_Main_Information() {
   const target = document.getElementById("collapseOne");
   const button = document.querySelector('[data-bs-target="#collapseOne"]');
-
-  target.classList.remove("show");
-  button.classList.add("collapsed");
-  button.setAttribute("aria-expanded", "false");
+  if (target) target.classList.remove("show");
+  if (button) {
+    button.classList.add("collapsed");
+    button.setAttribute("aria-expanded", "false");
+  }
 }
 
 function Close_All_Off_Canvas_Accordion_Extra_Information() {
   const secondAccordion = document.querySelector("#collapseTwo");
-  const bsCollapse = new bootstrap.Collapse(secondAccordion, {
-    toggle: false,
-  });
-  bsCollapse.hide();
+  if (secondAccordion) {
+    const bsCollapse = new bootstrap.Collapse(secondAccordion, {
+      toggle: false,
+    });
+    bsCollapse.hide();
+  }
 }
 function Is_Only_Extra_Data(object) {
   let result = true;
@@ -155,6 +159,9 @@ function Load_Data_Into_Container(Data, Destination_DOM, IgnoreList) {
   // Build entries array and intelligently detect coordinates.
   const entries = Object.entries(Data || {});
 
+  // normalize ignore list to lowercase for case-insensitive comparisons
+  const ignoreLower = (IgnoreList || []).map((k) => k.toString().toLowerCase());
+
   function findLatLon(obj) {
     if (!obj || typeof obj !== "object") return null;
     const keys = Object.keys(obj);
@@ -198,8 +205,8 @@ function Load_Data_Into_Container(Data, Destination_DOM, IgnoreList) {
 
   if (
     found &&
-    !IgnoreList.includes("latitude") &&
-    !IgnoreList.includes("longitude")
+    !ignoreLower.includes("latitude") &&
+    !ignoreLower.includes("longitude")
   ) {
     const coordsDisplay = `${found.lat}, ${found.lon}`;
     List_Data.push({
@@ -227,6 +234,24 @@ function Load_Data_Into_Container(Data, Destination_DOM, IgnoreList) {
       // ignore
     }
   }
+  // helper: consider strings with only whitespace, empty arrays, and objects with no meaningful fields as "empty"
+  function isEmptyContent(v) {
+    if (v === null || v === undefined) return true;
+    if (typeof v === "string") return v.toString().trim() === "";
+    if (Array.isArray(v))
+      return v.length === 0 || v.every((el) => isEmptyContent(el));
+    if (typeof v === "object") {
+      const ks = Object.keys(v);
+      if (ks.length === 0) return true;
+      // if all nested values are empty, treat as empty
+      for (const val of Object.values(v)) {
+        if (!isEmptyContent(val)) return false;
+      }
+      return true;
+    }
+    // numbers, booleans, and other primitives are considered non-empty
+    return false;
+  }
 
   for (const [key, value] of entries) {
     // if lat/lon were detected in this object, skip the raw fields when present
@@ -240,9 +265,11 @@ function Load_Data_Into_Container(Data, Destination_DOM, IgnoreList) {
         key.toLowerCase() === "long")
     )
       continue;
-    if (value == null || IgnoreList.includes(key)) {
+    if (value == null || ignoreLower.includes(key.toString().toLowerCase())) {
       continue; // Avoid null values and metadata
     }
+    // skip empty strings, empty arrays, or objects with no meaningful fields
+    if (isEmptyContent(value)) continue;
     let Formatted_Key_Name = Properties_Name[key] || key;
     List_Data.push({
       key_name: Formatted_Key_Name,
@@ -277,7 +304,7 @@ function Load_Data_Into_Container(Data, Destination_DOM, IgnoreList) {
         Item.key_name.toString().toLowerCase() === "coordinates") ||
       Item.originalKey === "coordinates"
     ) {
-      Content = `<div class="offcanvas-kv d-flex justify-content-start gap-2 align-items-center"><div class="kv-key text-muted small">${getKeyIcon("coordinates")} <span class="kv-key-text">coordinates:</span></div><div class="kv-value text-break">${Item.content}</div><button class="btn btn-sm btn-outline-light copy-coords-btn" data-coords="${Item.content}" title="Copy coordinates">Copy</button></div>`;
+      Content = `<div class="offcanvas-kv d-flex justify-content-start gap-2 align-items-center"><div class="kv-key text-muted small d-flex">${getKeyIcon("coordinates")} <span class="kv-key-text text-capitalize">coordinates:</span></div><div class="kv-value text-break">${Item.content}</div><button class="btn btn-sm btn-outline-light copy-coords-btn" data-coords="${Item.content}" title="Copy coordinates">Copy</button></div>`;
     } else if (
       typeof Item.content == "object" &&
       !Array.isArray(Item.content)
@@ -287,7 +314,10 @@ function Load_Data_Into_Container(Data, Destination_DOM, IgnoreList) {
         if (value == null) {
           continue;
         } // Skips if the section have a null field
-        Content += `<div class="offcanvas-kv d-flex justify-content-start gap-2"><div class="kv-key text-muted small text-capitalize">${getKeyIcon(key)} <span class="kv-key-text">${key}:</span></div><div class="kv-value text-break">${value}</div></div>`;
+        // skip nested extra/internal fields
+        const kn = key.toString().toLowerCase();
+        if (kn === "extra_data" || ignoreLower.includes(kn)) continue;
+        Content += `<div class="offcanvas-kv d-flex justify-content-start gap-2"><div class="kv-key text-muted small text-capitalize">${getKeyIcon(key)} <span class="kv-key-text text-capitalize">${key}:</span></div><div class="kv-value text-break">${value}</div></div>`;
       }
       Content += `</div>`;
     } else if (Array.isArray(Item.content)) {
@@ -311,7 +341,7 @@ function Load_Data_Into_Container(Data, Destination_DOM, IgnoreList) {
           valueHtml = `<span class="text-break">${Item.content}</span>`;
         }
 
-        Content = `<div class="offcanvas-kv d-flex justify-content-start gap-2 align-items-center"><div class="kv-key text-muted small text-capitalize">${getKeyIcon(Item.key_name)} <span class="kv-key-text">${Item.key_name}:</span></div><div class="kv-value text-break">${valueHtml}</div></div>`;
+        Content = `<div class="offcanvas-kv d-flex justify-content-start gap-2 align-items-center"><div class="kv-key text-muted small text-capitalize d-flex align-items-center">${getKeyIcon(Item.key_name)} <span class="kv-key-text text-capitalize">${Item.key_name}:</span></div><div class="kv-value text-break">${valueHtml}</div></div>`;
       }
     }
     if (Content == "") {
@@ -420,42 +450,32 @@ function Is_Only_Meta_Data(object) {
 }
 
 async function Load_Data_Off_Canvas(Data) {
-  Close_All_Off_Canvas_Accordion_Extra_Information();
+  //Close_All_Off_Canvas_Accordion_Extra_Information();
   const API_DATA_MANAGER = new DataProcessor(
     Data,
     Data.extra_data.Processing_Method,
   );
   const Standarized_Data = await API_DATA_MANAGER.process();
 
-  if (!Is_Only_Meta_Data(Standarized_Data)) {
-    document.querySelector("#headingOne").classList.remove("visually-hidden");
-    Load_Data_Into_Container(Standarized_Data, OffCanvas_Main_Info_DOM, [
-      "metadata",
-    ]);
-    Close_All_Off_Canvas_Accordion_Extra_Information();
-  } else {
-    document.querySelector("#headingOne").classList.add("visually-hidden");
-    OffCanvas_Main_Info_DOM.innerHTML =
-      "This center does not have extra information";
-    Close_All_Off_Canvas_Accordion_Main_Information();
-    console.log("Test");
-  }
-
+  // Merge main standardized data and metadata into a single object for rendering
+  const merged = Object.assign({}, Standarized_Data);
   if (
     Standarized_Data.metadata &&
-    !Is_Only_Extra_Data(Standarized_Data.metadata)
+    typeof Standarized_Data.metadata === "object"
   ) {
-    document.querySelector("#headingTwo").classList.remove("visually-hidden");
-    Load_Data_Into_Container(
-      Standarized_Data.metadata,
-      OffCanvas_Extra_Info_DOM,
-      ["extra_data"],
-    );
-  } else {
-    document.querySelector("#headingTwo").classList.add("visually-hidden");
-    OffCanvas_Extra_Info_DOM.innerHTML =
-      "This center does not have extra information";
+    // copy metadata fields into merged, but avoid overwriting top-level keys
+    for (const [k, v] of Object.entries(Standarized_Data.metadata)) {
+      if (merged[k] === undefined) merged[k] = v;
+    }
   }
+
+  // Render everything together into the single offcanvas container
+  OffCanvas_All_Info_DOM.innerHTML = "";
+  // hide metadata and extra_data (we don't want internal processing fields shown)
+  Load_Data_Into_Container(merged, OffCanvas_All_Info_DOM, [
+    "metadata",
+    "extra_data",
+  ]);
 
   const bsOffcanvas = new bootstrap.Offcanvas(Offcanvas_Map_Info_DOM);
   bsOffcanvas.show();

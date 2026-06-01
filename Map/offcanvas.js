@@ -304,7 +304,7 @@ function Load_Data_Into_Container(Data, Destination_DOM, IgnoreList) {
         Item.key_name.toString().toLowerCase() === "coordinates") ||
       Item.originalKey === "coordinates"
     ) {
-      Content = `<div class="offcanvas-kv d-flex justify-content-start gap-2 align-items-center"><div class="kv-key text-muted small d-flex">${getKeyIcon("coordinates")} <span class="kv-key-text text-capitalize">coordinates:</span></div><div class="kv-value text-break">${Item.content}</div><button class="btn btn-sm btn-outline-light copy-coords-btn" data-coords="${Item.content}" title="Copy coordinates">Copy</button></div>`;
+      Content = `<div class="d-flex justify-content-between align-items-center gap-2"><div class="kv-value text-break fw-semibold">${Item.content}</div><button class="btn btn-sm btn-outline-light copy-coords-btn" data-coords="${Item.content}" title="Copy coordinates">Copy</button></div>`;
     } else if (
       typeof Item.content == "object" &&
       !Array.isArray(Item.content)
@@ -329,9 +329,7 @@ function Load_Data_Into_Container(Data, Destination_DOM, IgnoreList) {
         });
       }
     } else {
-      // scalar values (string/number) -> render as a key/value row so
-      // data-key attributes are applied and latitude/longitude can be
-      // combined into a single coordinates entry
+      // scalar values (string/number)
       if (Item.content || Item.content === 0) {
         // prepare the inner value HTML (links for addresses)
         let valueHtml = "";
@@ -341,7 +339,16 @@ function Load_Data_Into_Container(Data, Destination_DOM, IgnoreList) {
           valueHtml = `<span class="text-break">${Item.content}</span>`;
         }
 
-        Content = `<div class="offcanvas-kv d-flex justify-content-start gap-2 align-items-center"><div class="kv-key text-muted small text-capitalize d-flex align-items-center">${getKeyIcon(Item.key_name)} <span class="kv-key-text text-capitalize">${Item.key_name}:</span></div><div class="kv-value text-break">${valueHtml}</div></div>`;
+        // For single values with heading, just show the value without label
+        // Create a temporary flag to check if heading will be shown
+        const willShowHeading =
+          typeof Item.content !== "object" || Array.isArray(Item.content);
+        if (willShowHeading) {
+          Content = valueHtml;
+        } else {
+          // data-key attributes for coordinates combination
+          Content = `<div class="offcanvas-kv d-flex justify-content-start gap-2 align-items-center"><div class="kv-key text-muted small text-capitalize d-flex align-items-center">${getKeyIcon(Item.key_name)} <span class="kv-key-text text-capitalize">${Item.key_name}:</span></div><div class="kv-value text-break">${valueHtml}</div></div>`;
+        }
       }
     }
     if (Content == "") {
@@ -352,10 +359,19 @@ function Load_Data_Into_Container(Data, Destination_DOM, IgnoreList) {
       .toString()
       .toLowerCase();
     // create coordinates combined view if both present in parent data
+
+    // Determine if this is a single key-value pair (not a nested object)
+    // Show heading for single values, hide for nested objects
+    const isSingleKeyValue =
+      typeof Item.content !== "object" || Array.isArray(Item.content);
+    const headingHTML = !isSingleKeyValue
+      ? ""
+      : `<h3 class="h6 mb-2 text-capitalize">${getKeyIcon(Item.key_name)} ${Item.key_name}</h3>`;
+
     let HTML = `
       <div class="OffCanvas_Informations_Wrappers card mb-3">
         <div class="card-body p-3">
-          <h3 class="h6 mb-2 text-capitalize">${getKeyIcon(Item.key_name)} ${Item.key_name}</h3>
+          ${headingHTML}
           <div class="offcanvas-content">${Content}</div>
         </div>
       </div>

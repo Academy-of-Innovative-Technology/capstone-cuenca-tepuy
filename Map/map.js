@@ -61,7 +61,7 @@ let Location_APIs = [
       Layer_Name: "MTA_Station_Bathrooms",
       Found: "MTA",
       Source: "MTA",
-      Pin_Color: "rgb(139, 92, 246)",
+      Pin_Color: "rgba(0, 0, 0, 0)",
       Processing_Method: "NY_MTA_Transit_Train_Station_Bathrooms",
       Icon_Link: "Icons/MTA_Logo.png",
     },
@@ -107,9 +107,26 @@ let mapbox_circle_stroke_color_light_mode = "rgba(0, 0, 0, 1)";
 let mapbox_circle_stroke_color_dark_mode = "rgba(186, 186, 186, 1)";
 
 // Icon sizing: modify these to change icon diameter and outline thickness
-const ICON_PIXEL_DIAMETER = 30; // desired icon photo diameter in screen pixels
+const ICON_PIXEL_DIAMETER = 22; // desired icon photo diameter in screen pixels
 const ICON_OUTLINE_WIDTH = 2; // outline thickness in pixels
 const ICON_BG_RADIUS = ICON_PIXEL_DIAMETER / 2 + ICON_OUTLINE_WIDTH; // circle background radius (px)
+
+// Return true if the provided CSS color string represents a fully transparent color.
+// Supports: 'transparent', 'rgba(r,g,b,0)', and 8-digit hex '#RRGGBBAA' where AA == '00'.
+function isTransparentColor(color) {
+  if (!color || typeof color !== "string") return false;
+  const s = color.replace(/\s+/g, "");
+  if (s.toLowerCase() === "transparent") return true;
+  const rgbaZero = /^rgba\(\d+,\d+,\d+,0(?:\.0+)?\)$/i;
+  if (rgbaZero.test(s)) return true;
+  const hex8 = /^#([0-9a-f]{8})$/i;
+  const m = s.match(hex8);
+  if (m) {
+    const alphaHex = m[1].substr(6, 2).toLowerCase();
+    if (alphaHex === "00") return true;
+  }
+  return false;
+}
 
 let Zoom_Level_Before_OffCanvas;
 function Add_List_Location_To_Map(Data) {
@@ -294,8 +311,13 @@ function Add_List_Location_To_Map(Data) {
         paint: {
           "circle-color": pinColor,
           "circle-radius": ICON_BG_RADIUS,
-          "circle-stroke-width": ICON_OUTLINE_WIDTH,
-          "circle-stroke-color": mapbox_circle_stroke_color_light_mode,
+          // if the background color is fully transparent, hide the outline
+          "circle-stroke-width": isTransparentColor(pinColor)
+            ? 0
+            : ICON_OUTLINE_WIDTH,
+          "circle-stroke-color": isTransparentColor(pinColor)
+            ? "rgba(0,0,0,0)"
+            : mapbox_circle_stroke_color_light_mode,
         },
       });
 
@@ -322,8 +344,17 @@ function Add_List_Location_To_Map(Data) {
         paint: {
           "circle-color": Layer_Group.locations[0].extra_data.Pin_Color,
           "circle-radius": ICON_BG_RADIUS,
-          "circle-stroke-width": ICON_OUTLINE_WIDTH,
-          "circle-stroke-color": mapbox_circle_stroke_color_light_mode,
+          // hide outline if the pin/background color is fully transparent
+          "circle-stroke-width": isTransparentColor(
+            Layer_Group.locations[0].extra_data.Pin_Color,
+          )
+            ? 0
+            : ICON_OUTLINE_WIDTH,
+          "circle-stroke-color": isTransparentColor(
+            Layer_Group.locations[0].extra_data.Pin_Color,
+          )
+            ? "rgba(0,0,0,0)"
+            : mapbox_circle_stroke_color_light_mode,
           "circle-emissive-strength": 1.05,
         },
       });
@@ -495,13 +526,41 @@ function Map_Lighting_Change(Mode) {
     const layers = map.getStyle().layers;
     layers.forEach((layer) => {
       if (layer.type === "circle") {
-        console.log(layer);
-        map.setPaintProperty(
-          layer.id,
-          "circle-stroke-color",
-          mapbox_circle_stroke_color_light_mode,
-        );
-        //map.setPaintProperty(layer.id, "circle-stroke-width", 2);
+        // attempt to detect a per-source Pin_Color; if it's transparent, hide the outline
+        let pinColor = null;
+        try {
+          const src =
+            map.getSource(layer.source) && map.getSource(layer.source)._data;
+          if (src && src.features && src.features.length > 0) {
+            const pdata =
+              src.features[0].properties && src.features[0].properties.data;
+            if (pdata && pdata.extra_data && pdata.extra_data.Pin_Color) {
+              pinColor = pdata.extra_data.Pin_Color;
+            }
+          }
+        } catch (e) {
+          // ignore and fall back to default
+        }
+
+        if (isTransparentColor(pinColor)) {
+          map.setPaintProperty(layer.id, "circle-stroke-width", 0);
+          map.setPaintProperty(
+            layer.id,
+            "circle-stroke-color",
+            "rgba(0,0,0,0)",
+          );
+        } else {
+          map.setPaintProperty(
+            layer.id,
+            "circle-stroke-color",
+            mapbox_circle_stroke_color_light_mode,
+          );
+          map.setPaintProperty(
+            layer.id,
+            "circle-stroke-width",
+            ICON_OUTLINE_WIDTH,
+          );
+        }
       }
     });
 
@@ -512,12 +571,40 @@ function Map_Lighting_Change(Mode) {
     const layers = map.getStyle().layers;
     layers.forEach((layer) => {
       if (layer.type === "circle") {
-        map.setPaintProperty(
-          layer.id,
-          "circle-stroke-color",
-          mapbox_circle_stroke_color_dark_mode,
-        );
-        //map.setPaintProperty(layer.id, "circle-stroke-width", 2);
+        let pinColor = null;
+        try {
+          const src =
+            map.getSource(layer.source) && map.getSource(layer.source)._data;
+          if (src && src.features && src.features.length > 0) {
+            const pdata =
+              src.features[0].properties && src.features[0].properties.data;
+            if (pdata && pdata.extra_data && pdata.extra_data.Pin_Color) {
+              pinColor = pdata.extra_data.Pin_Color;
+            }
+          }
+        } catch (e) {
+          // ignore and fall back to default
+        }
+
+        if (isTransparentColor(pinColor)) {
+          map.setPaintProperty(layer.id, "circle-stroke-width", 0);
+          map.setPaintProperty(
+            layer.id,
+            "circle-stroke-color",
+            "rgba(0,0,0,0)",
+          );
+        } else {
+          map.setPaintProperty(
+            layer.id,
+            "circle-stroke-color",
+            mapbox_circle_stroke_color_dark_mode,
+          );
+          map.setPaintProperty(
+            layer.id,
+            "circle-stroke-width",
+            ICON_OUTLINE_WIDTH,
+          );
+        }
       }
     });
 

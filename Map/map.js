@@ -468,7 +468,7 @@ function Initialize_Layer_Control() {
 
     let New_BTN_ID = `Layer_Toggler_${id}`;
 
-    if (document.getElementById(New_BTN_ID)) {
+    if (document.getElementById(New_BTN_ID) || id.endsWith("_bg")) {
       return;
     }
     let Button_Name =

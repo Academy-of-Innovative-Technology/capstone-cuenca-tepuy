@@ -95,10 +95,15 @@ function Is_Only_Extra_Data(object) {
 let Off_Canvas_Information_Order_Priority = [
   "location name",
   "location address",
+  "location",
+  "coordinates",
+  "url",
   "contact",
   "train lines",
   "comments",
   "borough",
+  "borobox",
+  "Citycouncil",
   "latitude",
   "longitude",
 ];
@@ -155,6 +160,7 @@ function Process_Train_Lines_As_Icons(list) {
 
 function Load_Data_Into_Container(Data, Destination_DOM, IgnoreList) {
   let List_Data = [];
+  console.log(Data);
   Destination_DOM.innerHTML = "";
   // Build entries array and intelligently detect coordinates.
   const entries = Object.entries(Data || {});
@@ -335,6 +341,8 @@ function Load_Data_Into_Container(Data, Destination_DOM, IgnoreList) {
         let valueHtml = "";
         if (Item.key_name == "location address") {
           valueHtml = `<a target="_blank" href="${Google_Maps_Search_Link(Item.content)}" class="text-break">${Item.content}</a>`;
+        } else if (Item.key_name == "url") {
+          valueHtml = `<a target="_blank" href="${Item.content}" class="text-break">${Item.content}</a>`;
         } else {
           valueHtml = `<span class="text-break">${Item.content}</span>`;
         }

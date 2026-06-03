@@ -1,12 +1,16 @@
+// const Main_Information_Keys = new Set([
+//   "center_name",
+//   "train_lines",
+//   "place_name",
+//   "provider",
+//   "address",
+//   "contact",
+//   "comments",
+//   "coordinates",
+// ]);
+
 const Main_Information_Keys = new Set([
-  "center_name",
-  "train_lines",
-  "place_name",
-  "provider",
-  "address",
-  "contact",
-  "comments",
-  "coordinates",
+
 ]);
 
 class DataProcessor {
@@ -20,7 +24,9 @@ class DataProcessor {
       Food_Pantries_DYCD: this.process_Food_Pantries_DYCD.bind(this),
       NY_MTA_Transit_Train_Station_Bathrooms:
         this.process_NY_MTA_Transit_Train_Station_Bathrooms.bind(this),
-      "NY_Bathrooms": this.process_NY_Bathrooms.bind(this),
+      NY_Bathrooms: this.process_NY_Bathrooms.bind(this),
+      NYPL: this.process_NYPL.bind(this),
+      In_Service_Alarm_Box_Locations: this.process_In_Service_Alarm_Box_Locations.bind(this),
     };
   }
 
@@ -49,6 +55,72 @@ class DataProcessor {
     return null;
   }
 
+  async process_In_Service_Alarm_Box_Locations() {
+    const address = this.normalizeAddress(this.location);
+
+    // 📍 Coordinates
+    let latitude = this.parseNumber(this.data.latitude);
+    let longitude = this.parseNumber(this.data.longitude);
+
+    if (latitude == null || longitude == null) {
+      const coords = await this.fetchCoordinates(address);
+      latitude = coords.latitude;
+      longitude = coords.longitude;
+    }
+
+    // 🧠 Build metadata by excluding known fields
+    const excludedKeys = Main_Information_Keys;
+
+    let metadata = {};
+
+    for (const key in this.data) {
+      if (!excludedKeys.has(key.toLowerCase())) {
+        metadata[key] = this.data[key];
+      }
+    }
+    metadata.latitude = latitude;
+    metadata.longitude = longitude;
+    return {
+      center_name: this.data.location + " Alarm Box" || null,
+      address,
+      comments: this.data.comments || null,
+      metadata,
+    };
+  }
+
+  async process_NYPL() {
+    const address = this.normalizeAddress(this.data.streetname);
+
+    // 📍 Coordinates
+    let latitude = this.parseNumber(this.data.the_geom.coordinates[1]);
+    let longitude = this.parseNumber(this.data.the_geom.coordinates[0]);
+
+    if (latitude == null || longitude == null) {
+      const coords = await this.fetchCoordinates(address);
+      latitude = coords.latitude;
+      longitude = coords.longitude;
+    }
+
+    // 🧠 Build metadata by excluding known fields
+    const excludedKeys = Main_Information_Keys;
+
+    let metadata = {};
+
+    for (const key in this.data) {
+      if (!excludedKeys.has(key.toLowerCase())) {
+        metadata[key] = this.data[key];
+      }
+    }
+    metadata.latitude = latitude;
+    metadata.longitude = longitude;
+    return {
+      center_name: this.data.name + " Library" || null,
+      address,
+      comments: this.data.comments || null,
+      metadata,
+    };
+  }
+
   async process_NY_Bathrooms() {
     const address = this.normalizeAddress(this.data.address);
 
@@ -66,7 +138,7 @@ class DataProcessor {
     const excludedKeys = Main_Information_Keys;
 
     let metadata = {};
-    
+
     for (const key in this.data.properties) {
       if (!excludedKeys.has(key.toLowerCase())) {
         metadata[key] = this.data.properties[key];

@@ -78,6 +78,30 @@ let Location_APIs = [
       Icon_Link: "Icons/Toilet.png",
     },
   },
+  {
+    url: "https://data.cityofnewyork.us/resource/feuq-due4.json",
+    extra_data: {
+      Name: "New York Public Libraries",
+      Layer_Name: "NYPL",
+      Found: "NYC Open Data",
+      Source: "New York Public Library",
+      Pin_Color: "rgb(255, 166, 0)",
+      Processing_Method: "NYPL",
+      Icon_Link: "Icons/Library.png",
+    },
+  },
+  {
+    url: "https://data.cityofnewyork.us/resource/v57i-gtxb.json",
+    extra_data: {
+      Name: "In-Service Alarm Box Locations",
+      Layer_Name: "In-Service_Alarm_Box_Locations",
+      Found: "NYC Open Data",
+      Source: "New York City Fire Department",
+      Pin_Color: "rgb(255, 0, 0)",
+      Processing_Method: "In_Service_Alarm_Box_Locations",
+      Icon_Link: "Icons/Alarm_Box.png",
+    },
+  },
 ];
 
 let Google_Maps_Search_Link = (address) => {

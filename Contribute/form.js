@@ -54,7 +54,7 @@ Copy_Coordinate.addEventListener("click", () => {
 
 Update_Fields();
 
-let Email_Send = "recipient@example.com";
+let Email_Send = "NY_Atlas_Support@gmail.com";
 let Email_Subject = "Suggest a new Location";
 
 
@@ -75,7 +75,7 @@ function sendEmail() {
     Description: Data_Suggestion.description
   }
 
-  const body = Data;
+  const body = JSON.stringify(Data);
   window.open (`mailto:${Email_Send}?subject=${Email_Subject}&body=${encodeURIComponent(body)}`, "_blank");
 }
 let Suggestion_Form_DOM = document.querySelector("#Suggestion_Form_DOM");

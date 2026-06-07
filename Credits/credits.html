@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark" class="h-100">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NY Atlas | Credits</title>
+
+    <link rel="stylesheet" href="../Scss/main.css" />
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <script defer src="../nav.js"></script>
+    <link rel="stylesheet" href="credits.css" />
+  </head>
+
+  <body class="d-flex flex-column  bg-primary-subtle overflow-x-hidden">
+    <nav
+      class="navbar navbar-expand-lg bg-primary"
+      data-bs-theme="dark"
+    >
+      <div class="container-fluid">
+        <a
+          class="navbar-brand bg-dark p-1 rounded d-flex justify-content-center align-items-center gap-1"
+          href="../index.html"
+          ><span class="badge bg-primary">NY</span><span>Atlas</span></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-between"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../Map/map.html"
+                ><i class="bi bi-search me-2"></i>Find</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="../Contribute/contribute.html"
+                ><i class="bi bi-patch-plus me-2"></i>Contribute</a
+              >
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link text-light" href="../About/about.html"
+                ><span class="me-2">😎</span>About us</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="../Credits/credits.html"
+                ><i class="bi bi-clipboard me-2"></i>Credits</a
+              >
+            </li>
+            <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+              <div class="vr d-none d-lg-flex h-100 mx-lg-2 bg-white"></div>
+              <hr class="d-lg-none my-2 text-white-50" />
+            </li>
+            <li class="nav-item dropdown" data-bs-theme="light">
+              <a
+                class="nav-link dropdown-toggle d-flex align-items-center"
+                href="#"
+                id="theme-menu"
+                aria-expanded="false"
+                data-bs-toggle="dropdown"
+                data-bs-display="static"
+                aria-label="Toggle theme"
+              >
+                <i class="bi bi-circle-half"></i>
+                <span class="d-lg-none ms-2">Toggle theme</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                  <button
+                    id="Light_Theme_BTN"
+                    type="button"
+                    class="dropdown-item d-flex align-items-center"
+                    data-bs-theme-value="light"
+                    aria-pressed="false"
+                  >
+                    <i class="bi bi-sun-fill"></i
+                    ><span class="ms-2">Light</span>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    id="Dark_Theme_BTN"
+                    type="button"
+                    class="dropdown-item d-flex align-items-center"
+                    data-bs-theme-value="dark"
+                    aria-pressed="true"
+                  >
+                    <i class="bi bi-moon-stars-fill"></i
+                    ><span class="ms-2">Dark</span>
+                  </button>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main
+      class="p-0 m-0 flex-grow-1 container-fluid d-flex flex-column align-items-center min-vh-100"
+    >
+      <section
+        class="row h-100 p-0 m-0 d-flex justify-content-center align-items-center flex-column"
+      >
+        <div class="alert alert-info alert-dismissible col-sm-8">
+          <button type="button" class="btn-close" data-bs-dismiss=""></button>
+
+          <div>
+            <h1>
+              This application contain data from the following sources
+            </h1>
+            <ul class="d-flex flex-column gap-3">
+              <li class="d-sm-flex align-items-center gap-3">
+                <img class="img-thumbnail Website_Thumbnails" src="https://opendata.cityofnewyork.us/wp-content/themes/opendata-wp/assets/img/favicon.ico" />
+                <div>
+                  <a
+                  class="fs-4"
+                  href="https://data.cityofnewyork.us/Social-Services/Directory-Of-Homeless-Drop-In-Centers/bmxf-3rd4/about_data"
+                  >NYC Open Data & Department of Homeless Services</a
+                >
+                </div>
+              </li>
+              <li class="d-sm-flex align-items-center gap-3">
+                <img class="img-thumbnail Website_Thumbnails" src="https://www.nyc.gov/favicon.ico" />
+                <div>
+                  <a
+                  class="fs-4"
+                  href="https://www.nyc.gov/site/dycd/services/food_pantries.page"
+                  >Department of Youth & Community Development</a
+                >
+                </div>
+                
+              </li>
+              <li class="d-sm-flex align-items-center gap-3">
+                <img class="img-thumbnail Website_Thumbnails" class="img-thumbnail Website_Thumbnails" src="https://www.mta.info/favicon.ico" />
+                <div>
+                  <a
+                  class="fs-4"
+                  href="https://www.mta.info/agency/new-york-city-transit/bathrooms"
+                  >New York City Transit (MTA)</a
+                >
+                </div>
+              </li>
+              <li class="d-sm-flex align-items-center gap-3">
+                <img class="img-thumbnail Website_Thumbnails" src="https://wiki.openstreetmap.org/favicon.ico" />
+                <div>
+                  <a
+                  class="fs-4"
+                  href="https://wiki.openstreetmap.org/wiki/Main_Page"
+                  >OpenStreetMap Wiki & Overpass API</a
+                ></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-primary d-flex flex-column flex-sm-row flex-wrap p-4 gap-sm-5">
+
+      <div class="d-flex flex-column" id="Quick_Links_Container">
+        <p>Quick links</p>
+        <a class="text-decoration-none text-body ps-2" href="../Map/map.html">Find resources</a>
+        <a class="text-decoration-none text-body ps-2"" href="../Contribute/contribute.html">Contribute</a>
+        <a class="text-decoration-none text-body ps-2"" href="../Discover/discover.html">Explore related content</a>
+        <a class="text-decoration-none text-body ps-2"" href="../About/about.html">About Us</a>
+        <a class="text-decoration-none text-body ps-2"" href="../Credits/credits.html">Credits</a>
+      </div>
+      <div class="vr d-none d-sm-block"></div>
+      <hr class="d-block d-sm-none">
+      <div>
+        <p>Contact us</p>
+        <p>NY Atlas</p>
+        <p>88-88th ave Queen, NY, 11111</p>
+        <p>NY_Atlas_Support@gmail.com</p>
+        <p>+1 (123) 1234-5678</p>
+      </div>
+      
+    </footer>
+  </body>
+</html>

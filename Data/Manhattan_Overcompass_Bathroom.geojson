@@ -1,0 +1,4730 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2026-04-16T11:49:57Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/160062003",
+        "access": "yes",
+        "amenity": "toilets",
+        "building": "yes",
+        "check_date": "2023-12-16",
+        "description": "There are two entrances. The front entrance is for the Men's bathroom and is wide enough to allow entrance of a bicycle.  The Women's bathroom is entered from the side.",
+        "fee": "no",
+        "female": "yes",
+        "toilets:disposal": "flush",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.94613,
+          40.8471096
+        ]
+      },
+      "id": "way/160062003"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/238356504",
+        "amenity": "toilets",
+        "building": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9590089,
+          40.7532214
+        ]
+      },
+      "id": "way/238356504"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/248166302",
+        "access": "yes",
+        "addr:housenumber": "200",
+        "addr:place": "Washington Square Park",
+        "amenity": "toilets",
+        "building": "toilets",
+        "changing_table": "no",
+        "check_date": "2024-06-09",
+        "fee": "no",
+        "female": "yes",
+        "gender_segregated": "yes",
+        "handwashing:soap": "yes",
+        "height": "4.6",
+        "male": "yes",
+        "name": "Washington Square Park House",
+        "nycdoitt:bin": "1088398",
+        "opening_hours": "07:00-17:00",
+        "toilets:disposal": "flush",
+        "toilets:handwashing": "yes",
+        "toilets:number": "5",
+        "website": "https://www.nycgovparks.org/facilities/restrooms/518",
+        "wheelchair": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9983298,
+          40.7307503
+        ]
+      },
+      "id": "way/248166302"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/248266458",
+        "amenity": "toilets",
+        "building": "yes",
+        "height": "3.2",
+        "nycdoitt:bin": "1088212",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9856262,
+          40.7242611
+        ]
+      },
+      "id": "way/248266458"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/248773597",
+        "access": "yes",
+        "amenity": "toilets",
+        "building": "yes",
+        "check_date": "2024-01-18",
+        "fee": "no",
+        "height": "3.3",
+        "level": "0",
+        "nycdoitt:bin": "1000000",
+        "opening_hours": "08:00-16:00",
+        "portable": "no",
+        "source": "survey",
+        "toilets:disposal": "flush",
+        "toilets:handwashing": "yes",
+        "toilets:position": "seated;urinal",
+        "unisex": "yes",
+        "wheelchair": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9895845,
+          40.7363087
+        ]
+      },
+      "id": "way/248773597"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/249664278",
+        "amenity": "toilets",
+        "building": "yes",
+        "height": "3.8",
+        "nycdoitt:bin": "1088208",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0024936,
+          40.7256163
+        ]
+      },
+      "id": "way/249664278"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/249848217",
+        "amenity": "toilets",
+        "building": "yes",
+        "height": "6.6",
+        "nycdoitt:bin": "1079269",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00007,
+          40.7148643
+        ]
+      },
+      "id": "way/249848217"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/250269716",
+        "access": "yes",
+        "addr:housenumber": "389",
+        "addr:postcode": "10014",
+        "addr:street": "West Street",
+        "amenity": "toilets",
+        "building": "yes",
+        "fee": "no",
+        "height": "4.5",
+        "name": "Pier 45 Comfort Station",
+        "nycdoitt:bin": "1012250",
+        "toilets:disposal": "flush",
+        "website": "https://hudsonriverpark.org/explore-the-park/locations/pier-45",
+        "wheelchair": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0107028,
+          40.7329011
+        ]
+      },
+      "id": "way/250269716"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/250490059",
+        "amenity": "toilets",
+        "building": "yes",
+        "height": "4.8",
+        "nycdoitt:bin": "1087168",
+        "opening_hours": "Mo-Su 07:30-20:00",
+        "toilets:disposal": "flush",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0103405,
+          40.7379905
+        ]
+      },
+      "id": "way/250490059"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/265347586",
+        "access": "yes",
+        "amenity": "toilets",
+        "building": "yes",
+        "building:levels": "1",
+        "height": "6.4",
+        "nycdoitt:bin": "1088623",
+        "opening_hours": "06:00-01:00",
+        "toilets:disposal": "flush",
+        "toilets:handwashing": "yes",
+        "wheelchair": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9770976,
+          40.7683626
+        ]
+      },
+      "id": "way/265347586"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/265347592",
+        "access": "yes",
+        "amenity": "toilets",
+        "architect": "Charles B. Meyers",
+        "building": "yes",
+        "building:levels": "1",
+        "height": "2.4",
+        "nycdoitt:bin": "1083806",
+        "opening_hours": "06:00-01:00",
+        "toilets:disposal": "flush",
+        "toilets:handwashing": "yes",
+        "unisex": "yes",
+        "wheelchair": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9807998,
+          40.7691778
+        ]
+      },
+      "id": "way/265347592"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/265356023",
+        "access": "yes",
+        "addr:housenumber": "737",
+        "addr:postcode": "10019",
+        "addr:street": "11th Avenue",
+        "amenity": "toilets",
+        "building": "toilets",
+        "changing_table": "yes",
+        "fee": "no",
+        "female": "yes",
+        "height": "3.1",
+        "male": "yes",
+        "name": "DeWitt Clinton Park Public Restroom",
+        "nycdoitt:bin": "1027153",
+        "opening_hours": "Mo-Su 08:00-04:00",
+        "operator": "New York City Department of Parks and Recreation",
+        "operator:short": "NYC Parks",
+        "operator:type": "government",
+        "operator:wikidata": "Q1894232",
+        "toilets:disposal": "flush",
+        "toilets:handwashing": "yes",
+        "website": "https://www.nycgovparks.org/facilities/restrooms/145",
+        "wheelchair": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.994639,
+          40.7682061
+        ]
+      },
+      "id": "way/265356023"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/265517918",
+        "amenity": "toilets",
+        "building": "yes",
+        "height": "5.0",
+        "layer": "1",
+        "nycdoitt:bin": "1040069",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9686964,
+          40.7480858
+        ]
+      },
+      "id": "way/265517918"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/266908243",
+        "access": "yes",
+        "amenity": "toilets",
+        "building": "yes",
+        "height": "4.5",
+        "nycdoitt:bin": "1000000",
+        "wheelchair": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9445591,
+          40.7829247
+        ]
+      },
+      "id": "way/266908243"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/266919662",
+        "access": "yes",
+        "amenity": "toilets",
+        "building": "yes",
+        "height": "4.8",
+        "nycdoitt:bin": "1048494",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9509847,
+          40.7854635
+        ]
+      },
+      "id": "way/266919662"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/266924330",
+        "addr:housenumber": "205",
+        "addr:postcode": "10029",
+        "addr:street": "East 99th Street",
+        "amenity": "toilets",
+        "building": "yes",
+        "height": "4.1",
+        "nycdoitt:bin": "1083463",
+        "opening_hours": "Mo-Su 08:00-16:00",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9472314,
+          40.78716
+        ]
+      },
+      "id": "way/266924330"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/269303594",
+        "access": "yes",
+        "amenity": "toilets",
+        "building": "toilets",
+        "check_date": "2022-10-28",
+        "female": "yes",
+        "height": "5.1",
+        "male": "no",
+        "nycdoitt:bin": "1089018",
+        "operator": "New York City Department of Parks and Recreation",
+        "operator:short": "NYC Parks",
+        "operator:type": "government",
+        "operator:wikidata": "Q1894232",
+        "toilets:disposal": "flush",
+        "toilets:handwashing": "yes",
+        "wheelchair": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9864251,
+          40.7837224
+        ]
+      },
+      "id": "way/269303594"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/269303596",
+        "access": "yes",
+        "amenity": "toilets",
+        "building": "toilets",
+        "check_date": "2022-10-28",
+        "female": "no",
+        "height": "4.2",
+        "male": "yes",
+        "nycdoitt:bin": "1089017",
+        "operator": "New York City Department of Parks and Recreation",
+        "operator:short": "NYC Parks",
+        "operator:type": "government",
+        "operator:wikidata": "Q1894232",
+        "toilets:disposal": "flush",
+        "toilets:handwashing": "yes",
+        "wheelchair": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9867508,
+          40.783265
+        ]
+      },
+      "id": "way/269303596"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/270898219",
+        "amenity": "toilets",
+        "building": "yes",
+        "height": "3.3",
+        "nycdoitt:bin": "1083333",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9820875,
+          40.7873297
+        ]
+      },
+      "id": "way/270898219"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/271832586",
+        "addr:housenumber": "680",
+        "addr:postcode": "10037",
+        "addr:street": "Lenox Avenue",
+        "amenity": "toilets",
+        "building": "yes",
+        "height": "4.0",
+        "nycdoitt:bin": "1053945",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9362218,
+          40.8195993
+        ]
+      },
+      "id": "way/271832586"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/271846418",
+        "access": "yes",
+        "addr:housenumber": "2619",
+        "addr:postcode": "10039",
+        "addr:street": "Adam C Powell Boulevard",
+        "amenity": "toilets",
+        "building": "yes",
+        "height": "4.5",
+        "nycdoitt:bin": "1077382",
+        "operator": "NYC Parks",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9347978,
+          40.8246633
+        ]
+      },
+      "id": "way/271846418"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/271885504",
+        "addr:housenumber": "400",
+        "addr:postcode": "10031",
+        "addr:street": "West 141st Street",
+        "amenity": "toilets",
+        "building": "yes",
+        "height": "4.3",
+        "nycdoitt:bin": "1084080",
+        "operator": "NYC Parks",
+        "source_ref": "https://www.nycgovparks.org/parks/st-nicholas-park/map",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9466673,
+          40.8208622
+        ]
+      },
+      "id": "way/271885504"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/271908085",
+        "access": "yes",
+        "amenity": "toilets",
+        "building": "yes",
+        "female": "yes",
+        "height": "4.6",
+        "male": "yes",
+        "nycdoitt:bin": "1089152",
+        "source_ref": "https://www.nycgovparks.org/parks/alexander-hamilton-playground/history",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.951098,
+          40.8229576
+        ]
+      },
+      "id": "way/271908085"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/271909951",
+        "access": "yes",
+        "amenity": "toilets",
+        "building": "yes",
+        "height": "4.2",
+        "nycdoitt:bin": "1059815",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9521077,
+          40.8203566
+        ]
+      },
+      "id": "way/271909951"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/274986260",
+        "access": "yes",
+        "amenity": "toilets",
+        "building": "hut",
+        "fee": "no",
+        "female": "yes",
+        "height": "3.0",
+        "male": "yes",
+        "nycdoitt:bin": "1089101",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9656518,
+          40.8113206
+        ]
+      },
+      "id": "way/274986260"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/274996572",
+        "amenity": "toilets",
+        "building": "yes",
+        "height": "4.5",
+        "nycdoitt:bin": "1087016",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9361726,
+          40.8291911
+        ]
+      },
+      "id": "way/274996572"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/275054097",
+        "addr:housenumber": "550",
+        "addr:postcode": "10032",
+        "addr:street": "West 170th Street",
+        "amenity": "toilets",
+        "building": "yes",
+        "ele": "56.6029053",
+        "height": "4.4",
+        "nycdoitt:bin": "1087024",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9379244,
+          40.8416661
+        ]
+      },
+      "id": "way/275054097"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/275081138",
+        "access": "yes",
+        "amenity": "toilets",
+        "building": "yes",
+        "height": "4.9",
+        "nycdoitt:bin": "1000000",
+        "toilets:disposal": "flush",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9538876,
+          40.8256084
+        ]
+      },
+      "id": "way/275081138"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/275097254",
+        "addr:housenumber": "801",
+        "addr:postcode": "10033",
+        "addr:street": "West 183rd Street",
+        "amenity": "toilets",
+        "building": "yes",
+        "height": "2.7",
+        "nycdoitt:bin": "1064350",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.937952,
+          40.8532211
+        ]
+      },
+      "id": "way/275097254"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/275116681",
+        "amenity": "toilets",
+        "building": "yes",
+        "height": "3.6",
+        "nycdoitt:bin": "1075615",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.92089,
+          40.86264
+        ]
+      },
+      "id": "way/275116681"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/275121180",
+        "amenity": "toilets",
+        "building": "toilets",
+        "height": "5.5",
+        "nycdoitt:bin": "1000000",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9214219,
+          40.8702904
+        ]
+      },
+      "id": "way/275121180"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/278053556",
+        "amenity": "toilets",
+        "building": "yes",
+        "height": "5.2",
+        "nycdoitt:bin": "1088312",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0158747,
+          40.7044109
+        ]
+      },
+      "id": "way/278053556"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/278233409",
+        "amenity": "toilets",
+        "building": "yes",
+        "height": "3.9",
+        "nycdoitt:bin": "1003208",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9934547,
+          40.7108733
+        ]
+      },
+      "id": "way/278233409"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/278363046",
+        "amenity": "toilets",
+        "building": "yes",
+        "fee": "no",
+        "height": "6.4",
+        "nycdoitt:bin": "1088627",
+        "wheelchair": "no",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9691382,
+          40.7804198
+        ]
+      },
+      "id": "way/278363046"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/278366163",
+        "access": "yes",
+        "amenity": "toilets",
+        "building": "toilets",
+        "building:colour": "red",
+        "building:levels": "1",
+        "building:material": "brick",
+        "fee": "no",
+        "female": "yes",
+        "height": "4.6",
+        "layer": "1",
+        "nycdoitt:bin": "1088622",
+        "operator": "Central Park Conservancy",
+        "operator:type": "ngo",
+        "owner": "New York City Department of Parks and Recreation",
+        "owner:short": "NYC Parks",
+        "owner:wikidata": "Q1894232",
+        "roof:shape": "flat",
+        "smoking": "no",
+        "toilets:disposal": "flush",
+        "wheelchair": "no",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9530845,
+          40.7937188
+        ]
+      },
+      "id": "way/278366163"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/278366166",
+        "access": "yes",
+        "amenity": "toilets",
+        "building": "toilets",
+        "building:colour": "red",
+        "building:levels": "1",
+        "building:material": "brick",
+        "fee": "no",
+        "height": "3.2",
+        "male": "yes",
+        "nycdoitt:bin": "1088629",
+        "operator": "Central Park Conservancy",
+        "operator:type": "ngo",
+        "owner": "New York City Department of Parks and Recreation",
+        "owner:short": "NYC Parks",
+        "owner:wikidata": "Q1894232",
+        "roof:shape": "flat",
+        "smoking": "no",
+        "toilets:disposal": "flush",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9527356,
+          40.7941964
+        ]
+      },
+      "id": "way/278366166"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/278366170",
+        "access": "yes",
+        "amenity": "toilets",
+        "building": "yes",
+        "height": "5.4",
+        "nycdoitt:bin": "1000000",
+        "operator": "New York City Department of Parks and Recreation",
+        "toilets:disposal": "flush",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9590634,
+          40.7973287
+        ]
+      },
+      "id": "way/278366170"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/278396512",
+        "addr:housenumber": "96",
+        "addr:postcode": "10004",
+        "addr:street": "Andes Road",
+        "amenity": "toilets",
+        "building": "yes",
+        "fee": "no",
+        "height": "8.1",
+        "nycdoitt:bin": "1086357",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0123629,
+          40.6907792
+        ]
+      },
+      "id": "way/278396512"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/284868525",
+        "amenity": "toilets",
+        "building": "yes",
+        "height": "4.2",
+        "nycdoitt:bin": "1089042",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9439067,
+          40.7756937
+        ]
+      },
+      "id": "way/284868525"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/284868931",
+        "addr:housenumber": "755",
+        "addr:postcode": "10044",
+        "addr:street": "Main Street",
+        "amenity": "toilets",
+        "building": "yes",
+        "height": "3.4",
+        "name": "Octagon Comfort Station",
+        "nycdoitt:bin": "1088295",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9450564,
+          40.7669999
+        ]
+      },
+      "id": "way/284868931"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/284893654",
+        "amenity": "toilets",
+        "building": "yes",
+        "height": "3.4",
+        "nycdoitt:bin": "1040073",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9650353,
+          40.7524069
+        ]
+      },
+      "id": "way/284893654"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/322546340",
+        "amenity": "toilets",
+        "fee": "no",
+        "toilets:handwashing": "yes",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9712258,
+          40.7735229
+        ]
+      },
+      "id": "node/322546340"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/348454463",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9665969,
+          40.7738831
+        ]
+      },
+      "id": "node/348454463"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/410224440",
+        "access": "yes",
+        "amenity": "toilets",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9514371,
+          40.7971609
+        ]
+      },
+      "id": "node/410224440"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/414018267",
+        "access": "yes",
+        "amenity": "toilets",
+        "building": "yes",
+        "changing_table": "yes",
+        "fee": "no",
+        "opening_hours": "08:00-16:00",
+        "wheelchair": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9997284,
+          40.7563236
+        ]
+      },
+      "id": "way/414018267"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/553406359",
+        "amenity": "toilets",
+        "building": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6175547,
+          39.1968186
+        ]
+      },
+      "id": "way/553406359"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/556918533",
+        "amenity": "toilets",
+        "building": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.5742365,
+          39.1804491
+        ]
+      },
+      "id": "way/556918533"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/558189161",
+        "amenity": "toilets",
+        "building": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.5596518,
+          39.1757565
+        ]
+      },
+      "id": "way/558189161"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/610993981",
+        "amenity": "toilets",
+        "female": "yes",
+        "gender_segregated": "yes",
+        "indoor": "room",
+        "level": "0",
+        "name": "100A",
+        "ref": "100A",
+        "room": "toilets",
+        "toilets:disposal": "flush",
+        "toilets:occupancy": "multi",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6155195,
+          39.1976773
+        ]
+      },
+      "id": "way/610993981"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/610994018",
+        "amenity": "toilets",
+        "indoor": "room",
+        "level": "0",
+        "room": "toilets",
+        "toilets:disposal": "flush",
+        "unisex": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6160005,
+          39.197637
+        ]
+      },
+      "id": "way/610994018"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/668189108",
+        "access": "yes",
+        "amenity": "toilets",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9489122,
+          40.7910895
+        ]
+      },
+      "id": "way/668189108"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/693854988",
+        "access": "yes",
+        "amenity": "toilets",
+        "building": "yes",
+        "toilets:disposal": "flush",
+        "toilets:handwashing": "yes",
+        "website": "https://www.nycgovparks.org/parks/washington-market-park/facilities/bathrooms",
+        "wheelchair": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0114997,
+          40.7174794
+        ]
+      },
+      "id": "way/693854988"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/748726581",
+        "amenity": "toilets",
+        "check_date": "2024-02-04",
+        "ele": "17.0688000",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9220478,
+          40.85778
+        ]
+      },
+      "id": "node/748726581"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/748726588",
+        "amenity": "toilets",
+        "check_date": "2022-11-05",
+        "ele": "49.99"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9415626,
+          40.8316806
+        ]
+      },
+      "id": "node/748726588"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/765233264",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9560223,
+          40.8153355
+        ]
+      },
+      "id": "node/765233264"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/765365612",
+        "amenity": "toilets",
+        "name": "High Bridge Recreation Center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.934347,
+          40.8428616
+        ]
+      },
+      "id": "node/765365612"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/767040778",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6187907,
+          39.2022606
+        ]
+      },
+      "id": "node/767040778"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/800212160",
+        "amenity": "toilets",
+        "building": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9973891,
+          40.7110355
+        ]
+      },
+      "id": "way/800212160"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/844118442",
+        "access": "yes",
+        "amenity": "toilets",
+        "fee": "no",
+        "toilets:disposal": "chemical",
+        "unisex": "yes",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6302159,
+          39.1827137
+        ]
+      },
+      "id": "node/844118442"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/864316029",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.5685029,
+          39.2170321
+        ]
+      },
+      "id": "node/864316029"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/870860952",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.580428,
+          39.192122
+        ]
+      },
+      "id": "node/870860952"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/877492738",
+        "amenity": "toilets",
+        "note": "Portable Toilet"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.5747634,
+          39.1729571
+        ]
+      },
+      "id": "node/877492738"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/877493925",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.5661363,
+          39.1787713
+        ]
+      },
+      "id": "node/877493925"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/877563403",
+        "amenity": "toilets",
+        "note": "Restroom"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.5742514,
+          39.1821466
+        ]
+      },
+      "id": "node/877563403"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/889019986",
+        "amenity": "toilets",
+        "building": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9404106,
+          40.7711081
+        ]
+      },
+      "id": "way/889019986"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1104441820",
+        "amenity": "toilets",
+        "building": "yes",
+        "height": "3",
+        "toilets:unisex": "no",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9820581,
+          40.7356377
+        ]
+      },
+      "id": "way/1104441820"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1112808839",
+        "access": "yes",
+        "amenity": "toilets",
+        "building": "yes",
+        "charge": "0.25 USD",
+        "fee": "yes",
+        "unisex": "yes",
+        "wheelchair": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9878401,
+          40.7413031
+        ]
+      },
+      "id": "way/1112808839"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1121582606",
+        "access": "yes",
+        "addr:city": "New York",
+        "addr:postcode": "10001",
+        "addr:state": "NY",
+        "addr:street": "West 35th Street",
+        "amenity": "toilets",
+        "building": "yes",
+        "unisex": "yes",
+        "wheelchair": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9875114,
+          40.7504592
+        ]
+      },
+      "id": "way/1121582606"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1121932388",
+        "access": "yes",
+        "addr:postcode": "10001",
+        "addr:street": "West 32nd Street",
+        "amenity": "toilets",
+        "building": "yes",
+        "height": "6.9",
+        "unisex": "yes",
+        "wheelchair": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.988453,
+          40.7485279
+        ]
+      },
+      "id": "way/1121932388"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1234238089",
+        "access": "yes",
+        "amenity": "toilets",
+        "building": "toilets",
+        "fee": "no",
+        "operator": "New York City Department of Parks and Recreation",
+        "operator:short": "NYC Parks",
+        "operator:type": "government",
+        "operator:wikidata": "Q1894232",
+        "toilets:disposal": "flush",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9622451,
+          40.8148866
+        ]
+      },
+      "id": "way/1234238089"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1240900887",
+        "access": "customers",
+        "amenity": "toilets",
+        "unisex": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9721622,
+          40.7674317
+        ]
+      },
+      "id": "node/1240900887"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1240900893",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9714341,
+          40.7674269
+        ]
+      },
+      "id": "node/1240900893"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1251782967",
+        "access": "yes",
+        "amenity": "toilets",
+        "building": "yes",
+        "check_date": "2024-02-17",
+        "layer": "-1",
+        "note": "Its been some time since I've been in this structure.  I doubt its all toilets. It is heated so bathrooms are open all year round.  This playground is getting redone by Parks but as I last heard, the bathrooms are not being done.",
+        "seasonal": "no",
+        "toilets:disposal": "flush",
+        "wikimedia_commons": "File:Bathroom_area_at_Dino_Park_in_Riverside_Park,_Manhattan.png",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9751413,
+          40.7966988
+        ]
+      },
+      "id": "way/1251782967"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1251856987",
+        "amenity": "toilets",
+        "fee": "no",
+        "male": "only",
+        "unisex": "no",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9816096,
+          40.726887
+        ]
+      },
+      "id": "node/1251856987"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1254311180",
+        "access": "yes",
+        "amenity": "toilets",
+        "building": "yes",
+        "layer": "-1",
+        "male": "yes",
+        "toilets:disposal": "flush",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9462256,
+          40.8471076
+        ]
+      },
+      "id": "way/1254311180"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1273566303",
+        "amenity": "toilets",
+        "gender_segregated": "no",
+        "indoor": "room",
+        "level": "0",
+        "name": "100B",
+        "ref": "100B",
+        "room": "toilets",
+        "toilets:disposal": "flush",
+        "unisex": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6153866,
+          39.1976559
+        ]
+      },
+      "id": "way/1273566303"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1273566310",
+        "amenity": "toilets",
+        "gender_segregated": "yes",
+        "indoor": "room",
+        "level": "0",
+        "male": "yes",
+        "name": "100C",
+        "ref": "100C",
+        "room": "toilets",
+        "toilets:disposal": "flush",
+        "toilets:occupancy": "multi",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6153283,
+          39.1977674
+        ]
+      },
+      "id": "way/1273566310"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1273866615",
+        "amenity": "toilets",
+        "area": "yes",
+        "gender_segregated": "no",
+        "indoor": "room",
+        "level": "0",
+        "name": "303D",
+        "ref": "303D",
+        "room": "toilets",
+        "toilets:disposal": "flush",
+        "unisex": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6153858,
+          39.1973578
+        ]
+      },
+      "id": "way/1273866615"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1284582009",
+        "access": "yes",
+        "amenity": "toilets",
+        "building": "toilets",
+        "check_date": "2024-06-11",
+        "toilets:disposal": "flush",
+        "wheelchair": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9585784,
+          40.7653174
+        ]
+      },
+      "id": "way/1284582009"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1310874079",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9590358,
+          40.8024841
+        ]
+      },
+      "id": "node/1310874079"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1310874081",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9559488,
+          40.8100256
+        ]
+      },
+      "id": "node/1310874081"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1321429556",
+        "access": "yes",
+        "amenity": "toilets",
+        "opening_hours": "08:00-16:00",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9361481,
+          40.8249325
+        ]
+      },
+      "id": "way/1321429556"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1388531100",
+        "amenity": "toilets",
+        "building": "yes",
+        "fee": "no",
+        "wheelchair": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0243585,
+          40.6860602
+        ]
+      },
+      "id": "way/1388531100"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1388531101",
+        "amenity": "toilets",
+        "building": "yes",
+        "fee": "no",
+        "wheelchair": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0244483,
+          40.6859743
+        ]
+      },
+      "id": "way/1388531101"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1414561898",
+        "amenity": "toilets",
+        "building": "yes",
+        "unisex": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.5963086,
+          39.1763893
+        ]
+      },
+      "id": "way/1414561898"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1468570274",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.5874412,
+          39.2026747
+        ]
+      },
+      "id": "node/1468570274"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1469927002",
+        "amenity": "toilets",
+        "building": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9815961,
+          40.7159339
+        ]
+      },
+      "id": "way/1469927002"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1473759614",
+        "access": "customers",
+        "amenity": "toilets",
+        "unisex": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.5988354,
+          39.2028665
+        ]
+      },
+      "id": "way/1473759614"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1473759615",
+        "access": "customers",
+        "amenity": "toilets",
+        "unisex": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.5988548,
+          39.2028664
+        ]
+      },
+      "id": "way/1473759615"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1480402066",
+        "amenity": "toilets",
+        "area": "yes",
+        "gender_segregated": "no",
+        "indoor": "room",
+        "level": "0",
+        "room": "toilets",
+        "toilets:disposal": "flush",
+        "unisex": "yes",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6153853,
+          39.1973305
+        ]
+      },
+      "id": "way/1480402066"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1529086416",
+        "amenity": "toilets",
+        "source": "survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.5587115,
+          39.1796736
+        ]
+      },
+      "id": "node/1529086416"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1577352522",
+        "amenity": "toilets",
+        "check_date": "2025-11-08",
+        "source": "survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9733014,
+          40.74488
+        ]
+      },
+      "id": "node/1577352522"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1578226903",
+        "amenity": "toilets",
+        "fee": "no",
+        "source": "survey",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9728391,
+          40.7238579
+        ]
+      },
+      "id": "node/1578226903"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1728189758",
+        "amenity": "toilets",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0161467,
+          40.7168721
+        ]
+      },
+      "id": "node/1728189758"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1737296851",
+        "access": "yes",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0127282,
+          40.7200374
+        ]
+      },
+      "id": "node/1737296851"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1740846707",
+        "amenity": "toilets",
+        "check_date": "2024-06-11",
+        "level": "-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9769392,
+          40.7525722
+        ]
+      },
+      "id": "node/1740846707"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1740891617",
+        "amenity": "toilets",
+        "fee": "no",
+        "toilets:handwashing": "yes",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9710787,
+          40.7734895
+        ]
+      },
+      "id": "node/1740891617"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1740891627",
+        "amenity": "toilets",
+        "fee": "no",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9686538,
+          40.7751064
+        ]
+      },
+      "id": "node/1740891627"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1754595065",
+        "amenity": "toilets",
+        "check_date": "2024-08-24"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9546166,
+          40.7903326
+        ]
+      },
+      "id": "node/1754595065"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1789077056",
+        "amenity": "toilets",
+        "male": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.5926347,
+          39.2012353
+        ]
+      },
+      "id": "node/1789077056"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1789077057",
+        "amenity": "toilets",
+        "female": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.5926334,
+          39.2019102
+        ]
+      },
+      "id": "node/1789077057"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1789077060",
+        "amenity": "toilets",
+        "changing_table": "yes",
+        "unisex": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.5926332,
+          39.2018467
+        ]
+      },
+      "id": "node/1789077060"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1789077063",
+        "amenity": "toilets",
+        "changing_table": "yes",
+        "unisex": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.5926266,
+          39.2026828
+        ]
+      },
+      "id": "node/1789077063"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1789077064",
+        "amenity": "toilets",
+        "female": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.5926265,
+          39.202592
+        ]
+      },
+      "id": "node/1789077064"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1789077071",
+        "amenity": "toilets",
+        "female": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.5926375,
+          39.2014614
+        ]
+      },
+      "id": "node/1789077071"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1789077077",
+        "amenity": "toilets",
+        "male": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.5926312,
+          39.2021821
+        ]
+      },
+      "id": "node/1789077077"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1824995170",
+        "access": "yes",
+        "amenity": "toilets",
+        "changing_table": "yes",
+        "check_date": "2024-06-10",
+        "drinking_water": "yes",
+        "fee": "no",
+        "level": "1",
+        "opening_hours": "24/7",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.012844,
+          40.7011924
+        ]
+      },
+      "id": "node/1824995170"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1915655233",
+        "access": "yes",
+        "amenity": "toilets",
+        "changing_table": "yes",
+        "check_date": "2024-04-28",
+        "created_by": "iLOE 1.9",
+        "fee": "no",
+        "level": "1",
+        "toilets:disposal": "flush",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.006871,
+          40.743513
+        ]
+      },
+      "id": "node/1915655233"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2312963423",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9615539,
+          40.7809709
+        ]
+      },
+      "id": "node/2312963423"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2324423000",
+        "amenity": "toilets",
+        "fee": "no",
+        "female": "only",
+        "unisex": "no",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9812642,
+          40.7267434
+        ]
+      },
+      "id": "node/2324423000"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2328509713",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9449161,
+          40.8049801
+        ]
+      },
+      "id": "node/2328509713"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2328530250",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9389616,
+          40.8136788
+        ]
+      },
+      "id": "node/2328530250"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2328547713",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.938969,
+          40.8173074
+        ]
+      },
+      "id": "node/2328547713"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2328585230",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.947175,
+          40.811089
+        ]
+      },
+      "id": "node/2328585230"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2328614780",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9370966,
+          40.8122847
+        ]
+      },
+      "id": "node/2328614780"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2329911645",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9781294,
+          40.7934015
+        ]
+      },
+      "id": "node/2329911645"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2329953698",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6201397,
+          39.2000821
+        ]
+      },
+      "id": "node/2329953698"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2339542681",
+        "amenity": "toilets",
+        "check_date": "2024-07-07"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.932932,
+          40.8016573
+        ]
+      },
+      "id": "node/2339542681"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2339622631",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9503196,
+          40.8003174
+        ]
+      },
+      "id": "node/2339622631"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2339646852",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9353357,
+          40.7975211
+        ]
+      },
+      "id": "node/2339646852"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2340002619",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9430638,
+          40.792999
+        ]
+      },
+      "id": "node/2340002619"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2603955356",
+        "amenity": "toilets",
+        "name": "Famous Famiglia"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9390377,
+          40.8416935
+        ]
+      },
+      "id": "node/2603955356"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2895921311",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0035133,
+          40.7049095
+        ]
+      },
+      "id": "node/2895921311"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3003918339",
+        "access": "yes",
+        "amenity": "toilets",
+        "toilets:disposal": "flush",
+        "toilets:handwashing": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9745294,
+          40.7730358
+        ]
+      },
+      "id": "node/3003918339"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3146474829",
+        "access": "yes",
+        "amenity": "toilets",
+        "check_date": "2023-07-05",
+        "level": "1",
+        "toilets:disposal": "flush"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.008335,
+          40.739739
+        ]
+      },
+      "id": "node/3146474829"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3345155228",
+        "amenity": "toilets",
+        "fee": "no",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0208246,
+          40.6897408
+        ]
+      },
+      "id": "node/3345155228"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3345158284",
+        "amenity": "toilets",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0137989,
+          40.6915727
+        ]
+      },
+      "id": "node/3345158284"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3493357015",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9928717,
+          40.7612138
+        ]
+      },
+      "id": "node/3493357015"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3562600595",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.044761,
+          40.68914
+        ]
+      },
+      "id": "node/3562600595"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3569402544",
+        "amenity": "toilets",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9466762,
+          40.7645261
+        ]
+      },
+      "id": "node/3569402544"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3669154898",
+        "access": "yes",
+        "amenity": "toilets",
+        "name": "Tavern on the Green public restrooms",
+        "opening_hours": "Mo-Su 08:00-22:00",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9772628,
+          40.7722751
+        ]
+      },
+      "id": "node/3669154898"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3706396010",
+        "amenity": "toilets",
+        "check_date": "2024-09-03",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0165559,
+          40.7034684
+        ]
+      },
+      "id": "node/3706396010"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3720680317",
+        "amenity": "toilets",
+        "male": "yes",
+        "toilets:disposal": "flush",
+        "toilets:handwashing": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9592846,
+          40.7911091
+        ]
+      },
+      "id": "node/3720680317"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3720681566",
+        "amenity": "toilets",
+        "female": "yes",
+        "toilets:disposal": "flush",
+        "toilets:handwashing": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9598934,
+          40.7912063
+        ]
+      },
+      "id": "node/3720681566"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3720681573",
+        "access": "yes",
+        "amenity": "toilets",
+        "check_date": "2024-07-27"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9677093,
+          40.7783792
+        ]
+      },
+      "id": "node/3720681573"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3720682054",
+        "access": "yes",
+        "amenity": "toilets",
+        "female": "yes",
+        "toilets:disposal": "flush",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9617443,
+          40.7894201
+        ]
+      },
+      "id": "node/3720682054"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3735208280",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9245112,
+          40.7933377
+        ]
+      },
+      "id": "node/3735208280"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3735208281",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9189004,
+          40.7955383
+        ]
+      },
+      "id": "node/3735208281"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3735213245",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9186439,
+          40.7932836
+        ]
+      },
+      "id": "node/3735213245"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3735230008",
+        "amenity": "toilets",
+        "check_date": "2023-12-16",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9307538,
+          40.7830477
+        ]
+      },
+      "id": "node/3735230008"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3735230625",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9262295,
+          40.7837141
+        ]
+      },
+      "id": "node/3735230625"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3748113385",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9239021,
+          40.8005404
+        ]
+      },
+      "id": "node/3748113385"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3821172935",
+        "access": "yes",
+        "amenity": "toilets",
+        "check_date": "2023-01-07",
+        "fee": "no",
+        "name": "Bryant Park Public Restroom",
+        "toilets:disposal": "flush",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9826414,
+          40.7540507
+        ]
+      },
+      "id": "node/3821172935"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3876362257",
+        "access": "yes",
+        "amenity": "toilets",
+        "fixme": "Check opening hours",
+        "toilets:wheelchair": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0084177,
+          40.7485097
+        ]
+      },
+      "id": "node/3876362257"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4080363529",
+        "amenity": "toilets",
+        "fee": "no",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0163557,
+          40.6927618
+        ]
+      },
+      "id": "node/4080363529"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4396410027",
+        "amenity": "toilets",
+        "name": "Chelsea Park Toilets",
+        "website": "https://www.nycgovparks.org/parks/chelsea-park/facilities/bathrooms"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.000837,
+          40.7498584
+        ]
+      },
+      "id": "node/4396410027"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4990556246",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0199976,
+          40.6916571
+        ]
+      },
+      "id": "node/4990556246"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4990556278",
+        "amenity": "toilets",
+        "fee": "no",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0174247,
+          40.687124
+        ]
+      },
+      "id": "node/4990556278"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5111604447",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0006186,
+          40.7631691
+        ]
+      },
+      "id": "node/5111604447"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5136640685",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0055805,
+          40.7363548
+        ]
+      },
+      "id": "node/5136640685"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5299506522",
+        "access": "yes",
+        "amenity": "toilets",
+        "male": "yes",
+        "opening_hours": "Mo-Su 08:00-16:00",
+        "toilets:disposal": "flush",
+        "toilets:seasonal": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9890559,
+          40.7148088
+        ]
+      },
+      "id": "node/5299506522"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5513875021",
+        "amenity": "toilets",
+        "operator": "Inside M&M store"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9843745,
+          40.7600602
+        ]
+      },
+      "id": "node/5513875021"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5964470953",
+        "amenity": "toilets",
+        "fee": "no",
+        "toilets:disposal": "flush",
+        "unisex": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9847675,
+          40.7834624
+        ]
+      },
+      "id": "node/5964470953"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5980549379",
+        "amenity": "toilets",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9882952,
+          40.7797008
+        ]
+      },
+      "id": "node/5980549379"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6304108187",
+        "access": "permissive",
+        "amenity": "toilets",
+        "level": "0",
+        "toilets:unisex": "no",
+        "toilets:wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9734208,
+          40.7430294
+        ]
+      },
+      "id": "node/6304108187"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6327876240",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0460733,
+          40.6896918
+        ]
+      },
+      "id": "node/6327876240"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6330061761",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9942069,
+          40.716749
+        ]
+      },
+      "id": "node/6330061761"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6575692630",
+        "access": "permissive",
+        "amenity": "toilets",
+        "toilets:disposal": "flush",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0032183,
+          40.7606114
+        ]
+      },
+      "id": "node/6575692630"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6657838439",
+        "amenity": "toilets",
+        "fee": "no",
+        "toilets:disposal": "flush",
+        "unisex": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0166952,
+          40.6930446
+        ]
+      },
+      "id": "node/6657838439"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6894104466",
+        "amenity": "toilets",
+        "gender_segregated": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0183978,
+          40.7052227
+        ]
+      },
+      "id": "node/6894104466"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6946750310",
+        "amenity": "toilets",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9999964,
+          40.7159752
+        ]
+      },
+      "id": "node/6946750310"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6946750317",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9996418,
+          40.7158528
+        ]
+      },
+      "id": "node/6946750317"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8539548031",
+        "access": "yes",
+        "amenity": "toilets",
+        "changing_table": "yes",
+        "changing_table:location": "male_toilet",
+        "fee": "no",
+        "level": "0",
+        "toilets:disposal": "flush",
+        "toilets:handwashing": "yes",
+        "toilets:paper_supplied": "yes",
+        "toilets:position": "seated;urinal",
+        "unisex": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9719504,
+          40.8024765
+        ]
+      },
+      "id": "node/8539548031"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8902027263",
+        "access": "yes",
+        "amenity": "toilets",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0038544,
+          40.7056191
+        ]
+      },
+      "id": "node/8902027263"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9026893654",
+        "access": "yes",
+        "amenity": "toilets",
+        "layer": "1",
+        "toilets:disposal": "flush",
+        "unisex": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0106745,
+          40.7416802
+        ]
+      },
+      "id": "node/9026893654"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9062928390",
+        "amenity": "toilets",
+        "female": "yes",
+        "level": "4",
+        "male": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0016529,
+          40.7058002
+        ]
+      },
+      "id": "node/9062928390"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9196017981",
+        "amenity": "toilets",
+        "check_date:opening_hours": "2024-04-04",
+        "female": "yes",
+        "male": "yes",
+        "opening_hours": "08:00-19:00",
+        "opening_hours:signed": "no",
+        "toilets:handwashing": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9326941,
+          40.8607906
+        ]
+      },
+      "id": "node/9196017981"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9196202537",
+        "access": "yes",
+        "amenity": "toilets",
+        "female": "yes",
+        "layer": "2",
+        "male": "yes",
+        "toilets:disposal": "flush",
+        "toilets:handwashing": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9576698,
+          40.8235095
+        ]
+      },
+      "id": "node/9196202537"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9333113617",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9897782,
+          40.7509157
+        ]
+      },
+      "id": "node/9333113617"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9411185887",
+        "access": "yes",
+        "amenity": "toilets",
+        "male": "yes",
+        "toilets:disposal": "flush",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9620466,
+          40.789384
+        ]
+      },
+      "id": "node/9411185887"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9423683685",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0010791,
+          40.7522651
+        ]
+      },
+      "id": "node/9423683685"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9458466436",
+        "access": "yes",
+        "amenity": "toilets",
+        "description": "Burlington",
+        "fee": "no",
+        "indoor": "yes",
+        "level": "4"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9916826,
+          40.7348004
+        ]
+      },
+      "id": "node/9458466436"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9652131607",
+        "access": "permissive",
+        "amenity": "toilets",
+        "toilets:disposal": "flush",
+        "unisex": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.988519,
+          40.7145684
+        ]
+      },
+      "id": "node/9652131607"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9686821929",
+        "amenity": "toilets",
+        "changing_table": "no",
+        "check_date": "2023-07-05",
+        "female": "yes",
+        "male": "yes",
+        "toilets:disposal": "flush",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0097331,
+          40.7434208
+        ]
+      },
+      "id": "node/9686821929"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9709939535",
+        "access": "yes",
+        "amenity": "toilets",
+        "male": "yes",
+        "toilets:disposal": "flush"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9741144,
+          40.7216424
+        ]
+      },
+      "id": "node/9709939535"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9709939536",
+        "access": "yes",
+        "amenity": "toilets",
+        "female": "yes",
+        "toilets:disposal": "flush"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9740385,
+          40.7219372
+        ]
+      },
+      "id": "node/9709939536"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9802778504",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0029512,
+          40.7299832
+        ]
+      },
+      "id": "node/9802778504"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9815185298",
+        "access": "yes",
+        "amenity": "toilets",
+        "female": "yes",
+        "toilets:disposal": "flush",
+        "toilets:seasonal": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9891467,
+          40.7146408
+        ]
+      },
+      "id": "node/9815185298"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10216105384",
+        "access": "yes",
+        "amenity": "toilets",
+        "female": "yes",
+        "level": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9789978,
+          40.7586528
+        ]
+      },
+      "id": "node/10216105384"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10216105385",
+        "access": "yes",
+        "amenity": "toilets",
+        "level": "1",
+        "male": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9790164,
+          40.7586548
+        ]
+      },
+      "id": "node/10216105385"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10224157725",
+        "amenity": "toilets",
+        "toilets:unisex": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9912775,
+          40.7224646
+        ]
+      },
+      "id": "node/10224157725"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10281405369",
+        "amenity": "toilets",
+        "check_date": "2022-12-22",
+        "level": "-2",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0112733,
+          40.7116704
+        ]
+      },
+      "id": "node/10281405369"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10557129368",
+        "access": "yes",
+        "amenity": "toilets",
+        "check_date": "2024-05-26",
+        "female": "yes",
+        "level": "2",
+        "male": "yes",
+        "toilets:disposal": "flush",
+        "unisex": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0023658,
+          40.7060031
+        ]
+      },
+      "id": "node/10557129368"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10659606022",
+        "access": "yes",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9929033,
+          40.7187625
+        ]
+      },
+      "id": "node/10659606022"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10659606023",
+        "access": "yes",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9928956,
+          40.7187785
+        ]
+      },
+      "id": "node/10659606023"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10659606024",
+        "access": "yes",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9928876,
+          40.7187927
+        ]
+      },
+      "id": "node/10659606024"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10659606025",
+        "access": "yes",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9928797,
+          40.7188113
+        ]
+      },
+      "id": "node/10659606025"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10769804999",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9787185,
+          40.7818942
+        ]
+      },
+      "id": "node/10769804999"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10793746842",
+        "access": "yes",
+        "amenity": "toilets",
+        "changing_table": "yes",
+        "check_date": "2023-04-07",
+        "fee": "no",
+        "level": "0",
+        "portable": "no",
+        "toilets:disposal": "flush",
+        "toilets:handwashing": "yes",
+        "toilets:position": "urinal;seated",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9962677,
+          40.7513442
+        ]
+      },
+      "id": "node/10793746842"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11048744578",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0112551,
+          40.743538
+        ]
+      },
+      "id": "node/11048744578"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11081484104",
+        "access": "yes",
+        "amenity": "toilets",
+        "toilets:disposal": "flush"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0032191,
+          40.7135064
+        ]
+      },
+      "id": "node/11081484104"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11142519804",
+        "amenity": "toilets",
+        "changing_table": "yes",
+        "unisex": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.5950696,
+          39.2026566
+        ]
+      },
+      "id": "node/11142519804"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11142559705",
+        "amenity": "toilets",
+        "changing_table": "yes",
+        "unisex": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.5950445,
+          39.2013812
+        ]
+      },
+      "id": "node/11142559705"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11142559754",
+        "amenity": "toilets",
+        "male": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.5950656,
+          39.2025049
+        ]
+      },
+      "id": "node/11142559754"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11142559755",
+        "amenity": "toilets",
+        "female": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.595061,
+          39.2023325
+        ]
+      },
+      "id": "node/11142559755"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11142559756",
+        "amenity": "toilets",
+        "male": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.5950484,
+          39.2017001
+        ]
+      },
+      "id": "node/11142559756"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11142559757",
+        "amenity": "toilets",
+        "female": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.5950485,
+          39.2015155
+        ]
+      },
+      "id": "node/11142559757"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11142559758",
+        "amenity": "toilets",
+        "changing_table": "yes",
+        "unisex": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.5926365,
+          39.2013951
+        ]
+      },
+      "id": "node/11142559758"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11142559771",
+        "amenity": "toilets",
+        "layer": "1",
+        "male": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.5929124,
+          39.2022717
+        ]
+      },
+      "id": "node/11142559771"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11142559772",
+        "amenity": "toilets",
+        "changing_table": "yes",
+        "layer": "1",
+        "unisex": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.592914,
+          39.2023612
+        ]
+      },
+      "id": "node/11142559772"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11142559773",
+        "amenity": "toilets",
+        "changing_table": "yes",
+        "layer": "1",
+        "unisex": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.5928993,
+          39.2016623
+        ]
+      },
+      "id": "node/11142559773"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11142559774",
+        "amenity": "toilets",
+        "female": "yes",
+        "layer": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.5929004,
+          39.2017519
+        ]
+      },
+      "id": "node/11142559774"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11142559776",
+        "amenity": "toilets",
+        "changing_table": "yes",
+        "unisex": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.5950135,
+          39.2024796
+        ]
+      },
+      "id": "node/11142559776"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11220911725",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9407918,
+          40.8265724
+        ]
+      },
+      "id": "node/11220911725"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11229800337",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9690759,
+          40.7800037
+        ]
+      },
+      "id": "node/11229800337"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11433570145",
+        "access": "yes",
+        "amenity": "toilets",
+        "fee": "no",
+        "level": "6"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9586523,
+          40.8173099
+        ]
+      },
+      "id": "node/11433570145"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11433600371",
+        "access": "yes",
+        "amenity": "toilets",
+        "changing_table": "yes",
+        "fee": "no",
+        "level": "0",
+        "panoramax": "9f77f92f-f71c-4d1b-a35c-0a89a23df958",
+        "panoramax:0": "a7067958-6ccf-47cc-97be-c31c1d220ea7",
+        "panoramax:1": "38134125-96f6-4c1b-8a7c-c540ca22eae8",
+        "panoramax:2": "2ec68678-67a8-463f-aada-b56b37c6f69a",
+        "panoramax:3": "536480bd-abe7-41d8-87d8-8d59b71481ef",
+        "panoramax:4": "263a37bc-9f3b-482d-a7ad-a96d5f83275c",
+        "panoramax:5": "7b0503af-ac5b-4322-b74e-02771cd85586",
+        "toilets:disposal": "flush",
+        "unisex": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9732499,
+          40.8006253
+        ]
+      },
+      "id": "node/11433600371"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11462880117",
+        "access": "yes",
+        "amenity": "toilets",
+        "check_date": "2023-12-28",
+        "fee": "no",
+        "level": "0",
+        "opening_hours": "08:00-16:00",
+        "operator": "NYC Parks",
+        "toilets:disposal": "flush",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9587116,
+          40.7593779
+        ]
+      },
+      "id": "node/11462880117"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11528344470",
+        "access": "yes",
+        "amenity": "toilets",
+        "check_date": "2024-08-14",
+        "fee": "no",
+        "level": "-1",
+        "note": "Just inside the north faregate of the 72nd St subway station",
+        "opening_hours": "07:00-12:00,13:00-19:00",
+        "operator": "NYC MTA",
+        "portable": "no",
+        "source": "survey",
+        "toilets:disposal": "flush",
+        "toilets:handwashing": "yes",
+        "toilets:position": "seated",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.958408,
+          40.7685022
+        ]
+      },
+      "id": "node/11528344470"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11607138399",
+        "access": "yes",
+        "amenity": "toilets",
+        "female": "yes",
+        "female:signed": "yes",
+        "fixme": "Hours are capricious.",
+        "operator": "NYC Department of Parks and Recreation",
+        "toilets:disposal": "flush",
+        "wheelchair": "yes",
+        "wikimedia_commons": "File:Women's_bathroom_at_Parks_building.png"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9311596,
+          40.8685436
+        ]
+      },
+      "id": "node/11607138399"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11610835267",
+        "access": "yes",
+        "amenity": "toilets",
+        "operator": "NYC Department of Parks and Recreation",
+        "seasonal": "yes",
+        "toilets:disposal": "flush",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9320025,
+          40.8683526
+        ]
+      },
+      "id": "node/11610835267"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11616088025",
+        "access": "yes",
+        "amenity": "toilets",
+        "seasonal": "yes",
+        "toilets:disposal": "flush"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9319041,
+          40.8688679
+        ]
+      },
+      "id": "node/11616088025"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11644432591",
+        "access": "yes",
+        "amenity": "toilets",
+        "changing_table": "yes",
+        "female": "yes",
+        "fixme": "Hours are capricious.",
+        "male:signed": "yes",
+        "operator": "NYC Department of Parks and Recreation",
+        "toilets:disposal": "flush",
+        "wheelchair": "yes",
+        "wikimedia_commons": "File:Men's bathroom at Parks building.png"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9312345,
+          40.8685651
+        ]
+      },
+      "id": "node/11644432591"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11721625336",
+        "access": "customers",
+        "amenity": "toilets",
+        "description": "In the subway station",
+        "fee": "no",
+        "layer": "-1",
+        "opening_hours": "Mo-Su 07:00-12:00, 13:00-19:00",
+        "panoramax": "d99796af-01c7-4327-bfdf-c1417d8c191f",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9397818,
+          40.8411035
+        ]
+      },
+      "id": "node/11721625336"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11721625337",
+        "access": "customers",
+        "amenity": "toilets",
+        "description": "In the subway station",
+        "female": "yes",
+        "layer": "-1",
+        "opening_hours": "Mo-Su 07:00-12:00, 13:00-19:00",
+        "panoramax": "9716ad21-d338-4d17-971f-d42f061bb62d",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9397877,
+          40.8410967
+        ]
+      },
+      "id": "node/11721625337"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11822433532",
+        "access": "yes",
+        "amenity": "toilets",
+        "portable": "yes",
+        "toilets:disposal": "chemical"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9816101,
+          40.7268012
+        ]
+      },
+      "id": "node/11822433532"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11870739703",
+        "access": "permissive",
+        "amenity": "toilets",
+        "changing_table": "yes",
+        "male": "yes",
+        "toilets:disposal": "flush",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0052409,
+          40.7268344
+        ]
+      },
+      "id": "node/11870739703"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11870739704",
+        "access": "permissive",
+        "amenity": "toilets",
+        "female": "yes",
+        "toilets:disposal": "flush",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0052394,
+          40.7268679
+        ]
+      },
+      "id": "node/11870739704"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11955796822",
+        "access": "yes",
+        "amenity": "toilets",
+        "changing_table": "no",
+        "description": "Seasonal.  Only here in warmer months at whim of NYC Parks Department.",
+        "mapillary": "862363075930004",
+        "toilets:disposal": "chemical"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9598286,
+          40.8202836
+        ]
+      },
+      "id": "node/11955796822"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11955796823",
+        "access": "yes",
+        "amenity": "toilets",
+        "changing_table": "no",
+        "description": "Seasonal.  Only here in warmer months at whim of NYC Parks Department.",
+        "mapillary": "862363075930004",
+        "toilets:disposal": "chemical"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9598241,
+          40.820288
+        ]
+      },
+      "id": "node/11955796823"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11971148597",
+        "access": "yes",
+        "amenity": "toilets",
+        "check_date": "2024-06-10",
+        "fee": "no",
+        "fixme": "location",
+        "level": "1",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9913067,
+          40.7570829
+        ]
+      },
+      "id": "node/11971148597"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12103697149",
+        "access": "yes",
+        "amenity": "toilets",
+        "female": "yes",
+        "opening_hours": "08:00-16:00",
+        "toilets:disposal": "flush"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9295188,
+          40.8652131
+        ]
+      },
+      "id": "node/12103697149"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12103697150",
+        "access": "yes",
+        "amenity": "toilets",
+        "male": "yes",
+        "opening_hours": "08:00-16:00",
+        "toilets:disposal": "flush"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9294498,
+          40.8650041
+        ]
+      },
+      "id": "node/12103697150"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12117376827",
+        "access": "yes",
+        "amenity": "toilets",
+        "fee": "no",
+        "female": "yes",
+        "indoor": "yes",
+        "level": "0",
+        "male": "no",
+        "toilets:disposal": "flush",
+        "toilets:handwashing": "yes",
+        "toilets:position": "seated",
+        "unisex": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.011005,
+          40.7434756
+        ]
+      },
+      "id": "node/12117376827"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12117376864",
+        "access": "yes",
+        "amenity": "toilets",
+        "fee": "no",
+        "female": "no",
+        "level": "0",
+        "male": "yes",
+        "toilets:disposal": "flush",
+        "toilets:handwashing": "yes",
+        "toilets:menstrual_products": "no",
+        "toilets:position": "seated;urinal",
+        "unisex": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.0110581,
+          40.7434803
+        ]
+      },
+      "id": "node/12117376864"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12148898921",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9707438,
+          40.7684015
+        ]
+      },
+      "id": "node/12148898921"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12847084637",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9450293,
+          40.7735649
+        ]
+      },
+      "id": "node/12847084637"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12879170794",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9460086,
+          40.8388938
+        ]
+      },
+      "id": "node/12879170794"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12879233201",
+        "access": "yes",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9399424,
+          40.8279396
+        ]
+      },
+      "id": "node/12879233201"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12925573384",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9388644,
+          40.8489151
+        ]
+      },
+      "id": "node/12925573384"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12925573390",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9386825,
+          40.8489606
+        ]
+      },
+      "id": "node/12925573390"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12998465740",
+        "amenity": "toilets",
+        "unisex": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.5962044,
+          39.1763704
+        ]
+      },
+      "id": "node/12998465740"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13046728237",
+        "amenity": "toilets",
+        "check_date": "2025-08-03"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9834215,
+          40.7103932
+        ]
+      },
+      "id": "node/13046728237"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13232117765",
+        "access": "yes",
+        "addr:city": "New York",
+        "addr:housenumber": "10",
+        "addr:state": "NY",
+        "addr:street": "Columbus Circle",
+        "air_conditioning": "yes",
+        "amenity": "toilets",
+        "fee": "no",
+        "female": "yes",
+        "level": "1",
+        "level:ref": "2",
+        "male": "yes",
+        "operator": "The Shops at Columbus Circle",
+        "operator:type": "private",
+        "operator:wikidata": "Q7763938",
+        "toilets:disposal": "flush",
+        "toilets:handwashing": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9826012,
+          40.7687727
+        ]
+      },
+      "id": "node/13232117765"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13232117766",
+        "access": "yes",
+        "addr:city": "New York",
+        "addr:housenumber": "10",
+        "addr:state": "NY",
+        "addr:street": "Columbus Circle",
+        "air_conditioning": "yes",
+        "amenity": "toilets",
+        "fee": "no",
+        "female": "yes",
+        "level": "1",
+        "level:ref": "2",
+        "male": "yes",
+        "operator": "The Shops at Columbus Circle",
+        "operator:type": "private",
+        "operator:wikidata": "Q7763938",
+        "toilets:disposal": "flush",
+        "toilets:handwashing": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9830383,
+          40.7681871
+        ]
+      },
+      "id": "node/13232117766"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13235181761",
+        "access": "yes",
+        "addr:city": "New York",
+        "addr:housenumber": "10",
+        "addr:state": "NY",
+        "addr:street": "Columbus Circle",
+        "air_conditioning": "yes",
+        "amenity": "toilets",
+        "fee": "no",
+        "female": "yes",
+        "level": "2",
+        "level:ref": "3",
+        "male": "yes",
+        "operator": "The Shops at Columbus Circle",
+        "operator:type": "private",
+        "operator:wikidata": "Q7763938",
+        "toilets:disposal": "flush",
+        "toilets:handwashing": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9831383,
+          40.7682263
+        ]
+      },
+      "id": "node/13235181761"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13235181762",
+        "access": "yes",
+        "addr:city": "New York",
+        "addr:housenumber": "10",
+        "addr:state": "NY",
+        "addr:street": "Columbus Circle",
+        "air_conditioning": "yes",
+        "amenity": "toilets",
+        "fee": "no",
+        "female": "yes",
+        "level": "2",
+        "level:ref": "3",
+        "male": "yes",
+        "operator": "The Shops at Columbus Circle",
+        "operator:type": "private",
+        "operator:wikidata": "Q7763938",
+        "toilets:disposal": "flush",
+        "toilets:handwashing": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9827012,
+          40.7688119
+        ]
+      },
+      "id": "node/13235181762"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13439788143",
+        "amenity": "toilets",
+        "changing_table": "yes",
+        "unisex": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.592631,
+          39.2021125
+        ]
+      },
+      "id": "node/13439788143"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13564503798",
+        "access": "yes",
+        "amenity": "toilets"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9443102,
+          40.8291431
+        ]
+      },
+      "id": "node/13564503798"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13577927471",
+        "access": "yes",
+        "amenity": "toilets",
+        "gender_segregated": "no",
+        "toilets:disposal": "flush",
+        "toilets:occupancy": "single",
+        "unisex": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.5768309,
+          39.2010832
+        ]
+      },
+      "id": "node/13577927471"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13577927472",
+        "access": "yes",
+        "amenity": "toilets",
+        "gender_segregated": "no",
+        "toilets:disposal": "flush",
+        "toilets:occupancy": "single",
+        "unisex": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.5768306,
+          39.2010917
+        ]
+      },
+      "id": "node/13577927472"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13577930323",
+        "access": "yes",
+        "amenity": "toilets",
+        "gender_segregated": "yes",
+        "male": "yes",
+        "toilets:disposal": "flush"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.614748,
+          39.1972508
+        ]
+      },
+      "id": "node/13577930323"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13577930324",
+        "access": "yes",
+        "amenity": "toilets",
+        "gender_segregated": "no",
+        "toilets:disposal": "flush",
+        "toilets:occupancy": "single",
+        "unisex": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6147492,
+          39.197231
+        ]
+      },
+      "id": "node/13577930324"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13577930325",
+        "access": "yes",
+        "amenity": "toilets",
+        "female": "yes",
+        "gender_segregated": "yes",
+        "toilets:disposal": "flush"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6147419,
+          39.1972149
+        ]
+      },
+      "id": "node/13577930325"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13577930326",
+        "access": "yes",
+        "amenity": "toilets",
+        "gender_segregated": "no",
+        "toilets:disposal": "flush",
+        "toilets:occupancy": "single",
+        "unisex": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6152564,
+          39.1968427
+        ]
+      },
+      "id": "node/13577930326"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13730194950",
+        "access": "customers",
+        "amenity": "toilets",
+        "source": "survey",
+        "toilets:disposal": "flush",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9870501,
+          40.745592
+        ]
+      },
+      "id": "node/13730194950"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/13730368349",
+        "access": "yes",
+        "amenity": "toilets",
+        "changing_table": "yes",
+        "source": "survey",
+        "toilets:disposal": "flush",
+        "wheelchair": "designated"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.978241,
+          40.7518535
+        ]
+      },
+      "id": "node/13730368349"
+    }
+  ]
+}

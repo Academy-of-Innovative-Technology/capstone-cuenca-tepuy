@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NY Atlas | Home</title>
+
+    <link rel="stylesheet" href="Scss/main.css" />
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <script defer src="../nav.js"></script>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+
+  <body class="d-flex flex-column h-100 bg-primary-subtle">
+    <nav class="navbar fixed-top navbar-expand-lg bg-primary" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand bg-dark p-1 rounded d-flex justify-content-center align-items-center gap-1" href="../index.html"><span class="badge bg-primary">NY</span><span>Atlas</span></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-between"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../Map/map.html"
+                ><i class="bi bi-search me-2"></i>Find</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../Contribute/contribute.html"
+                ><i class="bi bi-patch-plus me-2"></i>Contribute</a
+              >
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../About/about.html"
+                ><span class="me-2"></span>About us</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../Credits/credits.html"
+                ><i class="bi bi-clipboard me-2"></i>Credits</a
+              >
+            </li>
+            <li class="nav-item py-2 py-lg-1 col-12 col-lg-auto">
+              <div class="vr d-none d-lg-flex h-100 mx-lg-2 bg-white"></div>
+              <hr class="d-lg-none my-2 text-white-50">
+            </li>
+            <li class="nav-item dropdown" data-bs-theme="light">
+              <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="theme-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme">
+                <i class="bi bi-circle-half"></i>
+                <span class="d-lg-none ms-2">Toggle theme</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                  <button id="Light_Theme_BTN" type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                    <i class="bi bi-sun-fill"></i><span class="ms-2">Light</span>
+                  </button>
+                </li>
+                <li>
+                  <button id="Dark_Theme_BTN" type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="true">
+                    <i class="bi bi-moon-stars-fill"></i><span class="ms-2">Dark</span>
+                  </button>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main
+      class="p-0 flex-grow-1 container-fluid d-flex flex-column align-items-center"
+    >
+      <section
+        id="Main_Title"
+        class="container-fluid p-0 pt-5 pb-5 m-0 min-vh-100 d-flex flex-column align-items-center justify-content-center"
+      >
+        <div class="container-sm fade-in-top">
+          <h1 class="display-1 d-flex justify-content-center gap-1"><span class="badge bg-primary">NY</span><span>Atlas</span></h1>
+          <h2 class="text-center">Find local resources nearby fast.</h2>
+          <h3 class="text-center m-5 mt-3">
+            Our platform provides you with a
+            map to look for local resources to help you get the support you need
+            when you need it most.
+          </h3>
+        </div>
+        <div
+          class="flex-column flex-sm-row row container-sm d-flex justify-content-center align-items-center column-gap-2 row-gap-2 fade-in-top"
+        >
+          <a
+            href="../Map/map.html"
+            class="btn btn-primary btn-lg col-4 text-truncate text-li fs-4"
+            ><i class="bi bi-search me-2"></i>Find</a
+          >
+          <a
+            href="../Discover/discover.html"
+            class="btn btn-warning btn-lg col-4 text-truncate fs-4"
+          >
+            <i class="bi bi-rocket-takeoff-fill me-2"></i>Explore
+          </a>
+        </div>
+      </section>
+
+      <section
+        id="Information"
+        class="container-fluid p-0 pt-3 pb-3 m-0 d-flex flex-column align-items-center overflox-x-clip gap-3"
+      >
+      <article
+          class="container-fluid d-flex justify-content-center p-0 m-0 bg-half-dark"
+        >
+          <div class="container-sm p-0 row m-0">
+            <div
+              class="col-md p-2 d-flex flex-column align-items-center justify-content-center bg-article-dark-theme"
+            >
+              <h2 class="ps-5 pt-5 pe-5 text-decoration-underline text-light">
+                MTA Public Bathrooms
+              </h2>
+              <p class="ps-5 pb-5 pe-5 text-light">
+                The MTA maintains
+                <span class="fw-bold text-primary h2">125 public bathrooms</span>
+                  across 65 different subway stations in New York City. These facilities are generally open from 7:00 a.m. to 7:00 p.m., with a daily cleaning closure from 12:00 p.m. to 1:00 p.m.. Locations are spread across the boroughs, including key hubs, and are often listed on the official <a href="https://www.mta.info/agency/new-york-city-transit/bathrooms" target="_blank" class="link">MTA Bathroom webpage</a>. 
+              </p>
+            </div>
+            <div class="col-md p-0">
+              <img
+                class="h-100 w-100"
+                style="object-fit: cover"
+                src="https://nyc.streetsblog.org/wp-content/uploads/sites/9/2023/03/subway-bathroom-Jackson-Heights.jpg?w=1024"
+              />
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="container-fluid d-flex justify-content-center p-0 m-0 bg-half-dark-reverse"
+        >
+          <div class="container-sm p-0 row m-0 flex-row-reverse">
+            <div
+              class="col-md p-2 d-flex flex-column align-items-center justify-content-center bg-article-dark-theme"
+            >
+              <h2 class="ps-5 pt-5 pe-5 text-decoration-underline text-light">
+                Food Insecurity in New York City
+              </h2>
+              <p class="ps-5 pb-5 pe-5 text-light">
+                Over
+                <span class="fw-bold text-primary h2">1.2 million</span>
+                experience food insecurity each year, meaning they do not always
+                have reliable access to enough affordable, nutritious food.
+                <a target="_blank" class="link" href="https://council.nyc.gov/data/emergency-food-in-nyc/">The New York City Council</a> and organizations like <a target="_blank" class="link" href="https://www.foodbanknyc.org/news-and-stories/food-bank-for-nyc-and-allies-urge-city-to-prioritize-hunger-relief/">Food Bank For New York City</a> report that
+                demand for food assistance has remained significantly higher
+                than pre-pandemic levels, with many families relying on food
+                pantries regularly.
+              </p>
+            </div>
+            <div class="col-md p-0">
+              <img
+                class="h-100 w-100"
+                style="object-fit: cover"
+                src="https://www.immanueltemplechurch.com/wp-content/uploads/2024/11/Food-Pantry.png"
+              />
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="container-fluid d-flex justify-content-center p-0 m-0 bg-half-dark"
+        >
+          <div class="container-sm p-0 row m-0">
+            <div
+              class="col-md p-2 d-flex flex-column align-items-center justify-content-center bg-article-dark-theme"
+            >
+              <h2 class="ps-5 pt-5 pe-5 text-decoration-underline text-white">
+                Homelessness & Shelter in NYC
+              </h2>
+              <p class="text-white ps-5 pb-5 pe-5">
+                Over
+                <span class="fw-bold text-primary h2"><a class="link" target="_blank" href="https://www.nyc.gov/site/dhs/about/stats-and-reports.page">80,000 people</a></span> people stay in the New York City shelter system on an average night, including thousands of families with children. According to  City <a class="link" target="_blank" href="https://www.nyc.gov/site/dhs/index.page?utm_source=chatgpt.com">the New York Department of Homeless Services</a>, New York City operates the largest municipal shelter system in the United States, providing temporary housing, meals, and support services.
+              </p>
+            </div>
+            <div class="col-md p-0">
+              <img
+                class="h-100 w-100"
+                style="object-fit: cover"
+                src="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/izs4JYCl7GLk/v1/-1x-1.webp"
+              />
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="container-fluid d-flex justify-content-center p-0 m-0 bg-half-dark-reverse"
+        >
+          <div class="container-sm p-0 row m-0 flex-row-reverse">
+            <div
+              class="col-md p-2 d-flex flex-column align-items-center justify-content-center bg-article-dark-theme"
+            >
+              <h2 class="ps-5 pt-5 pe-5 text-decoration-underline text-light">
+                Ready to find these resources?
+              </h2>
+              <div id="Map_Redirect_BTN_Container" class="d-flex flex-nowrap align-items-center gap-2">
+                <i class="bi bi-arrow-right-square-fill rainbow_color"></i>
+                <i class="bi bi-arrow-right-square-fill rainbow_color"></i>
+                <button class="btn btn-primary btn-lg border-2 border-white"><a class="text-decoration-none rainbow_color" href="../Map/map.html">Click here to go to the map!</a></button>
+                <i class="bi bi-arrow-left-square-fill rainbow_color"></i>
+                <i class="bi bi-arrow-left-square-fill rainbow_color"></i>
+              </div>
+        
+            </div>
+            <div class="col-md p-0">
+              <img
+                class="h-100 w-100"
+                style="object-fit: cover"
+                src="Images/NY_Atlas_MAP_SS.png"
+              />
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="bg-primary d-flex flex-column flex-sm-row flex-wrap p-4 gap-sm-5">
+
+      <div class="d-flex flex-column" id="Quick_Links_Container">
+        <p>Quick links</p>
+        <a class="text-decoration-none text-body ps-2" href="Map/map.html">Find resources</a>
+        <a class="text-decoration-none text-body ps-2"" href="Contribute/contribute.html">Contribute</a>
+        <a class="text-decoration-none text-body ps-2"" href="Discover/discover.html">Explore related content</a>
+        <a class="text-decoration-none text-body ps-2"" href="About/about.html">About Us</a>
+        <a class="text-decoration-none text-body ps-2"" href="Credits/credits.html">Credits</a>
+      </div>
+      <div class="vr d-none d-sm-block"></div>
+      <hr class="d-block d-sm-none">
+      <div>
+        <p>Contact us</p>
+        <p>NY Atlas</p>
+        <p>88-88th ave Queen, NY, 11111</p>
+        <p>NY_Atlas_Support@gmail.com</p>
+        <p>+1 (123) 1234-5678</p>
+      </div>
+      
+    </footer>
+
+    <script src="index.js" defer></script>
+  </body>
+</html>
